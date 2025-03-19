@@ -15,10 +15,10 @@ return(
                         className="input-style"
                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                       >
-                        <option value="ΔΑ">ΔΑ</option>
-                        <option value="ΔΕ">ΔΕ</option>
-                        <option value="ΟΚ">ΟΚ</option>
-                        <option value="ΟΧΙ ΟΚ">ΟΧΙ ΟΚ</option>
+                          <option value="ΔΑ">Δ.Α.</option>
+                          <option value="ΔΕ">Δ.Ε.</option>
+                          <option value="ΟΚ">ΟΚ</option>
+                          <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
                       </select>
                     </td>
                     <td className="table-cell">
