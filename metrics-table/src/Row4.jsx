@@ -1,8 +1,19 @@
-import React, {useState,useRef} from "react";
+import React, {useState} from "react";
 import "./Row4.css";
 
 
-function Row4({ row, index, handleEnterPress,toggleDropdown4,dropdown4Visible, setDropdown4Visible, duration1BAT, setDuration1BAT, duration2BAT, setDuration2BAT}){
+function Row4({ row, 
+                index, 
+                handleEnterPress,
+                toggleDropdown4,
+                dropdown4Visible, 
+                setDropdown4Visible,
+                duration1BAT, 
+                setDuration1BAT, 
+                duration2BAT, 
+                setDuration2BAT,
+                duration1BATRef,
+                duration2BATRef}){
 
     const [dropdown4Data, setDropdown4Data] = useState([
         { text1: "α", text2: "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία 4.4V DC.", input1: "", input2: "", input3: "", input4: ""  },
@@ -18,10 +29,6 @@ function Row4({ row, index, handleEnterPress,toggleDropdown4,dropdown4Visible, s
         newDropdown4Data[rowIndex][field] = value;
         setDropdown4Data(newDropdown4Data);
       };  
-
-
-      const duration1BATRef = useRef(null);
-      const duration2BATRef = useRef(null);
     
       
 return(
@@ -43,7 +50,7 @@ return(
       id="duration1BAT"
       ref={duration1BATRef}
       value={duration1BAT}
-      onChange={(e) => setDuration1BAT(e.target.value)}
+      onChange={(e) => setDuration1BAT(e.target.value, duration1BATRef?.current, duration2BATRef?.current)}
       onKeyDown={(e) => handleEnterPress(e, index, true)}
       className="input-style text-right"
       placeholder="Διάρκεια με 1BAT"
@@ -61,7 +68,7 @@ return(
       id="duration2BAT"
       ref={duration2BATRef}
       value={duration2BAT}
-      onChange={(e) => setDuration2BAT(e.target.value)}
+      onChange={(e) => setDuration2BAT(e.target.value, duration1BATRef?.current, duration2BATRef?.current)}
       onKeyDown={(e) => handleEnterPress(e, index, true)}
       className="input-style text-right"
       placeholder="Διάρκεια με 2BAT"

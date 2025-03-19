@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useRef,useEffect} from "react";
 import "./ControlMetrics.css";
 import Row1 from "./Row1";
 import Row4 from "./Row4";
@@ -36,6 +36,9 @@ function ControlMetrics(){
       const [duration1BAT, setDuration1BAT] = useState("");
       const [duration2BAT, setDuration2BAT] = useState("");
 
+      const duration1BATRef = useRef(null);
+      const duration2BATRef = useRef(null);      
+
       const handleChange = (index, field, value) => {
         const newData = [...data];
         newData[index][field] = value;
@@ -47,13 +50,7 @@ function ControlMetrics(){
 
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
-        if (dropdown4Visible === null) {
-            setTimeout(() => {
-              const firstDropdown4Input = document.querySelector(".dropdown-input1");
-              if (firstDropdown4Input) firstDropdown4Input.focus();
-            }, 50);
-          }
-      };
+    };
       
       const toggleDropdown11 = (index) => {
         setDropdown11Visible(dropdown11Visible === index ? null : index);
@@ -64,6 +61,36 @@ function ControlMetrics(){
             }, 50);
           }
       };
+
+
+      useEffect(() => {
+        if (dropdown4Visible === 4) {
+          setTimeout(() => {
+            const firstDropdown4Input = document.querySelector(".dropdown-input1");
+            if (firstDropdown4Input) firstDropdown4Input.focus();
+          }, 50);
+        }
+      }, [dropdown4Visible]);
+
+      useEffect(() => {
+        const handleFocusChange = () => {
+          const activeElement = document.activeElement;
+          const allInputs = [...document.querySelectorAll(".input-style")];
+          const currentIndex = allInputs.indexOf(activeElement);
+
+          if (currentIndex === 3 && dropdown4Visible !== 3) {
+            toggleDropdown4(3);
+          }
+        };
+
+        document.addEventListener("focusin", handleFocusChange);
+
+        return () => {
+          document.removeEventListener("focusin", handleFocusChange);
+        };
+      }, [dropdown4Visible]);
+
+
       const handleEnterPress = (e, index, isInput = false, isDropdown = false, dropdownIndex = null) => {
         if (e.key === 'Enter') {
           e.preventDefault();
@@ -72,11 +99,18 @@ function ControlMetrics(){
             duration2BATRef.current?.focus();
             return;
           }
-          if (e.target.id === "duration2BAT" && !isDropdown) {
-    
-            toggleDropdown4(4);  
+
+          if (e.target.id === "duration2BAT") {
+            const allInputs = [...document.querySelectorAll(".input-style")];
+            let currentIndex = allInputs.indexOf(e.target);
+            let nextIndex = currentIndex + 1;
+        
+            if (nextIndex < allInputs.length) {
+                allInputs[nextIndex].focus();
+            }
             return;
-          }
+        }
+
       
           if (index === 3 && !isInput && !isDropdown) {
             toggleDropdown4(index);
@@ -153,9 +187,11 @@ function ControlMetrics(){
                     dropdown4Visible={dropdown4Visible}
                     setDropdown4Visible={setDropdown4Visible}
                     duration1BAT={duration1BAT}
-                    setDuration1BAT={setDuration2BAT}
-                    duration2BAT={duration1BAT}
+                    setDuration1BAT={setDuration1BAT}
+                    duration2BAT={duration2BAT}
                     setDuration2BAT={setDuration2BAT}
+                    duration1BATRef={duration1BATRef}
+                    duration2BATRef={duration2BATRef}
                     />
                   );
               }else if(index===4 || index===5 || index===6 || index===8){
