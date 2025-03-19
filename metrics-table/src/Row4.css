@@ -1,0 +1,40 @@
+  
+  .table-cell {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .input-style {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .centered-input-style {
+    width: 50%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    margin: auto;
+  }
+  
+  .dropdown-button-style {
+    cursor: pointer;
+    font-size: 16px;
+    color: #b40101;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .table-row {
+    border-bottom: 1px solid #ddd;
+  }
+  
+
+  .fourth-row{
+    background-color: #e7e6e6;
+  }
+

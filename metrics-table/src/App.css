@@ -1,0 +1,82 @@
+
+.row {
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+}
+
+.LogoImage{
+  width: 320px;
+  max-width: 100%; 
+  height: auto;
+  margin-top: 30px;
+  padding-right: 10px;    
+}
+
+.TopWidth{
+  padding: 0%;
+}
+
+.Details{
+  margin-top: 40px;
+  width: 100%;
+
+  padding: 20px;
+}
+
+.DetailsLabel, .TesterLabel, .DescriptionL{
+  margin-bottom: 5px; 
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.DetailsInput{
+  width: 20%;
+  margin-top: 5px;
+  margin-bottom: 8px; 
+  margin-right: 10px;
+} 
+
+.VersionInput{
+  width: 100%;
+  background-color: rgba(199, 199, 199, 0.842);
+  border: 0;
+}
+
+.RowDesign{
+  border: 2px solid black;
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(151, 151, 151);
+}
+
+.RowDesignLight{ 
+  border: 2px solid black;
+  padding: 10px;
+  font-weight: bold;
+  background-color: rgba(199, 199, 199, 0.842);
+}
+
+.RowDesignWhite{
+  border: 2px solid black;
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(255, 255, 255);
+}
+
+.TopWidth{
+  padding: 0%;
+}
+
+
+.TesterName, .DateOf, .Description{
+  width: 100%;
+  border: 0;
+}
+
+.NoBottomBorder{
+  border: 2px solid black;
+  border-width: 2px 2px 0px 2px;
+}
