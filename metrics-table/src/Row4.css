@@ -38,3 +38,10 @@
     background-color: #e7e6e6;
   }
 
+  .hidden {
+    display: none;
+  }
+  .visible {
+    display: table-row;
+  }
+    

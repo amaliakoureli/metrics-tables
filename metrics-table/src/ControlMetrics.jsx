@@ -51,17 +51,6 @@ function ControlMetrics(){
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
     };
-      
-      const toggleDropdown11 = (index) => {
-        setDropdown11Visible(dropdown11Visible === index ? null : index);
-        if (dropdown11Visible === null) {
-            setTimeout(() => {
-              const firstDropdown11Input = document.querySelector(".dropdown-input1");
-              if (firstDropdown11Input) firstDropdown11Input.focus();
-            }, 50);
-          }
-      };
-
 
       useEffect(() => {
         if (dropdown4Visible === 4) {
@@ -91,70 +80,88 @@ function ControlMetrics(){
       }, [dropdown4Visible]);
 
 
-      const handleEnterPress = (e, index, isInput = false, isDropdown = false, dropdownIndex = null) => {
+      const toggleDropdown11 = (index) => {
+        if (dropdown11Visible === index) {
+          setDropdown11Visible(null); 
+        } else {
+          setDropdown11Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown11-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+      
+      const handleEnterPress = (e, index, isInput = false, dropdownType = null) => {
         if (e.key === 'Enter') {
           e.preventDefault();
-    
+      
           if (e.target.id === "duration1BAT") {
             duration2BATRef.current?.focus();
             return;
           }
-
+      
           if (e.target.id === "duration2BAT") {
             const allInputs = [...document.querySelectorAll(".input-style")];
-            let currentIndex = allInputs.indexOf(e.target);
-            let nextIndex = currentIndex + 1;
-        
+            const currentIndex = allInputs.indexOf(e.target);
+            const nextIndex = currentIndex + 1;
             if (nextIndex < allInputs.length) {
-                allInputs[nextIndex].focus();
+              allInputs[nextIndex].focus();
             }
             return;
-        }
-
+          }
       
-          if (index === 3 && !isInput && !isDropdown) {
-            toggleDropdown4(index);
+          if (index === 9 && dropdown11Visible !== 10) {
+            toggleDropdown11(10);
             return;
           }
       
-          if (index === 9 && !isInput && !isDropdown) {
-            toggleDropdown11(index);
-            return;
-          }
-    
-          if (isDropdown) {
-            const dropdownInputs = [...document.querySelectorAll(".dropdown-input1, .dropdown-input2, .dropdown-input3, .dropdown-input4")];
-            let currentDropdownIndex = dropdownInputs.indexOf(e.target);
+          if (dropdownType === "dropdown11") {
+            const dropdown11Inputs = [...document.querySelectorAll(".dropdown11-input1, .dropdown11-input2, .dropdown11-input3, .dropdown11-input4")];
+            let currentDropdownIndex = dropdown11Inputs.indexOf(e.target);
             let nextDropdownIndex = currentDropdownIndex + 1;
       
-            if (nextDropdownIndex === dropdownInputs.length) {
-              setTimeout(() => {
-                const allInputs = [...document.querySelectorAll(".input-style")]; 
-                let currentIndex = allInputs.indexOf(e.target); 
-                let nextIndex = currentIndex + 1; 
-            
-                if (nextIndex < allInputs.length) {
-                  allInputs[nextIndex].focus();
-                }
-              }, 50);
-              return;
+            if (nextDropdownIndex >= dropdown11Inputs.length) {
+              const allInputs = [...document.querySelectorAll(".input-style")];
+              const currentIndex = allInputs.indexOf(e.target);
+              const nextIndex = currentIndex + 1;
+              if (nextIndex < allInputs.length) {
+                allInputs[nextIndex].focus();
+              }
+            } else {
+              dropdown11Inputs[nextDropdownIndex]?.focus();
             }
-      
-            dropdownInputs[nextDropdownIndex]?.focus();
             return;
           }
       
-          const allInputs = [...document.querySelectorAll(".input-style")];
-          let currentIndex = allInputs.indexOf(e.target);
-          let nextIndex = currentIndex + 1;
+          if (dropdownType === "dropdown4") {
+            const dropdown4Inputs = [...document.querySelectorAll(".dropdown4-input1, .dropdown4-input2")];
+            let currentDropdownIndex = dropdown4Inputs.indexOf(e.target);
+            let nextDropdownIndex = currentDropdownIndex + 1;
       
+            if (nextDropdownIndex >= dropdown4Inputs.length) {
+              const allInputs = [...document.querySelectorAll(".input-style")];
+              const currentIndex = allInputs.indexOf(e.target);
+              const nextIndex = currentIndex + 1;
+              if (nextIndex < allInputs.length) {
+                allInputs[nextIndex].focus();
+              }
+            } else {
+              dropdown4Inputs[nextDropdownIndex]?.focus();
+            }
+            return;
+          }
+      
+          // Default case - move between main inputs
+          const allInputs = [...document.querySelectorAll(".input-style")];
+          const currentIndex = allInputs.indexOf(e.target);
+          const nextIndex = currentIndex + 1;
           if (nextIndex < allInputs.length) {
             allInputs[nextIndex].focus();
           }
         }
       };
-
-
+      
       return (
         <div className="table-container">
           <h2>ΕΛΕΓΧΟΙ ΚΑΙ ΜΕΤΡΗΣΕΙΣ</h2>
