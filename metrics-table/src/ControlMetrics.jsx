@@ -5,6 +5,9 @@ import Row4 from "./Row4";
 import Rows5679 from "./Rows5-6-7-9";
 import Row8 from "./Row8";
 import Row11 from "./Row11";
+import Row12 from "./Row12";
+import Row13 from "./Row13";
+
 
 function ControlMetrics(){
     const [data, setData] = useState([
@@ -47,6 +50,8 @@ function ControlMetrics(){
 
       const [dropdown4Visible, setDropdown4Visible] = useState(null);
       const [dropdown11Visible, setDropdown11Visible] = useState(null); 
+      const [dropdown12Visible, setDropdown12Visible] = useState(null); 
+      const [dropdown13Visible, setDropdown13Visible] = useState(null); 
 
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
@@ -91,6 +96,30 @@ function ControlMetrics(){
           }, 50);
         }
       };
+
+      const toggleDropdown12 = (index) => {
+        if (dropdown12Visible === index) {
+          setDropdown12Visible(null); 
+        } else {
+          setDropdown12Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown12-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+      
+      const toggleDropdown13 = (index) => {
+        if (dropdown13Visible === index) {
+          setDropdown13Visible(null); 
+        } else {
+          setDropdown13Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown13-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
       
       const handleEnterPress = (e, index, isInput = false, dropdownType = null) => {
         if (e.key === 'Enter') {
@@ -113,6 +142,14 @@ function ControlMetrics(){
       
           if (index === 9 && dropdown11Visible !== 10) {
             toggleDropdown11(10);
+            toggleDropdown12(11);
+            toggleDropdown13(12);
+             // Move focus to first input of dropdown11 AFTER dropdown is mounted
+            setTimeout(() => {
+              const firstInput = document.querySelector(".dropdown11-input1");
+              if (firstInput) firstInput.focus();
+            }, 100);
+
             return;
           }
       
@@ -130,6 +167,42 @@ function ControlMetrics(){
               }
             } else {
               dropdown11Inputs[nextDropdownIndex]?.focus();
+            }
+            return;
+          }
+      
+          if (dropdownType === "dropdown12") {
+            const dropdown12Inputs = [...document.querySelectorAll(".dropdown12-input1, .dropdown12-input2")];
+            let currentDropdownIndex = dropdown12Inputs.indexOf(e.target);
+            let nextDropdownIndex = currentDropdownIndex + 1;
+      
+            if (nextDropdownIndex >= dropdown12Inputs.length) {
+              const allInputs = [...document.querySelectorAll(".input-style")];
+              const currentIndex = allInputs.indexOf(e.target);
+              const nextIndex = currentIndex + 1;
+              if (nextIndex < allInputs.length) {
+                allInputs[nextIndex].focus();
+              }
+            } else {
+              dropdown12Inputs[nextDropdownIndex]?.focus();
+            }
+            return;
+          }
+
+          if (dropdownType === "dropdown13") {
+            const dropdown13Inputs = [...document.querySelectorAll(".dropdown13-input1, .dropdown13-input2")];
+            let currentDropdownIndex = dropdown13Inputs.indexOf(e.target);
+            let nextDropdownIndex = currentDropdownIndex + 1;
+      
+            if (nextDropdownIndex >= dropdown12Inputs.length) {
+              const allInputs = [...document.querySelectorAll(".input-style")];
+              const currentIndex = allInputs.indexOf(e.target);
+              const nextIndex = currentIndex + 1;
+              if (nextIndex < allInputs.length) {
+                allInputs[nextIndex].focus();
+              }
+            } else {
+              dropdown13Inputs[nextDropdownIndex]?.focus();
             }
             return;
           }
@@ -232,6 +305,32 @@ function ControlMetrics(){
                 toggleDropdown11={toggleDropdown11}
                 dropdown11Visible={dropdown11Visible}
                 setDropdown11Visible={setDropdown11Visible}
+                />
+              );
+            }else if (index === 11) {
+              return (
+                <Row12
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown12={toggleDropdown12}
+                dropdown12Visible={dropdown12Visible}
+                setDropdown12Visible={setDropdown12Visible}
+                />
+              );
+            }else if (index === 12) {
+              return (
+                <Row13
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown13={toggleDropdown13}
+                dropdown13Visible={dropdown13Visible}
+                setDropdown13Visible={setDropdown13Visible}
                 />
               );
             }else {
