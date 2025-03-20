@@ -106,8 +106,8 @@ return(
                                     type="text"
                                     value={dropdownRow.input1}
                                     onChange={(e) => handleDropdown4Change(rowIndex, "input1", e.target.value)}
-                                    className="input-style dropdown-input1"
-                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex)}
+                                    className="input-style dropdown4-input1"
+                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
                                 />
                             </td>
                             <td className="table-cell">
@@ -115,8 +115,8 @@ return(
                                     type="text"
                                     value={dropdownRow.input2}
                                     onChange={(e) => handleDropdown4Change(rowIndex, "input2", e.target.value)}
-                                    className="input-style dropdown-input2"
-                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex)}
+                                    className="input-style dropdown4-input2"
+                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
                                 />
                             </td>
                             <td className="table-cell">
@@ -124,8 +124,8 @@ return(
                                     type="text"
                                     value={dropdownRow.input3}
                                     onChange={(e) => handleDropdown4Change(rowIndex, "input3", e.target.value)}
-                                    className="input-style dropdown-input3"
-                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex)}
+                                    className="input-style dropdown4-input3"
+                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
                                 />
                             </td>
                             <td className="table-cell">
@@ -133,8 +133,8 @@ return(
                                     type="text"
                                     value={dropdownRow.input4}
                                     onChange={(e) => handleDropdown4Change(rowIndex, "input4", e.target.value)}
-                                    className="input-style dropdown-input4"
-                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex)}
+                                    className="input-style dropdown4-input4"
+                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
                                 />
                             </td>
                         </tr>

@@ -50,32 +50,29 @@ return(
                                         <td className="table-cell">{dropdownRow.text2}</td>
                                         
                                         <td className="table-cell">
-                                          <input
-                                            type="text"
-                                            value={dropdownRow.input1}
-                                            onChange={(e) =>
-                                              handleDropdown11Change(rowIndex, "input1", e.target.value)
-                                            }  
-                                            className="input-style dropdown-input1" 
-                                            onKeyDown={(e) =>
-                                              handleEnterPress(e, rowIndex, true)
-                                            } 
-                                          />
+                                        <input
+                                          type="text"
+                                          value={dropdownRow.input1}
+                                          onChange={(e) =>
+                                            handleDropdown11Change(rowIndex, "input1", e.target.value)
+                                          }
+                                          className={`input-style dropdown11-input1`}
+                                          onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown11")}
+                                        />
+
                                         </td>
                                         
                                         
                                         {dropdownRow.input2 !== undefined && (
                                         <td className="table-cell">
                                           <select
-                                            value={dropdownRow.input2}
-                                            onChange={(e) =>
-                                              handleDropdown11Change(rowIndex, "input2", e.target.value)
-                                            }
-                                            className="input-style dropdown-input2"
-                                            onKeyDown={(e) =>
-                                              handleEnterPress(e, rowIndex, true)
-                                            } 
-                                          >
+                                              value={dropdownRow.input2}
+                                              onChange={(e) =>
+                                                handleDropdown11Change(rowIndex, "input2", e.target.value)
+                                              }
+                                              className="input-style dropdown11-input2"
+                                              onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown11")}
+                                            >
                                             <option value="ΔΑ">Δ.Α.</option>
                                             <option value="ΔΕ">Δ.Ε.</option>
                                             <option value="ΟΚ">ΟΚ</option>
