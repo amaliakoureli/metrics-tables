@@ -7,6 +7,8 @@ import Row8 from "./Row8";
 import Row11 from "./Row11";
 import Row12 from "./Row12";
 import Row13 from "./Row13";
+import Row14 from "./Row14";
+import Row15 from "./Row15";
 
 
 function ControlMetrics(){
@@ -14,7 +16,7 @@ function ControlMetrics(){
         { id: 1, text: "Τύπος φωτιστικού (Συνεχούς/Μη συνεχούς)"},
         { id: 2, text: "Πηγή φωτισμού (Αριθμός Led-Διάταξη)", input1: "" },
         { id: 3, text: "Τύπος Led/λάμπα", input1: "" },
-        { id: 4, text: "Ρεύμα Φόρτισης - Διάρκεια (Για τάση δικτύου = 1 x ονομαστική τάση δικτύου (110 VAC, 230 VAC, 245 VAC) (Ρεύμα φόρτισης x ώρες φόρτισης ≥ 1.5 x χωρητικότητα μπαταρίας = (0.2 * 23 = 4.6 Ah) > (1.5 * 3 Ah = 4.5 Ah)))", input1: "", input2: "" },
+        { id: 4, text: "Ρεύμα Φόρτισης - Διάρκεια (Για τάση δικτύου = 1 x ονομαστική τάση δικτύου (110 VAC, 230 VAC, 245 VAC) (Ρεύμα φόρτισης x ώρες φόρτισης ≥ 1.5 x χωρητικότητα μπαταρίας = {middleInput} mA)",middleInput:"", input1: "", input2: "" },
         { id: 5, text: "Τάση εξόδου του κυκλώματος φόρτισης (σε V DC)", input1: "", input2: "", input3: "", input4: ""  },
         { id: 6, text: "Τάση μπαταρίας για ένδειξη αποσύνδεξης (σε V DC)", input1: "", input2: "", input3: "", input4: ""  },
         { id: 7, text: "Ρεύμα Συντήρησης (σε mA DC) (1/5 της ονομαστικής φόρτισης)", input1: "", input2: "", input3: "", input4: ""  },
@@ -24,7 +26,7 @@ function ControlMetrics(){
         { id: 11, text: "'Ρεύμα φωτεινής πηγής για αυτονομίες 1,3,8 ώρες"},
         { id: 12, text: "Εναλλαγή Τάσης 138VAC-195VAC"},
         { id: 13, text: "Αποκοπή Μπαταρίας (μέτρηση με πολύμετρο)"},
-        { id: 14, text: "Κατανάλωση από τη μπαταρία στην εφεδρική λειτουργία (σε mA)...", input1: "", input2: "" , input3: ""},
+        { id: 14, text: "<b>Κατανάλωση από τη μπαταρία στην εφεδρική λειτουργία (σε mA) <br><u> -> Για μπαταρίες Ni-Cd, Ni-Mh, LiFePo4:</u> <br> Imax < (60min:0.4xC5A, 90min:0.51xC5A, 180min:0.25xC5A, 480min:0.1xC5A) <br> <u> -> Για μπαταρία Μολύβδου (Pb):</u> <br> Imax < (60min:0.4xC20A, 90min:0.34xxC20A, 180min:0.17xxC20A) </b>", limit1: "", limit2: "" , limit3: ""},
         { id: 15, text: "Κατανάλωση από τη μπαταρία (ονομαστιή τάση μπαταρίας) στην εφεδρική λειτουργία (σε mA) όταν η τάση του δικτύου είναι 0,6 x μέγιστη τάση λειτουργίας (σε V AC). Η κατανάλωση πρέπει να είναι περίπου ίδια με την κατανάλωση που αναφερεται στην παραπάνω παραγραφο.", input1: "", input2: "" , input3: ""},
         { id: 16, text: "Κατανάλωση Φωτιστικού  στην κανονκή λειτουργια (μέτρηση με YOKOGAWA) με πλήρη διαμόρφωση"},
         { id: 17, text: "V AC =90V. Φωτιστικό μπαίνει στην αποκοπή. Ξυπνάει σε 1' με VAC=220V", input1: "" },
@@ -52,6 +54,7 @@ function ControlMetrics(){
       const [dropdown11Visible, setDropdown11Visible] = useState(null); 
       const [dropdown12Visible, setDropdown12Visible] = useState(null); 
       const [dropdown13Visible, setDropdown13Visible] = useState(null); 
+      const [dropdown14Visible, setDropdown14Visible] = useState(null); 
 
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
@@ -60,30 +63,14 @@ function ControlMetrics(){
       useEffect(() => {
         if (dropdown4Visible === 4) {
           setTimeout(() => {
-            const firstDropdown4Input = document.querySelector(".dropdown-input1");
-            if (firstDropdown4Input) firstDropdown4Input.focus();
+            const dropdownInputs = [...document.querySelectorAll(".dropdown4-inline-input, .input-style")];
+            if (dropdownInputs.length > 0) {
+              dropdownInputs[0].focus(); 
+            }
           }, 50);
         }
       }, [dropdown4Visible]);
-
-      useEffect(() => {
-        const handleFocusChange = () => {
-          const activeElement = document.activeElement;
-          const allInputs = [...document.querySelectorAll(".input-style")];
-          const currentIndex = allInputs.indexOf(activeElement);
-
-          if (currentIndex === 3 && dropdown4Visible !== 3) {
-            toggleDropdown4(3);
-          }
-        };
-
-        document.addEventListener("focusin", handleFocusChange);
-
-        return () => {
-          document.removeEventListener("focusin", handleFocusChange);
-        };
-      }, [dropdown4Visible]);
-
+      
 
       const toggleDropdown11 = (index) => {
         if (dropdown11Visible === index) {
@@ -120,6 +107,18 @@ function ControlMetrics(){
           }, 50);
         }
       };
+
+      const toggleDropdown14 = (index) => {
+        if (dropdown14Visible === index) {
+          setDropdown14Visible(null); 
+        } else {
+          setDropdown14Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown14-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
       
       const handleEnterPress = (e, index, isInput = false, dropdownType = null) => {
         if (e.key === 'Enter') {
@@ -139,12 +138,19 @@ function ControlMetrics(){
             }
             return;
           }
-      
+          if (e.target.classList.contains("dropdown4-inline-input")) {
+            toggleDropdown4(index);
+
+            setTimeout(() => {
+                const firstMiddleInput2 = document.querySelector(".dropdown4-middleInput2");
+                if (firstMiddleInput2) firstMiddleInput2.focus();
+            }, 50);
+
+            return;
+        }
           if (index === 9 && dropdown11Visible !== 10) {
             toggleDropdown11(10);
-            toggleDropdown12(11);
-            toggleDropdown13(12);
-             // Move focus to first input of dropdown11 AFTER dropdown is mounted
+
             setTimeout(() => {
               const firstInput = document.querySelector(".dropdown11-input1");
               if (firstInput) firstInput.focus();
@@ -152,49 +158,75 @@ function ControlMetrics(){
 
             return;
           }
+
+          if (dropdownType === "dropdown4") {
+            const dropdown4Inputs = [...document.querySelectorAll(".dropdown4-middleInput2, .dropdown4-input1, .dropdown4-input2, .dropdown4-input3, .dropdown4-input4")];
+            let currentDropdownIndex = dropdown4Inputs.indexOf(e.target);
+            let nextDropdownIndex = currentDropdownIndex + 1;
+        
+            if (nextDropdownIndex >= dropdown4Inputs.length) {
+                const allInputs = [...document.querySelectorAll(".input-style")];
+                const currentIndex = allInputs.indexOf(e.target);
+                const nextIndex = currentIndex + 1;
+                if (nextIndex < allInputs.length) {
+                    allInputs[nextIndex].focus();
+                }
+            } else {
+                dropdown4Inputs[nextDropdownIndex]?.focus();
+            }
+            return;
+        }
+        
       
           if (dropdownType === "dropdown11") {
-            const dropdown11Inputs = [...document.querySelectorAll(".dropdown11-input1, .dropdown11-input2, .dropdown11-input3, .dropdown11-input4")];
-            let currentDropdownIndex = dropdown11Inputs.indexOf(e.target);
-            let nextDropdownIndex = currentDropdownIndex + 1;
-      
-            if (nextDropdownIndex >= dropdown11Inputs.length) {
-              const allInputs = [...document.querySelectorAll(".input-style")];
-              const currentIndex = allInputs.indexOf(e.target);
-              const nextIndex = currentIndex + 1;
-              if (nextIndex < allInputs.length) {
-                allInputs[nextIndex].focus();
-              }
+            const isLastInput = e.target.id === "dropdown11-last";
+          
+            if (isLastInput) {
+              toggleDropdown12(11);
+              setTimeout(() => {
+                const firstInput = document.querySelector(".dropdown12-input1");
+                if (firstInput) firstInput.focus();
+              }, 100);
             } else {
-              dropdown11Inputs[nextDropdownIndex]?.focus();
+              // Move to next input manually (optional fallback behavior)
+              const dropdown11Inputs = [
+                ...document.querySelectorAll(".dropdown11-input1, .dropdown11-input2")
+              ];
+              const currentIndex = dropdown11Inputs.indexOf(e.target);
+              dropdown11Inputs[currentIndex + 1]?.focus();
             }
+          
             return;
           }
       
+
           if (dropdownType === "dropdown12") {
-            const dropdown12Inputs = [...document.querySelectorAll(".dropdown12-input1, .dropdown12-input2")];
-            let currentDropdownIndex = dropdown12Inputs.indexOf(e.target);
-            let nextDropdownIndex = currentDropdownIndex + 1;
-      
-            if (nextDropdownIndex >= dropdown12Inputs.length) {
-              const allInputs = [...document.querySelectorAll(".input-style")];
-              const currentIndex = allInputs.indexOf(e.target);
-              const nextIndex = currentIndex + 1;
-              if (nextIndex < allInputs.length) {
-                allInputs[nextIndex].focus();
-              }
+            const isLastInput = e.target.id === "dropdown12-last";
+          
+            if (isLastInput) {
+              toggleDropdown13(12);
+              setTimeout(() => {
+                const firstInput = document.querySelector(".dropdown13-input1");
+                if (firstInput) firstInput.focus();
+              }, 100);
             } else {
-              dropdown12Inputs[nextDropdownIndex]?.focus();
+              // Move to next input manually (optional fallback behavior)
+              const dropdown12Inputs = [
+                ...document.querySelectorAll(".dropdown12-input1, .dropdown12-input2")
+              ];
+              const currentIndex = dropdown12Inputs.indexOf(e.target);
+              dropdown12Inputs[currentIndex + 1]?.focus();
             }
+          
             return;
           }
 
           if (dropdownType === "dropdown13") {
-            const dropdown13Inputs = [...document.querySelectorAll(".dropdown13-input1, .dropdown13-input2")];
+            const dropdown13Inputs = [...document.querySelectorAll(".dropdown13-input1, .dropdown13-text3")];
             let currentDropdownIndex = dropdown13Inputs.indexOf(e.target);
             let nextDropdownIndex = currentDropdownIndex + 1;
       
-            if (nextDropdownIndex >= dropdown12Inputs.length) {
+            if (nextDropdownIndex >= dropdown13Inputs.length) {
               const allInputs = [...document.querySelectorAll(".input-style")];
               const currentIndex = allInputs.indexOf(e.target);
               const nextIndex = currentIndex + 1;
@@ -206,7 +238,61 @@ function ControlMetrics(){
             }
             return;
           }
-      
+          if (e.target.id === "limit3") {
+            toggleDropdown14(13);
+            setTimeout(() => {
+              const firstMiddleInput = document.querySelector(".first-middle-input");
+              if (firstMiddleInput) {
+                  firstMiddleInput.focus();
+              }
+          }, 50);
+            return;
+            
+          }
+
+          if (dropdownType === "dropdown14") {
+            const dropdown14Inputs = [...document.querySelectorAll(".dropdown14-inline-input, .dropdown14-input1, .dropdown14-input2")];
+            let currentDropdownIndex = dropdown14Inputs.indexOf(e.target);
+            let nextDropdownIndex = currentDropdownIndex + 1;
+        
+            if (nextDropdownIndex < dropdown14Inputs.length) {
+                dropdown14Inputs[nextDropdownIndex]?.focus();
+            } else {
+                setTimeout(() => {
+                    const allRows = [...document.querySelectorAll(".table-row")];
+                    let currentRow = e.target.closest(".table-row"); 
+                    let currentRowIndex = allRows.indexOf(currentRow); 
+                    if (currentRowIndex !== -1 && currentRowIndex + 1 < allRows.length) {
+                        let nextRow = allRows[currentRowIndex + 1]; 
+                        
+                        if (nextRow) {
+                            const nextRowInputs = [...nextRow.querySelectorAll(".input-style, .dropdown14-inline-input, .dropdown14-input1, .dropdown14-input2")];
+                            if (nextRowInputs.length > 0) {
+                                nextRowInputs[0].focus(); 
+                            }
+                        }
+                    }
+                }, 50);
+            }
+            return;
+        }
+        
+
+        if (e.target.id === "limit3") {
+          const firstMiddleInput = document.querySelector(".first-middle-input");
+          
+          console.log("Πατήθηκε Enter στο limit3!");
+          console.log("Βρέθηκε πρώτο middleInput:", firstMiddleInput);
+          
+          if (firstMiddleInput) {
+              firstMiddleInput.focus();
+              console.log("Το focus δόθηκε στο πρώτο middleInput!");
+          } else {
+              console.log("⚠ Δεν βρέθηκε πρώτο middleInput!");
+          }
+          return;
+      }
+
           if (dropdownType === "dropdown4") {
             const dropdown4Inputs = [...document.querySelectorAll(".dropdown4-input1, .dropdown4-input2")];
             let currentDropdownIndex = dropdown4Inputs.indexOf(e.target);
@@ -224,8 +310,7 @@ function ControlMetrics(){
             }
             return;
           }
-      
-          // Default case - move between main inputs
+
           const allInputs = [...document.querySelectorAll(".input-style")];
           const currentIndex = allInputs.indexOf(e.target);
           const nextIndex = currentIndex + 1;
@@ -331,6 +416,36 @@ function ControlMetrics(){
                 toggleDropdown13={toggleDropdown13}
                 dropdown13Visible={dropdown13Visible}
                 setDropdown13Visible={setDropdown13Visible}
+                />
+              );
+            }else if (index === 13) {
+              return (
+                <Row14
+                key={row.id}
+                row={row}
+                index={index}
+                limit1={row.limit1}
+                limit2={row.limit2}
+                limit3={row.limit3}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown14={toggleDropdown14}
+                dropdown14Visible={dropdown14Visible}
+                setDropdown14Visible={setDropdown14Visible}
+                />
+              );
+            }
+            else if (index === 14) {
+              return (
+                <Row15
+                key={row.id}
+                row={row}
+                index={index}
+                input1={row.input1}
+                input2={row.input2}
+                input3={row.input3}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
                 />
               );
             }else {

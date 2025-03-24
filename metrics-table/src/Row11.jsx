@@ -57,7 +57,8 @@ return(
                                             handleDropdown11Change(rowIndex, "input1", e.target.value)
                                           }
                                           className={`input-style dropdown11-input1`}
-                                          onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown11")}
+                                          id={rowIndex === dropdown11Data.length - 1 && !dropdownRow.input2 ? "dropdown11-last" : undefined}
+                                          onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown11")}
                                         />
 
                                         </td>
@@ -71,7 +72,7 @@ return(
                                                 handleDropdown11Change(rowIndex, "input2", e.target.value)
                                               }
                                               className="input-style dropdown11-input2"
-                                              onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown11")}
+                                              onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown11")}
                                             >
                                             <option value="ΔΑ">Δ.Α.</option>
                                             <option value="ΔΕ">Δ.Ε.</option>

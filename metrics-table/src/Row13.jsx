@@ -35,10 +35,9 @@ return(
   <td colSpan="4" className="table-cell">
     {dropdown13Visible === index && (
       <table className="table">
-        <tbody>
+       <tbody>
           {dropdown13Data.map((dropdownRow, rowIndex) => (
             <React.Fragment key={rowIndex}>
-              {/* FIRST ROW */}
               <tr className="table-row">
                 <td className="table-cell" rowSpan="2">{dropdownRow.text1}</td>
                 <td className="table-cell" rowSpan="2">{dropdownRow.text2}</td>
@@ -47,51 +46,46 @@ return(
                     type="text"
                     value={dropdownRow.input1}
                     onChange={(e) => handleDropdown13Change(rowIndex, "input1", e.target.value)}
-                    className="input-style dropdown12-input1"
+                    className="input-style dropdown13-input1"
                     onKeyDown={(e) =>
-                      handleEnterPress(e, index, true, true, rowIndex, "dropdown13")
+                      handleEnterPress(e, index, true, "dropdown13")
                     }
                   />
                 </td>
               </tr>
+              <tr className="table-row">
+                <td className="table-cell">
+                  <input
+                    type="text"
+                    value={"Όριο = " + dropdownRow.text3.replace("Όριο = ", "")}
+                    onChange={(e) => {
+                      const inputValue = e.target.value;
+                      const prefix = "Όριο = ";
+                      
+                      if (inputValue.startsWith(prefix)) {
+                        handleDropdown13Change(rowIndex, "text3", inputValue);
+                      } else {
+                        handleDropdown13Change(rowIndex, "text3", prefix + inputValue);
+                      }
+                    }}
+                    onKeyDown={(e) => {
+                      const prefix = "Όριο = ";
+                      const cursorPos = e.target.selectionStart;
 
-            {/* SECOND ROW */}
-            <tr className="table-row">
-            <td className="table-cell" colSpan="2">
-            <input
-                type="text"
-                value={"Όριο = " + dropdownRow.text3.replace("Όριο = ", "")}
-                onChange={(e) => {
-                    const inputValue = e.target.value;
-                    const prefix = "Όριο = ";
+                      if (
+                        (e.key === "Backspace" && cursorPos <= prefix.length) ||
+                        (e.key === "Delete" && cursorPos < prefix.length)
+                      ) {
+                        e.preventDefault();
+                      }
+                      handleEnterPress(e, index, true, "dropdown13");
+                    }}
+                    className="input-style dropdown13-text3"
+
                     
-                    // Ensure "Όριο = " is always at the start and only the rest is editable
-                    if (inputValue.startsWith(prefix)) {
-                    handleDropdown13Change(rowIndex, "text3", inputValue);
-                    } else {
-                    handleDropdown13Change(rowIndex, "text3", prefix + inputValue);
-                    }
-                }}
-                onKeyDown={(e) => {
-                    const prefix = "Όριο = ";
-                    const cursorPos = e.target.selectionStart;
-
-                    // Prevent Backspace/Delete from removing the "Όριο = " part
-                    if (
-                    (e.key === "Backspace" && cursorPos <= prefix.length) ||
-                    (e.key === "Delete" && cursorPos < prefix.length)
-                    ) {
-                    e.preventDefault();
-                    }
-                }}
-                className="input-style dropdown13-input1"
-                />
-
-
-            </td>
-            </tr>
-
-
+                  />
+                </td>
+              </tr>
             </React.Fragment>
           ))}
         </tbody>
