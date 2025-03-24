@@ -4,6 +4,7 @@ import "./Row4.css";
 
 function Row4({ row, 
                 index, 
+                handleChange,
                 handleEnterPress,
                 toggleDropdown4,
                 dropdown4Visible, 
@@ -16,9 +17,9 @@ function Row4({ row,
                 duration2BATRef}){
 
     const [dropdown4Data, setDropdown4Data] = useState([
-        { text1: "α", text2: "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία 4.4V DC.", input1: "", input2: "", input3: "", input4: ""  },
-        { text1: "β", text2: "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία 3.6V DC.", input1: "", input2: "" , input3: "", input4: "" },
-        { text1: "γ", text2: "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία 3.2V DC.", input1: "", input2: "", input3: "", input4: ""  },
+        { text1: "α", text2: "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2}V DC.",textInput2:"", input1: "", input2: "", input3: "", input4: ""  },
+        { text1: "β", text2: "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2}V DC.",textInput2:"", input1: "", input2: "" , input3: "", input4: "" },
+        { text1: "γ", text2: "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2}V DC.",textInput2:"", input1: "", input2: "", input3: "", input4: ""  },
         { text1: "δ", text2: "Ρεύμα φόρτισης για τάση δικτύου = 0.9 x ονομαστική τάση (Max τάση μπαταρίας)", input1: "", input2: "", input3: "", input4: ""  },
         { text1: "ε", text2: "Ρεύμα φόρτισης για τάση δικτύου = 1.06 x ονομαστική τάση (Max τάση μπαταρίας)", input1: "", input2: "" , input3: "", input4: "" },
         { text1: "ζ", text2: "Τάση μπαταρίας όταν είναι φορτισμένη (συνδεδεμένη πάνω στην συσκευή) (σε V DC)", input1: "", input2: "" , input3: "", input4: "" },
@@ -78,10 +79,30 @@ return(
 
 <tr className="fourth-row">
 
-    <td className="table-cell">
-        Για τάση δικτύου = 1 x ονομαστική τάση δικτύου (110VAC, 230VAC, 245VAC)<br />
-        (Ρεύμα φόρτισης × ώρες φόρτισης ≥ 1.5 × χωρητικότητα μπαταρίας = ............)
-    </td>
+     <td className="table-cell">
+                    Για τάση δικτύου = 1 x ονομαστική τάση δικτύου (110VAC, 230VAC, 245VAC)
+                    <br />
+                    (Ρεύμα φόρτισης × ώρες φόρτισης ≥ 1.5 × χωρητικότητα μπαταρίας = )
+                    {
+                        (() => {
+                            const textParts = row.text ? row.text.split("{middleInput}") : ["", ""];
+                            return (
+                                <>
+                                    {textParts[0]}
+                                    <input
+                                        type="text"
+                                        value={row.middleInput || ""}
+                                        onChange={(e) => handleChange(index, "middleInput", e.target.value)}
+                                        className="input-style dropdown4-inline-input middle"
+                                        onKeyDown={(e) => handleEnterPress(e, index, true)}
+                                    />
+                                    {textParts[1]}
+                                </>
+                            );
+                        })()
+                    }
+                </td>
+
         <td className="table-cell">
                 <tr>
                     <td className="table-cell">1BAT</td>
@@ -100,7 +121,29 @@ return(
                     {dropdown4Data.map((dropdownRow, rowIndex) => (
                         <tr key={rowIndex} className="table-row">
                             <td className="table-cell">{dropdownRow.text1}</td>
-                            <td className="table-cell">{dropdownRow.text2}</td>
+                            <td className="table-cell">
+                            {dropdownRow.text2.includes("{middleInput2}") ? (
+                                (() => {
+                                const parts = dropdownRow.text2.split("{middleInput2}");
+                                return (
+                                    <>
+                                    {parts[0]}
+                                    <input
+                                        type="text"
+                                        value={dropdownRow.textInput2}
+                                        onChange={(e) => handleDropdown4Change(rowIndex, "textInput2", e.target.value)}
+                                        className="input-style dropdown4-middleInput2 "
+                                        onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown4")}
+                                    />
+                                    {parts[1]}
+                                    </>
+                                );
+                                })()
+                            ) : (
+                                dropdownRow.text2
+                            )}
+                            </td>
+
                             <td className="table-cell">
                                 <input
                                     type="text"
