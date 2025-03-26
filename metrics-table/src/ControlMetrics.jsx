@@ -14,6 +14,7 @@ import Row19 from "./Row19";
 import Row20 from "./Row20";
 import Row21 from "./Row21";
 import Row22 from "./Row22";
+import Row25 from "./Row25";
 
 
 function ControlMetrics(){
@@ -75,6 +76,7 @@ function ControlMetrics(){
       const [dropdown20Visible, setDropdown20Visible] = useState(null); 
       const [dropdown21Visible, setDropdown21Visible] = useState(null); 
       const [dropdown22Visible, setDropdown22Visible] = useState(null); 
+      const [dropdown25Visible, setDropdown25Visible] = useState(null); 
 
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
@@ -195,6 +197,18 @@ function ControlMetrics(){
           setDropdown22Visible(index);
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown22-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+
+      const toggleDropdown25 = (index) => {
+        if (dropdown25Visible === index) {
+          setDropdown25Visible(null); 
+        } else {
+          setDropdown25Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown25-input1");
             if (firstInput) firstInput.focus();
           }, 50);
         }
@@ -447,6 +461,18 @@ function ControlMetrics(){
         return;
       }
 
+      
+    if (index === 23 && dropdown25Visible !== 124) {
+      toggleDropdown25(24);
+
+      setTimeout(() => {
+        const firstInput = document.querySelector(".dropdown25-input1, .dropdown25-input2");
+        if (firstInput) firstInput.focus();
+      }, 100);
+
+      return;
+    }
+
         if (e.target.id === "limit3") {
           const firstMiddleInput = document.querySelector(".first-middle-input");
           
@@ -678,6 +704,18 @@ function ControlMetrics(){
                 toggleDropdown22={toggleDropdown22}
                 dropdown22Visible={dropdown22Visible}
                 setDropdown22Visible={setDropdown22Visible}
+                />
+              );
+            }else if (index === 24) {
+              return (
+                <Row25
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown25={toggleDropdown25}
+                dropdown25Visible={dropdown25Visible}
+                setDropdown25Visible={setDropdown25Visible}
                 />
               );
             }else {
