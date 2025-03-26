@@ -12,8 +12,8 @@ function Row25({ row,
     const [dropdown25Data, setDropdown25Data] = useState([
         { text1: "α", text2: "Θερμκρασία Voltage Regulator(s) , χωρίς μπαταρία, VAC = 240 V", input1: "", input2: ""},
         { text1: "β", text2: "Θερμκρασία Voltage Regulator(s) , με μπαταρία, VAC = 240 V", input1: "", input2: ""},
-        { text1: "γ", text2: "Θεροκρασία τρανζίστορ φόρτισης, με μπαταρία, VBAT =  κοντά στην τάση αποκοπής, VAC = 240 V", input1: "", input2: ""},
-        { text1: "δ", text2: "Στην εφεδρεία με VBAT = πλήρως φορτισμένη μπαταρία (1.50V ανά στοιχείο)", input1: "", input2: ""},
+        { text1: "γ", text2: "Θεροκρασία τρανζίστορ φόρτισης, με μπαταρία, VBAT =  κοντά στην τάση αποκοπής, VAC = 240 V", input1: ""},
+        { text1: "δ", text2: "Στην εφεδρεία με VBAT = πλήρως φορτισμένη μπαταρία (1.50V ανά στοιχείο)", input1: ""},
       ]);
 
       const handleDropdown25Change = (rowIndex, field, value) => {
@@ -43,8 +43,8 @@ return(
             <tr className="table-row">
                 <td className="table-cell">{dropdownRow.text1}</td>
                 <td className="table-cell">{dropdownRow.text2}</td>
-                <td className="table-cell">
-                <input
+                    <td className="table-cell">
+                    <input
                     type="text"
                     value={dropdownRow.input1}
                     onChange={(e) => handleDropdown25Change(rowIndex, "input1", e.target.value)}
@@ -53,9 +53,9 @@ return(
                       handleEnterPress(e, index, true,"dropdown25")
                     }
                   />
-                </td>
-                <td className="table-cell">
-                <input
+                    </td>
+                    <td className="table-cell">
+                    <input
                     type="text"
                     value={dropdownRow.input2}
                     onChange={(e) => handleDropdown25Change(rowIndex, "input2", e.target.value)}
@@ -64,7 +64,7 @@ return(
                       handleEnterPress(e, index, true,"dropdown25")
                     }
                   />
-                </td>
+                    </td>
             </tr>
             </React.Fragment>
         ))}
