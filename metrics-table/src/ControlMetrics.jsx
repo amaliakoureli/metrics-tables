@@ -12,6 +12,7 @@ import Row15 from "./Row15";
 import Row18 from "./Row18";
 import Row19 from "./Row19";
 import Row20 from "./Row20";
+import Row21 from "./Row21";
 
 
 function ControlMetrics(){
@@ -36,6 +37,16 @@ function ControlMetrics(){
         { id: 18, text: "Τάση τροφοδοσίας μικρολεγκτή (αν υπάρχει) με χρήση wireless module. Όριο: Μέχρι 200mV κάτω από την ονομαστική τάση ...."},
         { id: 19, text: "Έλεγχοι κατα το trickle charge"},
         { id: 20, text: "Φωτεινότητα"},
+        { id: 21, text: "Βραχυκύκλωμα LEDοσειράς και απόκριση του φωτιστικού"},
+        { id: 22, text: "Κυκλώματα ελέγχου- επικοινωνίας"},
+        { id: 23, text: "Δοκιμή κατανάλωση από την μπαταρία στην κατάσταση rest mode ή inhibit. Το ρεύμα πρέπει να είναι <0,0015 x C5Ah(NiCd) ή <25 x 0,000001 x C5aA(NiMh) ή <0.00001 x C20Ah(Pb)", input1:""},
+        { id: 24, text: "Δοκιμή ενδεικτικών LED και τις λειτουργίες τους και συγκριση με την εκτυπωση στο πλαστικό", input1:""},
+        { id: 25, text: "Θερμικές δοκιμές  υλικών κατά την λειτουργία (και με την χρήση wireless module, αν δεχεται)"},
+        { id: 26, text: "Βραχυκύκλωμα φορτιστή (στο φισ μπαταρίας) για 1 λεπτό σε τάση 1.06 x ονομαστική τάση δικτύου και μέτρηση θερμοκρασίας  στο κύκλωμα φόρτισης" , input1:"", input2:""},
+        { id: 27, text: "Δοκιμές τοποθέτησης σε όλα τα πλαστικά που θα μπαίνει η πλακέτα", input1:""},
+        { id: 28, text: "EMC - Ασφάλεια"},
+        { id: 29, text: "Έλεγχος αντοχής σε θερμοθάλαμο (στα όρια της θερμοκρασίας λειτουργίας).(Δες το τέλος του εγγράφου για ναλυτικά βήματα)", input1:""},
+        { id: 30, text: "Πρόγραμμα για το ΗΕ-4000 / ΗΕ-3000", input1:""},
       ]);
 
       const [selectedButton1, setSelectedButton1] = useState(false);
@@ -61,7 +72,7 @@ function ControlMetrics(){
       const [dropdown18Visible, setDropdown18Visible] = useState(null); 
       const [dropdown19Visible, setDropdown19Visible] = useState(null); 
       const [dropdown20Visible, setDropdown20Visible] = useState(null); 
-
+      const [dropdown21Visible, setDropdown21Visible] = useState(null); 
 
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
@@ -158,6 +169,18 @@ function ControlMetrics(){
           setDropdown20Visible(index);
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown20-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+
+      const toggleDropdown21 = (index) => {
+        if (dropdown21Visible === index) {
+          setDropdown21Visible(null); 
+        } else {
+          setDropdown21Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown21-input1");
             if (firstInput) firstInput.focus();
           }, 50);
         }
@@ -374,7 +397,7 @@ function ControlMetrics(){
         const isLastInput = e.target.id === "dropdown20-last";
       
         if (isLastInput) {
-          // toggleDropdown21(20);
+          toggleDropdown21(20);
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown21-input1");
             if (firstInput) firstInput.focus();
@@ -597,6 +620,18 @@ function ControlMetrics(){
                 toggleDropdown20={toggleDropdown20}
                 dropdown20Visible={dropdown20Visible}
                 setDropdown20Visible={setDropdown20Visible}
+                />
+              );
+            }else if (index === 20) {
+              return (
+                <Row21
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown21={toggleDropdown21}
+                dropdown21Visible={dropdown21Visible}
+                setDropdown21Visible={setDropdown21Visible}
                 />
               );
             }else {
