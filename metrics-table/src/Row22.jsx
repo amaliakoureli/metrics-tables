@@ -49,10 +49,11 @@ return(
 
                 {(dropdownRow.text1 === "α" || dropdownRow.text1 === "ζ") ? (
                 <>
+                <td className="table-cell">
                     <select
                     value={dropdownRow.input1}
                     onChange={(e) => handleDropdown22Change(rowIndex, "input1", e.target.value)}
-                    className="input-style dropdown22-input1 smallerSize"
+                    className="input-style dropdown22-input1 "
                     onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown22")}
                     >
                     <option value="ΔΑ">Δ.Α.</option>
@@ -60,10 +61,12 @@ return(
                     <option value="ΟΚ">ΟΚ</option>
                     <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
                     </select>
+                    </td>
+                    <td className="table-cell">
                     <select
                     value={dropdownRow.input2}
                     onChange={(e) => handleDropdown22Change(rowIndex, "input2", e.target.value)}
-                    className="input-style dropdown22-input2 smallerSize"
+                    className="input-style dropdown22-input2 "
                     onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown22")}
                     id={rowIndex === dropdown22Data.length - 1 && !dropdownRow.input1 ? "dropdown22-last" : undefined}
                     >
@@ -72,8 +75,10 @@ return(
                     <option value="ΟΚ">ΟΚ</option>
                     <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
                     </select>
+                    </td>
                 </>
                 ) : (
+                <td className="table-cell">
                 <select
                     value={dropdownRow.input1}
                     onChange={(e) => handleDropdown22Change(rowIndex, "input1", e.target.value)}
@@ -85,6 +90,7 @@ return(
                     <option value="ΟΚ">ΟΚ</option>
                     <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
                 </select>
+                </td>
                 )}
             </tr>
             </React.Fragment>
