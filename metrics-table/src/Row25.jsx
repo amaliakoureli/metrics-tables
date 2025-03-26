@@ -44,31 +44,26 @@ return(
                 <td className="table-cell">{dropdownRow.text1}</td>
                 <td className="table-cell">{dropdownRow.text2}</td>
                 <td className="table-cell">
-                    <select
+                <input
+                    type="text"
                     value={dropdownRow.input1}
                     onChange={(e) => handleDropdown25Change(rowIndex, "input1", e.target.value)}
-                    className="input-style dropdown25-input1 "
-                    onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown25")}
-                    >
-                    <option value="ΔΑ">Δ.Α.</option>
-                    <option value="ΔΕ">Δ.Ε.</option>
-                    <option value="ΟΚ">ΟΚ</option>
-                    <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
-                    </select>
+                    className="input-style dropdown25-input1"
+                    onKeyDown={(e) =>
+                      handleEnterPress(e, index, true,"dropdown25")
+                    }
+                  />
                 </td>
                 <td className="table-cell">
-                    <select
+                <input
+                    type="text"
                     value={dropdownRow.input2}
                     onChange={(e) => handleDropdown25Change(rowIndex, "input2", e.target.value)}
-                    className="input-style dropdown25-input2 "
-                    onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown25")}
-                    >
-                    <option value="ΔΑ">Δ.Α.</option>
-                    <option value="ΔΕ">Δ.Ε.</option>
-                    <option value="ΟΚ">ΟΚ</option>
-                    <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
-                    </select>
-          
+                    className="input-style dropdown25-input2"
+                    onKeyDown={(e) =>
+                      handleEnterPress(e, index, true,"dropdown25")
+                    }
+                  />
                 </td>
             </tr>
             </React.Fragment>
