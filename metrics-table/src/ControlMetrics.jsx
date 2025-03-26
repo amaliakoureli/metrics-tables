@@ -15,6 +15,8 @@ import Row20 from "./Row20";
 import Row21 from "./Row21";
 import Row22 from "./Row22";
 import Row25 from "./Row25";
+import Row28 from "./Row28";
+import Rows24272930 from "./Rows24-27-29-30";
 
 
 function ControlMetrics(){
@@ -77,6 +79,7 @@ function ControlMetrics(){
       const [dropdown21Visible, setDropdown21Visible] = useState(null); 
       const [dropdown22Visible, setDropdown22Visible] = useState(null); 
       const [dropdown25Visible, setDropdown25Visible] = useState(null); 
+      const [dropdown28Visible, setDropdown28Visible] = useState(null); 
 
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
@@ -209,6 +212,18 @@ function ControlMetrics(){
           setDropdown25Visible(index);
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown25-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+
+      const toggleDropdown28 = (index) => {
+        if (dropdown28Visible === index) {
+          setDropdown28Visible(null); 
+        } else {
+          setDropdown28Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown28-input1");
             if (firstInput) firstInput.focus();
           }, 50);
         }
@@ -462,11 +477,22 @@ function ControlMetrics(){
       }
 
       
-    if (index === 23 && dropdown25Visible !== 124) {
+    if (index === 23 && dropdown25Visible !== 24) {
       toggleDropdown25(24);
 
       setTimeout(() => {
         const firstInput = document.querySelector(".dropdown25-input1, .dropdown25-input2");
+        if (firstInput) firstInput.focus();
+      }, 100);
+
+      return;
+    }
+
+    if (index === 26 && dropdown28Visible !== 27) {
+      toggleDropdown28(27);
+
+      setTimeout(() => {
+        const firstInput = document.querySelector(".dropdown28-input1, .dropdown28-input2");
         if (firstInput) firstInput.focus();
       }, 100);
 
@@ -716,6 +742,28 @@ function ControlMetrics(){
                 toggleDropdown25={toggleDropdown25}
                 dropdown25Visible={dropdown25Visible}
                 setDropdown25Visible={setDropdown25Visible}
+                />
+              );
+            }else if (index === 27) {
+              return (
+                <Row28
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown28={toggleDropdown28}
+                dropdown28Visible={dropdown28Visible}
+                setDropdown28Visible={setDropdown28Visible}
+                />
+              );
+            }else if(index===23 || index===26 || index===28 || index===29){
+              return (
+                <Rows24272930
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
                 />
               );
             }else {
