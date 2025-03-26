@@ -9,6 +9,9 @@ import Row12 from "./Row12";
 import Row13 from "./Row13";
 import Row14 from "./Row14";
 import Row15 from "./Row15";
+import Row18 from "./Row18";
+import Row19 from "./Row19";
+import Row20 from "./Row20";
 
 
 function ControlMetrics(){
@@ -55,6 +58,10 @@ function ControlMetrics(){
       const [dropdown12Visible, setDropdown12Visible] = useState(null); 
       const [dropdown13Visible, setDropdown13Visible] = useState(null); 
       const [dropdown14Visible, setDropdown14Visible] = useState(null); 
+      const [dropdown18Visible, setDropdown18Visible] = useState(null); 
+      const [dropdown19Visible, setDropdown19Visible] = useState(null); 
+      const [dropdown20Visible, setDropdown20Visible] = useState(null); 
+
 
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
@@ -70,8 +77,8 @@ function ControlMetrics(){
           }, 50);
         }
       }, [dropdown4Visible]);
-      
 
+ 
       const toggleDropdown11 = (index) => {
         if (dropdown11Visible === index) {
           setDropdown11Visible(null); 
@@ -115,6 +122,42 @@ function ControlMetrics(){
           setDropdown14Visible(index);
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown14-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+
+      const toggleDropdown18 = (index) => {
+        if (dropdown18Visible === index) {
+          setDropdown18Visible(null); 
+        } else {
+          setDropdown18Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown18-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+
+      const toggleDropdown19 = (index) => {
+        if (dropdown19Visible === index) {
+          setDropdown19Visible(null); 
+        } else {
+          setDropdown19Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown19-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+
+      const toggleDropdown20 = (index) => {
+        if (dropdown20Visible === index) {
+          setDropdown20Visible(null); 
+        } else {
+          setDropdown20Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown20-input1");
             if (firstInput) firstInput.focus();
           }, 50);
         }
@@ -210,7 +253,6 @@ function ControlMetrics(){
                 if (firstInput) firstInput.focus();
               }, 100);
             } else {
-              // Move to next input manually (optional fallback behavior)
               const dropdown12Inputs = [
                 ...document.querySelectorAll(".dropdown12-input1, .dropdown12-input2")
               ];
@@ -276,7 +318,77 @@ function ControlMetrics(){
             }
             return;
         }
-        
+
+    if (index === 16 && dropdown18Visible !== 17) {
+      toggleDropdown18(17);
+
+      setTimeout(() => {
+        const firstInput = document.querySelector(".dropdown18-input1, .dropdown18-input2");
+        if (firstInput) firstInput.focus();
+      }, 100);
+
+      return;
+    }
+
+      if (dropdownType === "dropdown18") {
+        const isLastInput = e.target.id === "dropdown18-last";
+      
+        if (isLastInput) {
+          toggleDropdown19(18);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown19-input1");
+            if (firstInput) firstInput.focus();
+          }, 100);
+        } else {
+          const dropdown18Inputs = [
+            ...document.querySelectorAll(".dropdown18-input1, .dropdown18-input2")
+          ];
+          const currentIndex = dropdown18Inputs.indexOf(e.target);
+          dropdown18Inputs[currentIndex + 1]?.focus();
+        }
+      
+        return;
+      }
+
+      if (dropdownType === "dropdown19") {
+        const isLastInput = e.target.id === "dropdown19-last";
+      
+        if (isLastInput) {
+          toggleDropdown20(19);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown20-input1");
+            if (firstInput) firstInput.focus();
+          }, 100);
+        } else {
+          const dropdown19Inputs = [
+            ...document.querySelectorAll(".dropdown19-input1, .dropdown19-input2, .dropdown19-input3, .dropdown19-input4")
+          ];
+          const currentIndex = dropdown19Inputs.indexOf(e.target);
+          dropdown19Inputs[currentIndex + 1]?.focus();
+        }
+      
+        return;
+      }
+
+      if (dropdownType === "dropdown20") {
+        const isLastInput = e.target.id === "dropdown20-last";
+      
+        if (isLastInput) {
+          // toggleDropdown21(20);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown21-input1");
+            if (firstInput) firstInput.focus();
+          }, 100);
+        } else {
+          const dropdown20Inputs = [
+            ...document.querySelectorAll(".dropdown20-input1, .dropdown20-input2, .dropdown20-input3")
+          ];
+          const currentIndex = dropdown20Inputs.indexOf(e.target);
+          dropdown20Inputs[currentIndex + 1]?.focus();
+        }
+      
+        return;
+      }
 
         if (e.target.id === "limit3") {
           const firstMiddleInput = document.querySelector(".first-middle-input");
@@ -309,7 +421,8 @@ function ControlMetrics(){
               dropdown4Inputs[nextDropdownIndex]?.focus();
             }
             return;
-          }
+          }         
+
 
           const allInputs = [...document.querySelectorAll(".input-style")];
           const currentIndex = allInputs.indexOf(e.target);
@@ -446,6 +559,44 @@ function ControlMetrics(){
                 input3={row.input3}
                 handleChange={handleChange}
                 handleEnterPress={handleEnterPress}
+                />
+              );
+            }else if (index === 17) {
+              return (
+                <Row18
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown18={toggleDropdown18}
+                dropdown18Visible={dropdown18Visible}
+                setDropdown18Visible={setDropdown18Visible}
+                />
+              );
+            }
+            else if (index === 18) {
+              return (
+                <Row19
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown19={toggleDropdown19}
+                dropdown19Visible={dropdown19Visible}
+                setDropdown19Visible={setDropdown19Visible}
+                />
+              );
+            }else if (index === 19) {
+              return (
+                <Row20
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown20={toggleDropdown20}
+                dropdown20Visible={dropdown20Visible}
+                setDropdown20Visible={setDropdown20Visible}
                 />
               );
             }else {

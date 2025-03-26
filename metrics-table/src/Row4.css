@@ -75,5 +75,17 @@
     display: inline-block;
     box-sizing: border-box;
     text-align: center;}
+
+    .smallerSize{
+      width: 60px !important;
+      max-width: 60px;
+      padding: 4px 6px;
+      font-size: 0.85rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: inline-block;
+      box-sizing: border-box;
+      text-align: center;
+    }
   
     
