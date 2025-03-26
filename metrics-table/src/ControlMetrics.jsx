@@ -13,6 +13,7 @@ import Row18 from "./Row18";
 import Row19 from "./Row19";
 import Row20 from "./Row20";
 import Row21 from "./Row21";
+import Row22 from "./Row22";
 
 
 function ControlMetrics(){
@@ -73,6 +74,7 @@ function ControlMetrics(){
       const [dropdown19Visible, setDropdown19Visible] = useState(null); 
       const [dropdown20Visible, setDropdown20Visible] = useState(null); 
       const [dropdown21Visible, setDropdown21Visible] = useState(null); 
+      const [dropdown22Visible, setDropdown22Visible] = useState(null); 
 
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
@@ -181,6 +183,18 @@ function ControlMetrics(){
           setDropdown21Visible(index);
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown21-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+      
+      const toggleDropdown22 = (index) => {
+        if (dropdown22Visible === index) {
+          setDropdown22Visible(null); 
+        } else {
+          setDropdown22Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown22-input1");
             if (firstInput) firstInput.focus();
           }, 50);
         }
@@ -413,6 +427,26 @@ function ControlMetrics(){
         return;
       }
 
+      if (dropdownType === "dropdown21") {
+        const isLastInput = e.target.id === "dropdown21-last";
+      
+        if (isLastInput) {
+          toggleDropdown22(21);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown22-input1");
+            if (firstInput) firstInput.focus();
+          }, 100);
+        } else {
+          const dropdown21Inputs = [
+            ...document.querySelectorAll(".dropdown21-input1")
+          ];
+          const currentIndex = dropdown21Inputs.indexOf(e.target);
+          dropdown21Inputs[currentIndex + 1]?.focus();
+        }
+      
+        return;
+      }
+
         if (e.target.id === "limit3") {
           const firstMiddleInput = document.querySelector(".first-middle-input");
           
@@ -632,6 +666,18 @@ function ControlMetrics(){
                 toggleDropdown21={toggleDropdown21}
                 dropdown21Visible={dropdown21Visible}
                 setDropdown21Visible={setDropdown21Visible}
+                />
+              );
+            }else if (index === 21) {
+              return (
+                <Row22
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown22={toggleDropdown22}
+                dropdown22Visible={dropdown22Visible}
+                setDropdown22Visible={setDropdown22Visible}
                 />
               );
             }else {

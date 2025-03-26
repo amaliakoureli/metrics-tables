@@ -77,8 +77,8 @@
     text-align: center;}
 
     .smallerSize{
-      width: 60px !important;
-      max-width: 60px;
+      width: 120px !important;
+      max-width: 120px;
       padding: 4px 6px;
       font-size: 0.85rem;
       border: 1px solid #ccc;
