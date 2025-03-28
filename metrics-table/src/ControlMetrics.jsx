@@ -118,6 +118,7 @@ function ControlMetrics(){
           }, 50);
         }
       }, [dropdown4Visible]);
+      
 
  
       const toggleDropdown11 = (index) => {
@@ -168,16 +169,15 @@ function ControlMetrics(){
         }
       };
 
+      const firstDropdown16InputRef = useRef(null);
+      useEffect(() => {
+          if (dropdown16Visible === 15 && firstDropdown16InputRef.current) {
+              firstDropdown16InputRef.current.focus();
+          }
+      }, [dropdown16Visible]);
+  
       const toggleDropdown16 = (index) => {
-        if (dropdown16Visible === index) {
-          setDropdown16Visible(null); 
-        } else {
-          setDropdown16Visible(index);
-          setTimeout(() => {
-            const firstInput = document.querySelector(".dropdown16-input1");
-            if (firstInput) firstInput.focus();
-          }, 50);
-        }
+          setDropdown16Visible((prev) => (prev === index ? null : index));
       };
 
       const toggleDropdown18 = (index) => {
@@ -274,16 +274,16 @@ function ControlMetrics(){
           }, 50);
         }
       };
+
+      const firstDropdownInputRef = useRef(null);
+      useEffect(() => {
+          if (dropdown34Visible === 33 && firstDropdownInputRef.current) {
+              firstDropdownInputRef.current.focus();
+          }
+      }, [dropdown34Visible]);
+  
       const toggleDropdown34 = (index) => {
-        if (dropdown34Visible === index) {
-          setDropdown34Visible(null); 
-        } else {
-          setDropdown34Visible(index);
-          setTimeout(() => {
-            const firstInput = document.querySelector(".dropdown34-input1");
-            if (firstInput) firstInput.focus();
-          }, 50);
-        }
+          setDropdown34Visible((prev) => (prev === index ? null : index));
       };
       
       const handleEnterPress = (e, index, isInput = false, dropdownType = null) => {
@@ -440,34 +440,25 @@ function ControlMetrics(){
                 }, 50);
             }
             return;
-        }
+        }      
 
         const isLastInputInRow15 = index === 14 && e.target.classList.contains("input3");
 
-        if (isLastInputInRow15 && dropdown16Visible !== 15) {
-          e.preventDefault();
-          toggleDropdown16(15);
-      
+        if (isLastInputInRow15) {
+            toggleDropdown16(15);
+            return;
+        }
+        
+        if (index === 16 && dropdown18Visible !== 17) {
+          toggleDropdown18(17);
+    
           setTimeout(() => {
-            const firstInput = document.querySelector(".dropdown16-input1");
+            const firstInput = document.querySelector(".dropdown18-input1, .dropdown18-input2");
             if (firstInput) firstInput.focus();
           }, 100);
-      
+    
           return;
         }
-      
-
-    if (index === 16 && dropdown18Visible !== 17) {
-      toggleDropdown18(17);
-
-      setTimeout(() => {
-        const firstInput = document.querySelector(".dropdown18-input1, .dropdown18-input2");
-        if (firstInput) firstInput.focus();
-      }, 100);
-
-      return;
-    }
-
       if (dropdownType === "dropdown18") {
         const isLastInput = e.target.id === "dropdown18-last";
       
@@ -584,17 +575,11 @@ function ControlMetrics(){
 
     const isLastInputInRow33 = index === 32 && e.target.classList.contains("input2");
 
-    if (isLastInputInRow33 && dropdown34Visible !== 33) {
-      e.preventDefault();
-      toggleDropdown34(33);
-  
-      setTimeout(() => {
-        const firstInput = document.querySelector(".dropdown34-input1");
-        if (firstInput) firstInput.focus();
-      }, 100);
-  
-      return;
+    if (isLastInputInRow33) {
+        toggleDropdown34(33);
+        return;
     }
+
         if (e.target.id === "limit3") {
           const firstMiddleInput = document.querySelector(".first-middle-input");
           
@@ -776,6 +761,7 @@ function ControlMetrics(){
                 dropdown16Visible={ dropdown16Visible} 
                 setDropdown16Visible={ setDropdown16Visible}
                 handleEnterPress={handleEnterPress}
+                firstDropdown16InputRef={firstDropdown16InputRef}
                 />
               );
             }else if (index === 17) {
@@ -906,6 +892,7 @@ function ControlMetrics(){
                 toggleDropdown34={toggleDropdown34}
                 dropdown34Visible={dropdown34Visible}
                 setDropdown34Visible={setDropdown34Visible}
+                firstDropdownInputRef={firstDropdownInputRef}
                 />
               );
             }else {

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import "./Row4.css";
 
-function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visible }) {
+function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visible, firstDropdownInputRef }) {
     const [dropdown34Data, setDropdown34Data] = useState([
         { text1: "α", text2: "Στο Δίκτυο", input1: "", input2: "", input3: "", input4: "", input5: "", input6: "" },
         { text1: "β", text2: "Με την μπαταρία", input1: "", input2: "", input3: "", input4: "", input5: "", input6: "" },
@@ -55,6 +55,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                                                 onChange={(e) => handleDropdown34Change(rowIndex, "input1", e.target.value)}
                                                 className="input-style smallerSize"
                                                 onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
+                                                ref={firstDropdownInputRef}
                                             />
                                         </td>
                                         <td className="table-cell">

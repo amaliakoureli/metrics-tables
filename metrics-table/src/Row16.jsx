@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import "./Row4.css";
 
-function Row16({ row, index, handleEnterPress, toggleDropdown16, dropdown16Visible }) {
+function Row16({ row, index, handleEnterPress, toggleDropdown16, dropdown16Visible, firstDropdown16InputRef }) {
   const [dropdown16Data, setDropdown16Data] = useState([
     {
       text1: "α",
@@ -214,7 +214,7 @@ function Row16({ row, index, handleEnterPress, toggleDropdown16, dropdown16Visib
                           </td>
                         </tr>
                       </>
-                    ) : (
+                    ) : dropdownRow.text1 === "β" ?(
                       <>
                         <tr>
                           <td rowSpan="2" className="table-cell">{dropdownRow.text1}</td>
@@ -227,6 +227,7 @@ function Row16({ row, index, handleEnterPress, toggleDropdown16, dropdown16Visib
                               onChange={(e) => handleDropdown16Change(rowIndex, "input1", e.target.value)}
                               className="input-style smallSize"
                               onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                              ref={firstDropdown16InputRef}
                             />
                           </td>
                           <td className="table-cell">
@@ -352,6 +353,144 @@ function Row16({ row, index, handleEnterPress, toggleDropdown16, dropdown16Visib
                           </td>
                         </tr>
                       </>
+                    ):(
+                    <>
+                      <tr>
+                        <td rowSpan="2" className="table-cell">{dropdownRow.text1}</td>
+                        <td rowSpan="2" className="table-cell">{dropdownRow.text2}</td>
+                        <td className="table-cell">{dropdownRow.text3}</td>
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input1}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input1", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input2}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input2", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td>
+                        <input
+                            type="text"
+                            value={dropdownRow.input5}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input5", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input6}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input6", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td>
+                        <input
+                            type="text"
+                            value={dropdownRow.input9}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input9", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input10}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input10", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td className="table-cell" rowSpan="2">
+                          <input
+                            type="text"
+                            value={dropdownRow.input13}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input13", e.target.value)}
+                            className="input-style Heigher"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td className="table-cell" rowSpan="2">
+                          <input
+                            type="text"
+                            value={dropdownRow.input14}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input14", e.target.value)}
+                            className="input-style Heigher"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="table-cell">{dropdownRow.text4}</td>
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input3}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input3", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input4}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input4", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td>
+                        <input
+                            type="text"
+                            value={dropdownRow.input7}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input7", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input8}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input8", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td>
+                        <input
+                            type="text"
+                            value={dropdownRow.input11}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input11", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input12}
+                            onChange={(e) => handleDropdown16Change(rowIndex, "input12", e.target.value)}
+                            className="input-style smallSize"
+                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown16")}
+                          />
+                        </td>
+                      </tr>
+                    </>
                     )}
                   </React.Fragment>
                 ))}
