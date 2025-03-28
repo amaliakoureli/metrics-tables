@@ -35,7 +35,7 @@ function Row16({ row, index, handleEnterPress, toggleDropdown16, dropdown16Visib
 
   return (
     <>
-      <tr className="main-row">
+      <tr className="fourth-row">
         <td className="table-cell">
           <button onClick={() => toggleDropdown16(index)} className="dropdown-button-style">
             {row.id}
