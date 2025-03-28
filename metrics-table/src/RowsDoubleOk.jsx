@@ -16,7 +16,7 @@ return(
                           <select
                             value={row.input1}
                             onChange={(e) => handleChange(index, "input1", e.target.value)}
-                            className="input-style"
+                            className="input-style input1"
                             onKeyDown={(e) => handleEnterPress(e, index, true)}
                           >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -27,9 +27,9 @@ return(
                     </td>
                     <td className="table-cell">
                           <select
-                            value={row.input1}
-                            onChange={(e) => handleChange(index, "input1", e.target.value)}
-                            className="input-style"
+                            value={row.input2}
+                            onChange={(e) => handleChange(index, "input2", e.target.value)}
+                            className="input-style input2"
                             onKeyDown={(e) => handleEnterPress(e, index, true)}
                           >
                             <option value="ΔΑ">Δ.Α.</option>
