@@ -19,6 +19,7 @@ import Row28 from "./Row28";
 import RowsSingleOk from "./RowsSingleOk";
 import Row16 from "./Row16";
 import RowsDoubleOk from "./RowsDoubleOk";
+import Row31 from "./Row31";
 
 
 function ControlMetrics(){
@@ -99,6 +100,7 @@ function ControlMetrics(){
       const [dropdown22Visible, setDropdown22Visible] = useState(null); 
       const [dropdown25Visible, setDropdown25Visible] = useState(null); 
       const [dropdown28Visible, setDropdown28Visible] = useState(null); 
+      const [dropdown31Visible, setDropdown31Visible] = useState(null); 
 
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
@@ -255,6 +257,17 @@ function ControlMetrics(){
           setDropdown28Visible(index);
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown28-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+      const toggleDropdown31 = (index) => {
+        if (dropdown31Visible === index) {
+          setDropdown31Visible(null); 
+        } else {
+          setDropdown31Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown31-input1");
             if (firstInput) firstInput.focus();
           }, 50);
         }
@@ -539,6 +552,17 @@ function ControlMetrics(){
 
       setTimeout(() => {
         const firstInput = document.querySelector(".dropdown28-input1, .dropdown28-input2");
+        if (firstInput) firstInput.focus();
+      }, 100);
+
+      return;
+    }
+    
+    if (index === 29 && dropdown31Visible !== 30) {
+      toggleDropdown31(30);
+
+      setTimeout(() => {
+        const firstInput = document.querySelector(".dropdown31-input1");
         if (firstInput) firstInput.focus();
       }, 100);
 
@@ -832,6 +856,18 @@ function ControlMetrics(){
                 index={index}
                 handleChange={handleChange}
                 handleEnterPress={handleEnterPress}
+                />
+              );
+            }else if (index === 30) {
+              return (
+                <Row31
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown31={toggleDropdown31}
+                dropdown31Visible={dropdown31Visible}
+                setDropdown31Visible={setDropdown31Visible}
                 />
               );
             }else {
