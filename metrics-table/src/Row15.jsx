@@ -110,6 +110,7 @@ return(
                       handleEnterPress(e, index, true);
                     }}
                     className="input-style input3"
+
                   />
                 </td>
             </tr>

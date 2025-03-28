@@ -46,17 +46,36 @@ return(
     </td>
 
     <td className="table-cell">
+    <div className="input-wrapper">
     <input
-      type="text"
-      id="duration1BAT"
-      ref={duration1BATRef}
-      value={duration1BAT}
-      onChange={(e) => setDuration1BAT(e.target.value, duration1BATRef?.current, duration2BATRef?.current)}
-      onKeyDown={(e) => handleEnterPress(e, index, true)}
-      className="input-style text-right"
-      placeholder="Διάρκεια με 1BAT"
-
+        type="text"
+        id="duration1BAT"
+        ref={duration1BATRef}
+        value={"Διάρκεια με 1BAT: " + (duration1BAT ?? "")}
+        onChange={(e) => {
+            const prefix = "Διάρκεια με 1BAT: ";
+            const inputValue = e.target.value;
+            if (inputValue.startsWith(prefix)) {
+            setDuration1BAT(inputValue.replace(prefix, ""), duration1BATRef?.current, duration2BATRef?.current);
+            } else {
+            setDuration1BAT(inputValue, duration1BATRef?.current, duration2BATRef?.current);
+            }
+        }}
+        onKeyDown={(e) => {
+            const prefix = "Διάρκεια με 1BAT: ";
+            const cursorPos = e.target.selectionStart;
+            if (
+            (e.key === "Backspace" && cursorPos <= prefix.length) ||
+            (e.key === "Delete" && cursorPos < prefix.length)
+            ) {
+            e.preventDefault();
+            }
+            handleEnterPress(e, index, true);
+        }}
+        className="input-style text-right"
     />
+     <span className="unit">h</span>
+    </div>
     </td>
 
 </tr>
@@ -64,16 +83,40 @@ return(
 <tr className="fourth-row">
 
     <td className="table-cell">
+    <div className="input-wrapper">
     <input
-      type="text"
-      id="duration2BAT"
-      ref={duration2BATRef}
-      value={duration2BAT}
-      onChange={(e) => setDuration2BAT(e.target.value, duration1BATRef?.current, duration2BATRef?.current)}
-      onKeyDown={(e) => handleEnterPress(e, index, true)}
-      className="input-style text-right"
-      placeholder="Διάρκεια με 2BAT"
+        type="text"
+        id="duration2BAT"
+        ref={duration2BATRef}
+        value={"Διάρκεια με 2BAT: " + (duration2BAT ?? "")}
+        onChange={(e) => {
+            const prefix = "Διάρκεια με 2BAT: ";
+            const inputValue = e.target.value;
+
+            // Εξασφαλίζουμε ότι η αποθηκευμένη τιμή δεν περιλαμβάνει το prefix
+            if (inputValue.startsWith(prefix)) {
+            setDuration2BAT(inputValue.replace(prefix, ""), duration1BATRef?.current, duration2BATRef?.current);
+            } else {
+            setDuration2BAT(inputValue, duration1BATRef?.current, duration2BATRef?.current);
+            }
+        }}
+        onKeyDown={(e) => {
+            const prefix = "Διάρκεια με 2BAT: ";
+            const cursorPos = e.target.selectionStart;
+
+            // Εμποδίζει τον χρήστη να διαγράψει το prefix
+            if (
+            (e.key === "Backspace" && cursorPos <= prefix.length) ||
+            (e.key === "Delete" && cursorPos < prefix.length)
+            ) {
+            e.preventDefault();
+            }
+            handleEnterPress(e, index, true);
+        }}
+        className="input-style text-right"
     />
+         <span className="unit">h</span>
+         </div>
     </td>
 </tr>
 

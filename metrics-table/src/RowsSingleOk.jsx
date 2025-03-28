@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 
-function Rows24272930({ row, 
+function RowsSingleOk({ row, 
                 index, 
                 handleEnterPress,
                 handleChange,
@@ -30,7 +30,7 @@ return(
 );
 }
 
-export default Rows24272930;
+export default RowsSingleOk;
 
 
 

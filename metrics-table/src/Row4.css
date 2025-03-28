@@ -87,5 +87,48 @@
       box-sizing: border-box;
       text-align: center;
     }
-  
+    .input-wrapper {
+      position: relative;
+      display: inline-block;
+    }
     
+    .input-wrapper input {
+      padding-right: 20px; /* Για να μην καλύπτει το 'h' */
+    }
+    
+    .input-wrapper .unit {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: #555;
+      pointer-events: none; /* Δεν επιτρέπει interaction με το κείμενο */
+    }
+    .smallSize{
+      width: 50px !important;
+      max-width: 50px;
+
+      font-size: 0.85rem;
+      display: inline-block;
+    }    
+    
+    .textCenter{
+      text-align: center;
+      vertical-align: middle;
+    }
+    
+    .Heigher{
+      width: 50px !important;
+      height: 80px !important;
+      max-width: 50px;
+      font-size: 0.85rem;
+      display: inline-block;
+    }
+
+    .widthSize{
+      width: 175px !important;
+      height: 80px !important;
+      font-size: 0.85rem;
+      display: inline-block;
+    }

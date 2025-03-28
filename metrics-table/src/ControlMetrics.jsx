@@ -16,7 +16,9 @@ import Row21 from "./Row21";
 import Row22 from "./Row22";
 import Row25 from "./Row25";
 import Row28 from "./Row28";
-import Rows24272930 from "./Rows24-27-29-30";
+import RowsSingleOk from "./RowsSingleOk";
+import Row16 from "./Row16";
+import RowsDoubleOk from "./RowsDoubleOk";
 
 
 function ControlMetrics(){
@@ -51,6 +53,22 @@ function ControlMetrics(){
         { id: 28, text: "EMC - Ασφάλεια"},
         { id: 29, text: "Έλεγχος αντοχής σε θερμοθάλαμο (στα όρια της θερμοκρασίας λειτουργίας).(Δες το τέλος του εγγράφου για ναλυτικά βήματα)", input1:""},
         { id: 30, text: "Πρόγραμμα για το ΗΕ-4000 / ΗΕ-3000", input1:""},
+        { id: 31, text: "Το προιόν παράγεται με μπαταρία:"},
+        { id: 32, text: "'Εχει δυνατότητα Dimming;", input1:"", input2:""},
+        { id: 33, text: "Έλεγχος σειράς εκτέλεσης έξυπνων λειτουργιών από το μπουτόν", input1:"", input2:""},
+        { id: 34, text: "Έλεγχος ομαλής έναυσης λεντοσειράς", text1:"", text2:"", text3:""},
+        { id: 35, text: "Έλεγχος σφάλματος λεντοσειράς σε τεστ, με και χωρίς L1", input1:"", input2:""},
+        { id: 36, text: "Συγκριτικός έλεγχος τεχνικών στοιχείων, λειτουργίας φωτιστικού και τεχνικού εγχειριδίου (αν υπάρχει).", input1:""},
+        { id: 37, text: "Έλεγχος αποστάσεων πλακέτας (Creepage-Clearance)", input1:""},
+        { id: 38, text: "Έλεγχος ποιότητας φωτιστικού (χωρίς flicker) ", text1:"", text2:"", text3:""},
+        { id: 39, text: "Μετρήσεις πικτογραφήματος", input1:"", input2:"", input3:"", input4:"", input5:"", input6:""},
+        { id: 40, text: "IP Test", input1:""},
+        { id: 41, text: "Dip Switch Test (σε φωτιστικά που έχουν Dip switches)", input1:""},
+        { id: "", text: "Απαιτήσεις BSI", text1:""},
+        { id: 42, text: "Max open circuit (V LED+ - V LED- σε V DC, χωρλις τη LEDοσειρά πάνω)(Uout(V DC) : (C1 -> C2 & C1,C2 ->GND). Αν δεν έχει C1 ,C2 τότε είναι η Max open circuit voltage)", input1:""},
+        { id: 43, text: "tc (θερμόμετρο σμείο της πλακέτας, σε °C)", input1:""},
+        { id: 44, text: "Μέγιστη θερμοκρασία στην λεντοσειρά", input1:""},
+        { id: 45, text: "EOFp = P LED,emergency/ P LED,normal", input1:""}
       ]);
 
       const [selectedButton1, setSelectedButton1] = useState(false);
@@ -73,6 +91,7 @@ function ControlMetrics(){
       const [dropdown12Visible, setDropdown12Visible] = useState(null); 
       const [dropdown13Visible, setDropdown13Visible] = useState(null); 
       const [dropdown14Visible, setDropdown14Visible] = useState(null); 
+      const [dropdown16Visible, setDropdown16Visible] = useState(null); 
       const [dropdown18Visible, setDropdown18Visible] = useState(null); 
       const [dropdown19Visible, setDropdown19Visible] = useState(null); 
       const [dropdown20Visible, setDropdown20Visible] = useState(null); 
@@ -140,6 +159,18 @@ function ControlMetrics(){
           setDropdown14Visible(index);
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown14-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+
+      const toggleDropdown16 = (index) => {
+        if (dropdown16Visible === index) {
+          setDropdown16Visible(null); 
+        } else {
+          setDropdown16Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown16-input1");
             if (firstInput) firstInput.focus();
           }, 50);
         }
@@ -384,6 +415,21 @@ function ControlMetrics(){
             }
             return;
         }
+
+        const isLastInputInRow15 = index === 14 && e.target.classList.contains("input3");
+
+        if (isLastInputInRow15 && dropdown16Visible !== 15) {
+          e.preventDefault();
+          toggleDropdown16(15);
+      
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown16-input1");
+            if (firstInput) firstInput.focus();
+          }, 100);
+      
+          return;
+        }
+      
 
     if (index === 16 && dropdown18Visible !== 17) {
       toggleDropdown18(17);
@@ -670,6 +716,18 @@ function ControlMetrics(){
                 handleEnterPress={handleEnterPress}
                 />
               );
+            }else if (index === 15) {
+              return (
+                <Row16
+                key={row.id}
+                row={row}
+                index={index}
+                toggleDropdown16={ toggleDropdown16}
+                dropdown16Visible={ dropdown16Visible} 
+                setDropdown16Visible={ setDropdown16Visible}
+                handleEnterPress={handleEnterPress}
+                />
+              );
             }else if (index === 17) {
               return (
                 <Row18
@@ -756,9 +814,19 @@ function ControlMetrics(){
                 setDropdown28Visible={setDropdown28Visible}
                 />
               );
-            }else if(index===23 || index===26 || index===28 || index===29){
+            }else if(index===23 || index===26 || index===28 || index===29|| index===35|| index===36 || index===39 || index===40 ){
               return (
-                <Rows24272930
+                <RowsSingleOk
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+                />
+              );
+            }else if(index===32 || index===34){
+              return (
+                <RowsDoubleOk
                 key={row.id}
                 row={row}
                 index={index}
