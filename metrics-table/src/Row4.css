@@ -108,7 +108,7 @@
     .smallSize{
       width: 50px !important;
       max-width: 50px;
-
+      padding: 4px 6px;
       font-size: 0.85rem;
       display: inline-block;
     }    
@@ -122,10 +122,10 @@
       width: 50px !important;
       height: 80px !important;
       max-width: 50px;
+      padding: 4px 6px;
       font-size: 0.85rem;
       display: inline-block;
     }
-
     .widthSize{
       width: 175px !important;
       height: 80px !important;
