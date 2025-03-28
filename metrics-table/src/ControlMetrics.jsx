@@ -20,6 +20,7 @@ import RowsSingleOk from "./RowsSingleOk";
 import Row16 from "./Row16";
 import RowsDoubleOk from "./RowsDoubleOk";
 import Row31 from "./Row31";
+import Row34 from "./Row34";
 
 
 function ControlMetrics(){
@@ -57,7 +58,7 @@ function ControlMetrics(){
         { id: 31, text: "Το προιόν παράγεται με μπαταρία:"},
         { id: 32, text: "'Εχει δυνατότητα Dimming;", input1:"", input2:""},
         { id: 33, text: "Έλεγχος σειράς εκτέλεσης έξυπνων λειτουργιών από το μπουτόν", input1:"", input2:""},
-        { id: 34, text: "Έλεγχος ομαλής έναυσης λεντοσειράς", text1:"", text2:"", text3:""},
+        { id: 34, text: "Έλεγχος ομαλής έναυσης λεντοσειράς", text1:"1H", text2:"3H", text3:"8H", text4:"1H", text5:"3H", text6:"8H"},
         { id: 35, text: "Έλεγχος σφάλματος λεντοσειράς σε τεστ, με και χωρίς L1", input1:"", input2:""},
         { id: 36, text: "Συγκριτικός έλεγχος τεχνικών στοιχείων, λειτουργίας φωτιστικού και τεχνικού εγχειριδίου (αν υπάρχει).", input1:""},
         { id: 37, text: "Έλεγχος αποστάσεων πλακέτας (Creepage-Clearance)", input1:""},
@@ -101,6 +102,7 @@ function ControlMetrics(){
       const [dropdown25Visible, setDropdown25Visible] = useState(null); 
       const [dropdown28Visible, setDropdown28Visible] = useState(null); 
       const [dropdown31Visible, setDropdown31Visible] = useState(null); 
+      const [dropdown34Visible, setDropdown34Visible] = useState(null); 
 
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
@@ -268,6 +270,17 @@ function ControlMetrics(){
           setDropdown31Visible(index);
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown31-input1");
+            if (firstInput) firstInput.focus();
+          }, 50);
+        }
+      };
+      const toggleDropdown34 = (index) => {
+        if (dropdown34Visible === index) {
+          setDropdown34Visible(null); 
+        } else {
+          setDropdown34Visible(index);
+          setTimeout(() => {
+            const firstInput = document.querySelector(".dropdown34-input1");
             if (firstInput) firstInput.focus();
           }, 50);
         }
@@ -569,6 +582,19 @@ function ControlMetrics(){
       return;
     }
 
+    const isLastInputInRow33 = index === 32 && e.target.classList.contains("input2");
+
+    if (isLastInputInRow33 && dropdown34Visible !== 33) {
+      e.preventDefault();
+      toggleDropdown34(33);
+  
+      setTimeout(() => {
+        const firstInput = document.querySelector(".dropdown34-input1");
+        if (firstInput) firstInput.focus();
+      }, 100);
+  
+      return;
+    }
         if (e.target.id === "limit3") {
           const firstMiddleInput = document.querySelector(".first-middle-input");
           
@@ -868,6 +894,18 @@ function ControlMetrics(){
                 toggleDropdown31={toggleDropdown31}
                 dropdown31Visible={dropdown31Visible}
                 setDropdown31Visible={setDropdown31Visible}
+                />
+              );
+            }else if (index === 33) {
+              return (
+                <Row34
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown34={toggleDropdown34}
+                dropdown34Visible={dropdown34Visible}
+                setDropdown34Visible={setDropdown34Visible}
                 />
               );
             }else {
