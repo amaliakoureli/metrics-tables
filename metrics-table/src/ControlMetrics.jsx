@@ -71,7 +71,20 @@ function ControlMetrics(){
         { id: 42, text: "Max open circuit (V LED+ - V LED- σε V DC, χωρλις τη LEDοσειρά πάνω)(Uout(V DC) : (C1 -> C2 & C1,C2 ->GND). Αν δεν έχει C1 ,C2 τότε είναι η Max open circuit voltage)", input1:""},
         { id: 43, text: "tc (θερμόμετρο σμείο της πλακέτας, σε °C)", input1:""},
         { id: 44, text: "Μέγιστη θερμοκρασία στην λεντοσειρά", input1:""},
-        { id: 45, text: "EOFp = P LED,emergency/ P LED,normal", input1:""}
+        { id: 45, text: "EOFp = P LED,emergency/ P LED,normal", input1:""},
+        { id: "", text: "", input1:""},
+        { id: "", text:"28. Βήματα μέτρησης αυτονομίας στο θερμοθάλαμο.", 
+                  text1:"1) Ρύθμιση του θερμοθαλάμου στην ελάχιστη θρμοκρασία", 
+                  text2:"2) Τοποθέτηση dip switch για 1 ώρα και πλήρη εκφόρτιση του φωτιστικού", 
+                  text3:"3) Εκκίνηση καταγραφής μετρήσεων (τάση μπαταρίας, ρεύμα εκφόρτισης και θερμοκρασία μπαταρίας)", 
+                  text4:"4) Πλήρη φόρτιση και εκφόρτιση του φωτιστικού", 
+                  text5:"5) Αλλαγή τοθ dip switch για 3 ώρες και πλήρη φόρτιση και εκφόρτιση φωτιστικού", 
+                  text6:"6) Αλλαγή τοθ dip switch για 8 ώρες και πλήρη φόρτιση και εκφόρτιση φωτιστικού", 
+                  text7:"7) Αλλαγή της θερμοκρασίας θεροθαλάμου στη μέγιστη θερμοκρασία", 
+                  text8:"8) Φότριση φωτιστικού σε λειτουργία συνεχούς στη μέγιστη φωτεινότητα (αν υπάρχει)", 
+                  text9:"9) Τέλος καταγραφής",
+                  text10:"* εκτιμώμενος χρόνο για μπαταρίες NiMH 5 ημέρες και για LiFeP04 4 ημέρες",},
+        { id: "", text1:"Δ.Ε. : Δεν έγινε",text2:"Δ.Α. : Δεν απαιτείται."}
       ]);
 
       const [selectedButton1, setSelectedButton1] = useState(false);
@@ -369,7 +382,7 @@ function ControlMetrics(){
                 if (firstInput) firstInput.focus();
               }, 100);
             } else {
-              // Move to next input manually (optional fallback behavior)
+
               const dropdown11Inputs = [
                 ...document.querySelectorAll(".dropdown11-input1, .dropdown11-input2")
               ];
@@ -944,6 +957,142 @@ function ControlMetrics(){
                 handleEnterPress={handleEnterPress}
                 />
               );
+            } else if (index === 45) {
+              return (
+                  <>
+                      <tr key={row.id} className="table-row">
+                          <td className="table-cell">{row.id}</td>
+                          <td colSpan={3}>
+                          <textarea
+                            value={"Παρατηρήσεις: " + (row.input1?.replace("Παρατηρήσεις: ", "") ?? "")}
+                            rows={10}
+                            onChange={(e) => {
+                              const inputValue = e.target.value;
+                              const prefix = "Παρατηρήσεις: ";
+                        
+                                if (inputValue.startsWith(prefix)) {
+                                  handleChange(index, "input1", inputValue);
+                                } else {
+                                  handleChange(index, "input1", prefix + inputValue);
+                                }
+                              }}
+                              onKeyDown={(e) => {
+                                const prefix = "Παρατηρήσεις: ";
+                                const cursorPos = e.target.selectionStart;
+          
+                                if (
+                                  (e.key === "Backspace" && cursorPos <= prefix.length) ||
+                                  (e.key === "Delete" && cursorPos < prefix.length)
+                                ) {
+                                  e.preventDefault();
+                                }
+                                handleEnterPress(e, index, true);
+                              }}
+                              className="input-style input1"
+                            />
+                          </td>
+                      </tr>
+                  </>
+              );
+            }else if (index === 46) {
+              return (
+                row.id === "" && (
+                  <>
+                    <tr key={row.id} className="table-row" data-row={index === 0 ? "0" : undefined}>
+                      <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    </tr>
+                    <tr>
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                        <b>{row.text}</b>
+                      </td>
+                    </tr>
+                    <tr>
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                        {row.text1}
+                      </td>
+                    </tr>
+                    <tr>
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                        {row.text2}
+                      </td>
+                    </tr>
+                    <tr>
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                        {row.text3}
+                      </td>
+                    </tr>
+                    <tr>
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                        {row.text4}
+                      </td>
+                    </tr>
+                    <tr>
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                        {row.text5}
+                      </td>
+                    </tr>
+                    <tr>
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                        {row.text6}
+                      </td>
+                    </tr>
+                    <tr>
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                        {row.text7}
+                      </td>
+                    </tr>
+                    <tr>
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                        {row.text8}
+                      </td>
+                    </tr>
+                    <tr>
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                        {row.text9}
+                      </td>
+                    </tr>
+                    <tr>
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                        {row.text10}
+                      </td>
+                    </tr>
+                  </>
+                )
+              );              
+            }else if (index === 47) {
+              return (
+                <>
+                {row.id === "" && (
+                  <tr key={row.id} className="table-row">
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                      <b>{row.text1}</b>
+                    </td>
+                  </tr>
+                )}
+                {row.id === "" && (
+                  <tr key={row.id} className="table-row">
+                    <td className="table-cell" style={{ paddingLeft: '20px' }}></td>
+                    <td className="table-cell" colSpan={3}>
+                      <b>{row.text2}</b>
+                    </td>
+                  </tr>
+                )}
+
+                </>
+                
+                );
             }else {
                     return (
                     <tr key={row.id} className="table-row" data-row={index === 0 ? "0" : undefined}>
