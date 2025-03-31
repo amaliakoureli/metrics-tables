@@ -21,6 +21,7 @@ import Row16 from "./Row16";
 import RowsDoubleOk from "./RowsDoubleOk";
 import Row31 from "./Row31";
 import Row34 from "./Row34";
+import Row38 from "./Row38";
 
 
 function ControlMetrics(){
@@ -58,15 +59,14 @@ function ControlMetrics(){
         { id: 31, text: "Το προιόν παράγεται με μπαταρία:"},
         { id: 32, text: "'Εχει δυνατότητα Dimming;", input1:"", input2:""},
         { id: 33, text: "Έλεγχος σειράς εκτέλεσης έξυπνων λειτουργιών από το μπουτόν", input1:"", input2:""},
-        { id: 34, text: "Έλεγχος ομαλής έναυσης λεντοσειράς", text1:"1H", text2:"3H", text3:"8H", text4:"1H", text5:"3H", text6:"8H"},
+        { id: 34, text: "Έλεγχος ομαλής έναυσης λεντοσειράς", text1:"", text2:"", text3:"", text4:"", text5:"", text6:""},
         { id: 35, text: "Έλεγχος σφάλματος λεντοσειράς σε τεστ, με και χωρίς L1", input1:"", input2:""},
         { id: 36, text: "Συγκριτικός έλεγχος τεχνικών στοιχείων, λειτουργίας φωτιστικού και τεχνικού εγχειριδίου (αν υπάρχει).", input1:""},
         { id: 37, text: "Έλεγχος αποστάσεων πλακέτας (Creepage-Clearance)", input1:""},
-        { id: 38, text: "Έλεγχος ποιότητας φωτιστικού (χωρίς flicker) ", text1:"", text2:"", text3:""},
+        { id: 38, text: "Έλεγχος ποιότητας φωτιστικού (χωρίς flicker) ", text1:"", text2:"", text3:"", text4:"", text5:"", text6:""},
         { id: 39, text: "Μετρήσεις πικτογραφήματος", input1:"", input2:"", input3:"", input4:"", input5:"", input6:""},
         { id: 40, text: "IP Test", input1:""},
         { id: 41, text: "Dip Switch Test (σε φωτιστικά που έχουν Dip switches)", input1:""},
-        { id: "", text: "Απαιτήσεις BSI", text1:""},
         { id: 42, text: "Max open circuit (V LED+ - V LED- σε V DC, χωρλις τη LEDοσειρά πάνω)(Uout(V DC) : (C1 -> C2 & C1,C2 ->GND). Αν δεν έχει C1 ,C2 τότε είναι η Max open circuit voltage)", input1:""},
         { id: 43, text: "tc (θερμόμετρο σμείο της πλακέτας, σε °C)", input1:""},
         { id: 44, text: "Μέγιστη θερμοκρασία στην λεντοσειρά", input1:""},
@@ -103,6 +103,7 @@ function ControlMetrics(){
       const [dropdown28Visible, setDropdown28Visible] = useState(null); 
       const [dropdown31Visible, setDropdown31Visible] = useState(null); 
       const [dropdown34Visible, setDropdown34Visible] = useState(null); 
+      const [dropdown38Visible, setDropdown38Visible] = useState(null); 
 
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
@@ -286,6 +287,18 @@ function ControlMetrics(){
           setDropdown34Visible((prev) => (prev === index ? null : index));
       };
       
+      
+      const firstDropdown38InputRef = useRef(null);
+      useEffect(() => {
+          if (dropdown38Visible === 37 && firstDropdown38InputRef.current) {
+              firstDropdown38InputRef.current.focus();
+          }
+      }, [dropdown38Visible]);
+  
+      const toggleDropdown38 = (index) => {
+          setDropdown38Visible((prev) => (prev === index ? null : index));
+      };
+
       const handleEnterPress = (e, index, isInput = false, dropdownType = null) => {
         if (e.key === 'Enter') {
           e.preventDefault();
@@ -578,6 +591,17 @@ function ControlMetrics(){
     if (isLastInputInRow33) {
         toggleDropdown34(33);
         return;
+    }
+
+    if (index === 36 && dropdown38Visible !==37) {
+      toggleDropdown38(37);
+
+      setTimeout(() => {
+        const firstInput = document.querySelector(".dropdown38-input1");
+        if (firstInput) firstInput.focus();
+      }, 100);
+
+      return;
     }
 
         if (e.target.id === "limit3") {
@@ -893,6 +917,19 @@ function ControlMetrics(){
                 dropdown34Visible={dropdown34Visible}
                 setDropdown34Visible={setDropdown34Visible}
                 firstDropdownInputRef={firstDropdownInputRef}
+                />
+              );
+            }else if (index === 37) {
+              return (
+                <Row38
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown38={toggleDropdown38}
+                dropdown38Visible={dropdown38Visible}
+                setDropdown38Visible={setDropdown38Visible}
+                firstDropdown38InputRef={firstDropdown38InputRef}
                 />
               );
             }else {
