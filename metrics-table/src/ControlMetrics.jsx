@@ -22,6 +22,7 @@ import RowsDoubleOk from "./RowsDoubleOk";
 import Row31 from "./Row31";
 import Row34 from "./Row34";
 import Row38 from "./Row38";
+import Row39 from "./Row39";
 
 
 function ControlMetrics(){
@@ -105,6 +106,7 @@ function ControlMetrics(){
       const [dropdown34Visible, setDropdown34Visible] = useState(null); 
       const [dropdown38Visible, setDropdown38Visible] = useState(null); 
 
+      
       const toggleDropdown4 = (index) => {
         setDropdown4Visible(dropdown4Visible === index ? null : index);
     };
@@ -930,6 +932,16 @@ function ControlMetrics(){
                 dropdown38Visible={dropdown38Visible}
                 setDropdown38Visible={setDropdown38Visible}
                 firstDropdown38InputRef={firstDropdown38InputRef}
+                />
+              );
+            }else if(index===38){
+              return (
+                <Row39 
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
                 />
               );
             }else {
