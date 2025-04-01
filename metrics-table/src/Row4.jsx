@@ -32,100 +32,94 @@ function Row4({ row,
       };  
     
       
-return(
-<>
-<tr key={row.id + "-1"} className="fourth-row">
-    <td className="table-cell" rowSpan="3">
-        <button onClick={() => toggleDropdown4(index)} className="dropdown-button-style">
-            {row.id}
-        </button>
-    </td>
+    return(
+        <>
+            <tr key={row.id + "-1"} className="fourth-row">
+                <td className="table-cell column-id" rowSpan="3">
+                    <button onClick={() => toggleDropdown4(index)} className="dropdown-button">
+                        {row.id}
+                    </button>
+                </td>
 
-    <td className="table-cell" rowSpan="2">
-        Ρεύμα Φόρτισης – Διάρκεια Φόρτισης
-    </td>
+                <td className="table-cell column-text" rowSpan="2">
+                    Ρεύμα Φόρτισης – Διάρκεια Φόρτισης
+                </td>
 
-    <td className="table-cell">
-    <div className="input-wrapper">
-    <input
-        type="text"
-        id="duration1BAT"
-        ref={duration1BATRef}
-        value={"Διάρκεια με 1BAT: " + (duration1BAT ?? "")}
-        onChange={(e) => {
-            const prefix = "Διάρκεια με 1BAT: ";
-            const inputValue = e.target.value;
-            if (inputValue.startsWith(prefix)) {
-            setDuration1BAT(inputValue.replace(prefix, ""), duration1BATRef?.current, duration2BATRef?.current);
-            } else {
-            setDuration1BAT(inputValue, duration1BATRef?.current, duration2BATRef?.current);
-            }
-        }}
-        onKeyDown={(e) => {
-            const prefix = "Διάρκεια με 1BAT: ";
-            const cursorPos = e.target.selectionStart;
-            if (
-            (e.key === "Backspace" && cursorPos <= prefix.length) ||
-            (e.key === "Delete" && cursorPos < prefix.length)
-            ) {
-            e.preventDefault();
-            }
-            handleEnterPress(e, index, true);
-        }}
-        className="input-style text-right"
-    />
-     <span className="unit">h</span>
-    </div>
-    </td>
+                <td className="table-cell"  colSpan="2">
+                    <div className="input-wrapper">
+                        <input
+                            type="text"
+                            id="duration1BAT"
+                            ref={duration1BATRef}
+                            value={"Διάρκεια με 1BAT: " + (duration1BAT ?? "")}
+                            onChange={(e) => {
+                                const prefix = "Διάρκεια με 1BAT: ";
+                                const inputValue = e.target.value;
+                                if (inputValue.startsWith(prefix)) {
+                                setDuration1BAT(inputValue.replace(prefix, ""), duration1BATRef?.current, duration2BATRef?.current);
+                                } else {
+                                setDuration1BAT(inputValue, duration1BATRef?.current, duration2BATRef?.current);
+                                }
+                            }}
+                            onKeyDown={(e) => {
+                                const prefix = "Διάρκεια με 1BAT: ";
+                                const cursorPos = e.target.selectionStart;
+                                if (
+                                (e.key === "Backspace" && cursorPos <= prefix.length) ||
+                                (e.key === "Delete" && cursorPos < prefix.length)
+                                ) {
+                                e.preventDefault();
+                                }
+                                handleEnterPress(e, index, true);
+                            }}
+                            className="input-style column-inputs"
+                        />
+                        <span className="hoursOfDuration">h</span>
+                    </div>
+                </td>
 
-</tr>
+            </tr>
 
-<tr className="fourth-row">
+            <tr className="fourth-row">
 
-    <td className="table-cell">
-    <div className="input-wrapper">
-    <input
-        type="text"
-        id="duration2BAT"
-        ref={duration2BATRef}
-        value={"Διάρκεια με 2BAT: " + (duration2BAT ?? "")}
-        onChange={(e) => {
-            const prefix = "Διάρκεια με 2BAT: ";
-            const inputValue = e.target.value;
+                <td className="table-cell" colSpan="2">
+                    <div className="input-wrapper">
+                        <input
+                            type="text"
+                            id="duration2BAT"
+                            ref={duration2BATRef}
+                            value={"Διάρκεια με 2BAT: " + (duration2BAT ?? "")}
+                            onChange={(e) => {
+                                const prefix = "Διάρκεια με 2BAT: ";
+                                const inputValue = e.target.value;
+                                if (inputValue.startsWith(prefix)) {
+                                setDuration2BAT(inputValue.replace(prefix, ""), duration1BATRef?.current, duration2BATRef?.current);
+                                } else {
+                                setDuration2BAT(inputValue, duration1BATRef?.current, duration2BATRef?.current);
+                                }
+                            }}
+                            onKeyDown={(e) => {
+                                const prefix = "Διάρκεια με 2BAT: ";
+                                const cursorPos = e.target.selectionStart;
+                                if (
+                                (e.key === "Backspace" && cursorPos <= prefix.length) ||
+                                (e.key === "Delete" && cursorPos < prefix.length)
+                                ) {
+                                e.preventDefault();
+                                }
+                                handleEnterPress(e, index, true);
+                            }}
+                            className="input-style column-inputs"
+                        />
+                        <span className="hoursOfDuration">h</span>
+                    </div>
+                </td>
+            </tr>
 
-            // Εξασφαλίζουμε ότι η αποθηκευμένη τιμή δεν περιλαμβάνει το prefix
-            if (inputValue.startsWith(prefix)) {
-            setDuration2BAT(inputValue.replace(prefix, ""), duration1BATRef?.current, duration2BATRef?.current);
-            } else {
-            setDuration2BAT(inputValue, duration1BATRef?.current, duration2BATRef?.current);
-            }
-        }}
-        onKeyDown={(e) => {
-            const prefix = "Διάρκεια με 2BAT: ";
-            const cursorPos = e.target.selectionStart;
+            <tr className="fourth-row">
 
-            // Εμποδίζει τον χρήστη να διαγράψει το prefix
-            if (
-            (e.key === "Backspace" && cursorPos <= prefix.length) ||
-            (e.key === "Delete" && cursorPos < prefix.length)
-            ) {
-            e.preventDefault();
-            }
-            handleEnterPress(e, index, true);
-        }}
-        className="input-style text-right"
-    />
-         <span className="unit">h</span>
-         </div>
-    </td>
-</tr>
-
-<tr className="fourth-row">
-
-     <td className="table-cell">
-                    Για τάση δικτύου = 1 x ονομαστική τάση δικτύου (110VAC, 230VAC, 245VAC)
-                    <br />
-                    (Ρεύμα φόρτισης × ώρες φόρτισης ≥ 1.5 × χωρητικότητα μπαταρίας = )
+                <td className="table-cell column-text"  colSpan="2">
+                    Για τάση δικτύου = 1 x ονομαστική τάση δικτύου (110VAC, 230VAC, 245VAC)<br />
                     {
                         (() => {
                             const textParts = row.text ? row.text.split("{middleInput}") : ["", ""];
@@ -136,7 +130,7 @@ return(
                                         type="text"
                                         value={row.middleInput || ""}
                                         onChange={(e) => handleChange(index, "middleInput", e.target.value)}
-                                        className="input-style dropdown4-inline-input middle"
+                                        className="input-style column-inputs dropdown4-middleInput"
                                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                                     />
                                     {textParts[1]}
@@ -146,92 +140,93 @@ return(
                     }
                 </td>
 
-        <td className="table-cell">
-                <tr>
-                    <td className="table-cell">1BAT</td>
-                    <td className="table-cell">2BAT</td>
-                    <td className="table-cell">1BAT</td>
-                    <td className="table-cell">2BAT</td>
-                </tr>
-    </td>
-</tr>
+                <div className="table-cell">
+                    <tr>
+                        <td className="bat1">1BAT</td>
+                        <td className="bat2">2BAT</td>
+                        <td className="bat1">1BAT</td>
+                        <td className="bat2">2BAT</td>
+                    </tr>
+                </div>
+            </tr>
 
-<tr key={row.id + "-subrow"} className={`table-row ${dropdown4Visible === index ? 'visible' : 'hidden'}`}>
-    <td colSpan="4" className="table-cell">
-        {dropdown4Visible === index && (
-            <table className="table">
-                <tbody>
-                    {dropdown4Data.map((dropdownRow, rowIndex) => (
-                        <tr key={rowIndex} className="table-row">
-                            <td className="table-cell">{dropdownRow.text1}</td>
-                            <td className="table-cell">
-                            {dropdownRow.text2.includes("{middleInput2}") ? (
-                                (() => {
-                                const parts = dropdownRow.text2.split("{middleInput2}");
-                                return (
-                                    <>
-                                    {parts[0]}
-                                    <input
-                                        type="text"
-                                        value={dropdownRow.textInput2}
-                                        onChange={(e) => handleDropdown4Change(rowIndex, "textInput2", e.target.value)}
-                                        className="input-style dropdown4-middleInput2 "
-                                        onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown4")}
-                                    />
-                                    {parts[1]}
-                                    </>
-                                );
-                                })()
-                            ) : (
-                                dropdownRow.text2
-                            )}
-                            </td>
-
-                            <td className="table-cell">
-                                <input
-                                    type="text"
-                                    value={dropdownRow.input1}
-                                    onChange={(e) => handleDropdown4Change(rowIndex, "input1", e.target.value)}
-                                    className="input-style dropdown4-input1"
-                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
-                                />
-                            </td>
-                            <td className="table-cell">
-                                <input
-                                    type="text"
-                                    value={dropdownRow.input2}
-                                    onChange={(e) => handleDropdown4Change(rowIndex, "input2", e.target.value)}
-                                    className="input-style dropdown4-input2"
-                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
-                                />
-                            </td>
-                            <td className="table-cell">
-                                <input
-                                    type="text"
-                                    value={dropdownRow.input3}
-                                    onChange={(e) => handleDropdown4Change(rowIndex, "input3", e.target.value)}
-                                    className="input-style dropdown4-input3"
-                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
-                                />
-                            </td>
-                            <td className="table-cell">
-                                <input
-                                    type="text"
-                                    value={dropdownRow.input4}
-                                    onChange={(e) => handleDropdown4Change(rowIndex, "input4", e.target.value)}
-                                    className="input-style dropdown4-input4"
-                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
-                                />
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        )}
-    </td>
-</tr>
-</>
-)
+            <tr key={row.id + "-subrow"} className={` ${dropdown4Visible === index ? 'visible' : 'hidden'} dropdown4`}>
+                <td colSpan="4" className="table-cell">
+                    {dropdown4Visible === index && (
+                        <table>
+                            <tbody>
+                                {dropdown4Data.map((dropdownRow, rowIndex) => (
+                                    <tr key={rowIndex}>
+                                        <td className="table-cell">{dropdownRow.text1}</td>
+                                        <td className="table-cell">
+                                        {dropdownRow.text2.includes("{middleInput2}") ? (
+                                            (() => {
+                                                const parts = dropdownRow.text2.split("{middleInput2}");
+                                                return (
+                                                    <>
+                                                        {parts[0]}
+                                                        <input
+                                                            type="text"
+                                                            value={dropdownRow.textInput2}
+                                                            onChange={(e) => handleDropdown4Change(rowIndex, "textInput2", e.target.value)}
+                                                            className="input-style column-inputs dropdown4-middleInput2 "
+                                                            onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown4")}
+                                                        />
+                                                        {parts[1]}
+                                                    </>
+                                                );
+                                            })()
+                                        ) : (
+                                            dropdownRow.text2
+                                        )}
+                                        </td>
+                                        <div className="inputs-alignment" >
+                                            <td className="table-cell">
+                                                <input
+                                                    type="text"
+                                                    value={dropdownRow.input1}
+                                                    onChange={(e) => handleDropdown4Change(rowIndex, "input1", e.target.value)}
+                                                    className="input-style column-inputs dropdown4-input1"
+                                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
+                                                />
+                                            </td>
+                                            <td className="table-cell">
+                                                <input
+                                                    type="text"
+                                                    value={dropdownRow.input2}
+                                                    onChange={(e) => handleDropdown4Change(rowIndex, "input2", e.target.value)}
+                                                    className="input-style column-inputs dropdown4-input2"
+                                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
+                                                />
+                                            </td>
+                                            <td className="table-cell">
+                                                <input
+                                                    type="text"
+                                                    value={dropdownRow.input3}
+                                                    onChange={(e) => handleDropdown4Change(rowIndex, "input3", e.target.value)}
+                                                    className="input-style column-inputs dropdown4-input3"
+                                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
+                                                />
+                                            </td>
+                                            <td className="table-cell">
+                                                <input
+                                                    type="text"
+                                                    value={dropdownRow.input4}
+                                                    onChange={(e) => handleDropdown4Change(rowIndex, "input4", e.target.value)}
+                                                    className="input-style column-inputs dropdown4-input4"
+                                                    onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
+                                                />
+                                            </td>
+                                        </div>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    )}
+                </td>
+            </tr>
+        </>
+    );
 }
 
 export default Row4;

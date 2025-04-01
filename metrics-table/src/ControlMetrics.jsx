@@ -30,7 +30,7 @@ function ControlMetrics(){
         { id: 1, text: "Τύπος φωτιστικού (Συνεχούς/Μη συνεχούς)"},
         { id: 2, text: "Πηγή φωτισμού (Αριθμός Led-Διάταξη)", input1: "" },
         { id: 3, text: "Τύπος Led/λάμπα", input1: "" },
-        { id: 4, text: "Ρεύμα Φόρτισης - Διάρκεια (Για τάση δικτύου = 1 x ονομαστική τάση δικτύου (110 VAC, 230 VAC, 245 VAC) (Ρεύμα φόρτισης x ώρες φόρτισης ≥ 1.5 x χωρητικότητα μπαταρίας = {middleInput} mA)",middleInput:"", input1: "", input2: "" },
+        { id: 4, text: "(Ρεύμα φόρτισης x ώρες φόρτισης ≥ 1.5 x χωρητικότητα μπαταρίας = {middleInput} mA)",middleInput:"", input1: "", input2: "" },
         { id: 5, text: "Τάση εξόδου του κυκλώματος φόρτισης (σε V DC)", input1: "", input2: "", input3: "", input4: ""  },
         { id: 6, text: "Τάση μπαταρίας για ένδειξη αποσύνδεξης (σε V DC)", input1: "", input2: "", input3: "", input4: ""  },
         { id: 7, text: "Ρεύμα Συντήρησης (σε mA DC) (1/5 της ονομαστικής φόρτισης)", input1: "", input2: "", input3: "", input4: ""  },
@@ -127,14 +127,13 @@ function ControlMetrics(){
       useEffect(() => {
         if (dropdown4Visible === 4) {
           setTimeout(() => {
-            const dropdownInputs = [...document.querySelectorAll(".dropdown4-inline-input, .input-style")];
+            const dropdownInputs = [...document.querySelectorAll(".dropdown4-middleInput, .input-style")];
             if (dropdownInputs.length > 0) {
               dropdownInputs[0].focus(); 
             }
           }, 50);
         }
-      }, [dropdown4Visible]);
-      
+      }, [dropdown4Visible]);      
 
  
       const toggleDropdown11 = (index) => {
@@ -332,7 +331,7 @@ function ControlMetrics(){
             }
             return;
           }
-          if (e.target.classList.contains("dropdown4-inline-input")) {
+          if (e.target.classList.contains("dropdown4-middleInput")) {
             toggleDropdown4(index);
 
             setTimeout(() => {
@@ -370,7 +369,7 @@ function ControlMetrics(){
             }
             return;
         }
-        
+
       
           if (dropdownType === "dropdown11") {
             const isLastInput = e.target.id === "dropdown11-last";
@@ -634,25 +633,6 @@ function ControlMetrics(){
           return;
       }
 
-          if (dropdownType === "dropdown4") {
-            const dropdown4Inputs = [...document.querySelectorAll(".dropdown4-input1, .dropdown4-input2")];
-            let currentDropdownIndex = dropdown4Inputs.indexOf(e.target);
-            let nextDropdownIndex = currentDropdownIndex + 1;
-      
-            if (nextDropdownIndex >= dropdown4Inputs.length) {
-              const allInputs = [...document.querySelectorAll(".input-style")];
-              const currentIndex = allInputs.indexOf(e.target);
-              const nextIndex = currentIndex + 1;
-              if (nextIndex < allInputs.length) {
-                allInputs[nextIndex].focus();
-              }
-            } else {
-              dropdown4Inputs[nextDropdownIndex]?.focus();
-            }
-            return;
-          }         
-
-
           const allInputs = [...document.querySelectorAll(".input-style")];
           const currentIndex = allInputs.indexOf(e.target);
           const nextIndex = currentIndex + 1;
@@ -663,9 +643,9 @@ function ControlMetrics(){
       };
       
       return (
-        <div className="table-container">
+        <div className="MetricsTable">
           <h2>ΕΛΕΓΧΟΙ ΚΑΙ ΜΕΤΡΗΣΕΙΣ</h2>
-          <table className="MetricsTable">
+          <table >
             <tbody>
               {data.map((row, index) => {
                 if (index === 0) {
@@ -701,7 +681,8 @@ function ControlMetrics(){
                     duration2BATRef={duration2BATRef}
                     />
                   );
-              }else if(index===4 || index===5 || index===6 || index===8){
+              }
+              else if(index===4 || index===5 || index===6 || index===8){
                 return (
                   <Rows5679 
                   key={row.id}
@@ -1093,9 +1074,10 @@ function ControlMetrics(){
                 </>
                 
                 );
-            }else {
+            }
+                else {
                     return (
-                    <tr key={row.id} className="table-row" data-row={index === 0 ? "0" : undefined}>
+                    <tr key={row.id}  data-row={index === 0 ? "0" : undefined}>
                     <td className="table-cell">{row.id}</td>
                     <td className="table-cell">{row.text}</td>
                     <td className="table-cell">

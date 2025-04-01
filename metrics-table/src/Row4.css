@@ -1,134 +1,116 @@
-  
+  .fourth-row{
+    background-color: #afc7d9 !important;
+    width: 100%;
+  }
+
   .table-cell {
     padding: 10px;
     border-bottom: 1px solid #ddd;
   }
+  .bat1{
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+  }
+  .bat2{
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+  }
   
-  .input-style {
+  .column-id{
+    width: 10%;
+  }
+
+  .column-text{
     width: 100%;
-    padding: 5px;
+  }
+
+ .dropdown4-input1,
+  .dropdown4-input2,
+  .dropdown4-input3,
+  .dropdown4-input4{
+    width: 50px !important;
     border: 1px solid #ccc;
     border-radius: 4px;
+    padding: 0;
+    margin: 0;
   }
   
-  .centered-input-style {
-    width: 50%;
-    padding: 5px;
+  .inputs-alignment{
+  position: relative;
+  padding-right: 10px;
+  justify-items: right;
+  }
+
+  .column-inputs {
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
-    display: block;
-    margin: auto;
+    padding: 0;
+    margin: 0;
   }
-  
-  .dropdown-button-style {
+
+table {
+  width: 100%;
+}
+
+  .dropdown-button {
     cursor: pointer;
     font-size: 16px;
-    color: #b40101;
+    color: #000000;
+    font-weight: bold;
     background-color: transparent;
     border: none;
     padding: 0;
   }
 
-  .table-row {
-    border-bottom: 1px solid #ddd;
-  }
-  
-
-  .fourth-row{
-    background-color: #e7e6e6;
-  }
-
   .hidden {
     display: none;
   }
+
   .visible {
     display: table-row;
   }
-  .dropdown14-inline-input {
-    width: 60px !important;
-    max-width: 60px;
-    padding: 4px 6px;
-    font-size: 0.85rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: inline-block;
-    box-sizing: border-box;
-    text-align: right;
-  }
-  .dropdown4-middleInput2{
-    width: 60px !important;
-    max-width: 60px;
-    padding: 4px 6px;
-    font-size: 0.85rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: inline-block;
-    box-sizing: border-box;
-    text-align: right;
-  }
-  .middle{    width: 60px !important;
-    max-width: 60px;
-    padding: 4px 6px;
-    font-size: 0.85rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: inline-block;
-    box-sizing: border-box;
-    text-align: center;}
 
-    .smallerSize{
-      width: 120px !important;
-      max-width: 120px;
-      padding: 4px 6px;
-      font-size: 0.85rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      display: inline-block;
-      box-sizing: border-box;
-      text-align: center;
-    }
+  .dropdown4-middleInput, .dropdown4-middleInput2 {
+    width: 60px !important;
+    max-width: 60px;
+    padding: 4px 6px;
+    font-size: 0.85rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: right;
+  }
+  
+  .dropdown4{
+    background-color:#d8e5f0 ;
+  }
     .input-wrapper {
       position: relative;
       display: inline-block;
+      width: 100%;
     }
     
     .input-wrapper input {
-      padding-right: 20px; /* Για να μην καλύπτει το 'h' */
+      padding-right: 20px;
     }
     
-    .input-wrapper .unit {
+    .input-wrapper .hoursOfDuration {
       position: absolute;
       right: 8px;
       top: 50%;
       transform: translateY(-50%);
       font-size: 14px;
-      color: #555;
-      pointer-events: none; /* Δεν επιτρέπει interaction με το κείμενο */
+      color: #000000;
+      pointer-events: none;
     }
-    .smallSize{
-      width: 50px !important;
-      max-width: 50px;
-      padding: 4px 6px;
-      font-size: 0.85rem;
-      display: inline-block;
-    }    
-    
-    .textCenter{
-      text-align: center;
-      vertical-align: middle;
-    }
-    
-    .Heigher{
-      width: 50px !important;
-      height: 80px !important;
-      max-width: 50px;
-      padding: 4px 6px;
-      font-size: 0.85rem;
-      display: inline-block;
-    }
-    .widthSize{
-      width: 175px !important;
-      height: 80px !important;
-      font-size: 0.85rem;
-      display: inline-block;
+
+    .row8input, .row8select{
+      width: 120px !important;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0;
+      margin: 0;
+      
     }
