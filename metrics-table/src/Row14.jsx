@@ -33,17 +33,17 @@ function Row14({ row,
       
 return(
 <>
-<tr key={row.id + "-1"} className="fourth-row">
-  <td className="table-cell">
+<tr key={row.id + "-1"} className="row-width">
+  <td className="table-cell column-id">
     <button
       onClick={() => toggleDropdown14(index)}
-      className="dropdown-button-style"
+      className="dropdown-button"
     >
       {row.id}
     </button>
   </td>
 
-  <td className="table-cell">
+  <td className="table-cell column-text" colSpan={2}>
     <div
       dangerouslySetInnerHTML={{
         __html: `<b>Κατανάλωση από τη μπαταρία στην εφεδρική λειτουργία (σε mA) <br><u> -> Για μπαταρίες Ni-Cd, Ni-Mh, LiFePo4:</u> <br> Imax < (60min:0.4xC5A, 90min:0.51xC5A, 180min:0.25xC5A, 480min:0.1xC5A) <br> <u> -> Για μπαταρία Μολύβδου (Pb):</u> <br> Imax < (60min:0.4xC20A, 90min:0.34xxC20A, 180min:0.17xxC20A) </b>`
@@ -55,7 +55,7 @@ return(
     <table>
       <tbody>
         <tr>
-          <td>
+          <td className="table-cell">
             <input
                     type="text"
                     value={"Όριο (1H) = " + (limit1?.replace("Όριο (1H) = ", "") ?? "")}
@@ -81,12 +81,12 @@ return(
                       }
                       handleEnterPress(e, index, true);
                     }}
-                    className="controller limit1 "
+                    className="controller limit1"
                   />
           </td>
         </tr>
         <tr>
-          <td>
+          <td className="table-cell">
           <input
                     type="text"
                     value={"Όριο (3H) = " + (limit2?.replace("Όριο (3H) = ", "") ?? "")}
@@ -117,7 +117,7 @@ return(
           </td>
         </tr>
         <tr>
-          <td>
+          <td className="table-cell">
           <input
                     type="text"
                     value={"Όριο (8H) = " + (limit3?.replace("Όριο (8H) = ", "") ?? "")}
@@ -151,22 +151,19 @@ return(
       </tbody>
     </table>
   </td>
-
-  <td className="table-cell no-wl-module">
-    No WL module
-  </td>
 </tr>
 
 
-      <tr key={row.id + "-subrow"} className={`table-row ${dropdown14Visible === index ? "visible" : "hidden"}`}>
+      <tr key={row.id + "-subrow"} className={`${dropdown14Visible === index ? "visible" : "hidden"} dropdown14`}>
         <td colSpan="4" className="table-cell">
           {dropdown14Visible === index && (
-            <table className="table">
-              <tbody>
+            <table >
+              <tbody className="dropdown14">
                 {dropdown14Data.map((dropdownRow, rowIndex) => (
                   <React.Fragment key={rowIndex}>
                     <tr className="table-row">
                       <td className="table-cell">{dropdownRow.text1}</td>
+                      <div className="inputs-alignment">
                       <td className="table-cell">
                         {(() => {
                           const parts = dropdownRow.text2.split("{middleInput}");
@@ -177,7 +174,7 @@ return(
                                 type="text"
                                 value={dropdownRow.textInput1}
                                 onChange={(e) => handleDropdown14Change(rowIndex, "textInput1", e.target.value)}
-                                className={`controller dropdown14-inline-input ${rowIndex === 0 ? "first-middle-input" : ""}`}
+                                className={`controller dropdown14-middleInput ${rowIndex === 0 ? "dropdown14-firstMiddleInput" : ""}`}
                                 onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown14")}
                               />
                               {parts[1]}
@@ -205,6 +202,7 @@ return(
                           id={rowIndex === dropdown14Data.length - 1 && !dropdownRow.input2 ? "dropdown14-last" : undefined}
                         />
                       </td>
+                      </div>
                     </tr>
 
                     {(rowIndex + 1) % 3 === 0 && rowIndex !== dropdown14Data.length - 1 && (

@@ -23,23 +23,22 @@ function Row12({ row,
       
 return(
 <>
-<tr key={row.id + "-1"} className="fourth-row">
-  <td className="table-cell">
-    <button onClick={() => toggleDropdown12(index)} className="dropdown-button-style">
+<tr key={row.id + "-1"} className="row-width">
+  <td className="table-cell column-id">
+    <button onClick={() => toggleDropdown12(index)} className="dropdown-button">
       {row.id}
     </button>
   </td>
-  <td className="table-cell">{row.text}</td>
+  <td className="table-cell column-text" colSpan={3}>{row.text}</td>
 </tr>
-<tr key={row.id + "-subrow"} className={`table-row ${dropdown12Visible === index ? 'visible' : 'hidden'}`}>
+<tr key={row.id + "-subrow"} className={`${dropdown12Visible === index ? 'visible' : 'hidden'} dropdown12`}>
   <td colSpan="4" className="table-cell">
     {dropdown12Visible === index && (
-      <table className="table">
-        <tbody>
+      <table>
+        <tbody className="dropdown12">
           {dropdown12Data.map((dropdownRow, rowIndex) => (
             <React.Fragment key={rowIndex}>
-              {/* FIRST ROW */}
-              <tr className="table-row">
+              <tr>
                 <td className="table-cell" rowSpan="2">{dropdownRow.text1}</td>
                 <td className="table-cell" rowSpan="2">{dropdownRow.text2}</td>
                 <td className="table-cell">
@@ -66,9 +65,7 @@ return(
                   />
                 </td>
               </tr>
-
-              {/* SECOND ROW */}
-              <tr className="table-row">
+              <tr>
                 <td className="table-cell" colSpan="2">
                     {dropdownRow.text3}
                 </td>

@@ -1,4 +1,4 @@
-  .fourth-row{
+  .row-width{
     background-color: #afc7d9 !important;
     width: 100%;
   }
@@ -6,6 +6,7 @@
   .table-cell {
     padding: 10px;
     border-bottom: 1px solid #ddd;
+    
   }
   .bat1{
     padding: 5px;
@@ -29,6 +30,14 @@
   .dropdown4-input3,
   .dropdown4-input4{
     width: 50px !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .dropdown11-input1, .dropdown11-input2, .dropdown12-input1, .dropdown12-input2, .dropdown14-input1, .dropdown14-input2{
+    width: 120px !important;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 0;
@@ -71,7 +80,7 @@ table {
     display: table-row;
   }
 
-  .dropdown4-middleInput, .dropdown4-middleInput2 {
+  .dropdown4-middleInput, .dropdown4-middleInput2, .dropdown14-middleInput {
     width: 60px !important;
     max-width: 60px;
     padding: 4px 6px;
@@ -83,9 +92,10 @@ table {
     text-align: right;
   }
   
-  .dropdown4{
-    background-color:#d8e5f0 ;
+  .dropdown4, .dropdown11, .dropdown12, .dropdown13 , .dropdown14{
+    background-color:#d8e5f0 !important;
   }
+
     .input-wrapper {
       position: relative;
       display: inline-block;
@@ -105,5 +115,14 @@ table {
       color: #000000;
       pointer-events: none;
     }
+
+    .dropdown13-input1, .dropdown13-text3, .limit1, .limit2, .limit3{
+      width: 260px ;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0;
+      margin: 0;
+    }
+
 
 

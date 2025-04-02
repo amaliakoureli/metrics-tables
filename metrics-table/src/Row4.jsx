@@ -34,7 +34,7 @@ function Row4({ row,
       
     return(
         <>
-            <tr key={row.id + "-1"} className="fourth-row">
+            <tr key={row.id + "-1"} className="row-width">
                 <td className="table-cell column-id" rowSpan="3">
                     <button onClick={() => toggleDropdown4(index)} className="dropdown-button">
                         {row.id}
@@ -80,7 +80,7 @@ function Row4({ row,
 
             </tr>
 
-            <tr className="fourth-row">
+            <tr className="row-width">
 
                 <td className="table-cell" colSpan="2">
                     <div className="input-wrapper">
@@ -116,7 +116,7 @@ function Row4({ row,
                 </td>
             </tr>
 
-            <tr className="fourth-row">
+            <tr className="row-width">
 
                 <td className="table-cell column-text"  colSpan="2">
                     Για τάση δικτύου = 1 x ονομαστική τάση δικτύου (110VAC, 230VAC, 245VAC)<br />
@@ -154,7 +154,7 @@ function Row4({ row,
                 <td colSpan="4" className="table-cell">
                     {dropdown4Visible === index && (
                         <table>
-                            <tbody>
+                            <tbody className=" dropdown4">
                                 {dropdown4Data.map((dropdownRow, rowIndex) => (
                                     <tr key={rowIndex}>
                                         <td className="table-cell">{dropdownRow.text1}</td>

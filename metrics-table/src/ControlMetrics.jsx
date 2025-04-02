@@ -16,9 +16,9 @@ import Row21 from "./Row21";
 import Row22 from "./Row22";
 import Row25 from "./Row25";
 import Row28 from "./Row28";
-import RowsSingleOk from "./SingleSelect";
+import SingleSelect from "./SingleSelect"
 import Row16 from "./Row16";
-import RowsDoubleOk from "./DoubleSelect";
+import DoubleSelect from "./DoubleSelect";
 import Row31 from "./Row31";
 import Row34 from "./Row34";
 import Row38 from "./Row38";
@@ -433,7 +433,7 @@ function ControlMetrics(){
           if (e.target.id === "limit3") {
             toggleDropdown14(13);
             setTimeout(() => {
-              const firstMiddleInput = document.querySelector(".first-middle-input");
+              const firstMiddleInput = document.querySelector(".dropdown14-firstMiddleInput");
               if (firstMiddleInput) {
                   firstMiddleInput.focus();
               }
@@ -442,8 +442,11 @@ function ControlMetrics(){
             
           }
 
+
+
+
           if (dropdownType === "dropdown14") {
-            const dropdown14Inputs = [...document.querySelectorAll(".dropdown14-inline-input, .dropdown14-input1, .dropdown14-input2")];
+            const dropdown14Inputs = [...document.querySelectorAll(".dropdown14-middleInput, .dropdown14-input1, .dropdown14-input2")];
             let currentDropdownIndex = dropdown14Inputs.indexOf(e.target);
             let nextDropdownIndex = currentDropdownIndex + 1;
         
@@ -458,7 +461,7 @@ function ControlMetrics(){
                         let nextRow = allRows[currentRowIndex + 1]; 
                         
                         if (nextRow) {
-                            const nextRowInputs = [...nextRow.querySelectorAll(".controller, .dropdown14-inline-input, .dropdown14-input1, .dropdown14-input2")];
+                            const nextRowInputs = [...nextRow.querySelectorAll(".controller, .dropdown14-middleInput, .dropdown14-input1, .dropdown14-input2")];
                             if (nextRowInputs.length > 0) {
                                 nextRowInputs[0].focus(); 
                             }
@@ -618,13 +621,7 @@ function ControlMetrics(){
       return;
     }
 
-        if (e.target.id === "limit3") {
-          const firstMiddleInput = document.querySelector(".first-middle-input");          
-          if (firstMiddleInput) {
-              firstMiddleInput.focus();
-          }
-          return;
-      }
+
 
           const allInputs = [...document.querySelectorAll(".controller")];
           const currentIndex = allInputs.indexOf(e.target);
@@ -863,9 +860,9 @@ function ControlMetrics(){
                 setDropdown28Visible={setDropdown28Visible}
                 />
               );
-            }else if(index===9 ||index===23 || index===26 || index===28 || index===35|| index===36 || index===39 || index===40 ){
+            }else if(index===9 ||index===23 || index===26 || index===28 || index===29|| index===35|| index===36 || index===39 || index===40 ){
               return (
-                <RowsSingleOk
+                <SingleSelect
                 key={row.id}
                 row={row}
                 index={index}
@@ -875,7 +872,7 @@ function ControlMetrics(){
               );
             }else if(index===32 || index===34){
               return (
-                <RowsDoubleOk
+                <DoubleSelect
                 key={row.id}
                 row={row}
                 index={index}

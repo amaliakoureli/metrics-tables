@@ -10,8 +10,8 @@ function Row13({ row,
 }){
 
     const [dropdown13Data, setDropdown13Data] = useState([
-        { text1: "α", text2: "Τάση έναρξης εφεδρικής λειτουργίας: > 0.6 x μέγιστη τάση λειτουργίας (σε V AC).", input1: "", input2: "", text3: ""},
-        { text1: "β", text2: "Τάση παύσης εφεδρικής λειτουργίας και έναρξης φόρτισης: > 0.85 x ελάχιστη τάση λειτουργίας (σε V AC).", input1: "", input2: "", text3: ""},
+        { text1: "α", text2: "Τάση έναρξης εφεδρικής λειτουργίας: > 0.6 x μέγιστη τάση λειτουργίας (σε V AC).", input1: "", text3: ""},
+        { text1: "β", text2: "Τάση παύσης εφεδρικής λειτουργίας και έναρξης φόρτισης: > 0.85 x ελάχιστη τάση λειτουργίας (σε V AC).", input1: "", text3: ""},
       ]);
 
       const handleDropdown13Change = (rowIndex, field, value) => {
@@ -23,22 +23,22 @@ function Row13({ row,
       
 return(
 <>
-<tr key={row.id + "-1"} className="fourth-row">
-  <td className="table-cell">
-    <button onClick={() => toggleDropdown13(index)} className="dropdown-button-style">
+<tr key={row.id + "-1"} className="row-width">
+  <td className="table-cell column-id">
+    <button onClick={() => toggleDropdown13(index)} className="dropdown-button">
       {row.id}
     </button>
   </td>
-  <td className="table-cell">{row.text}</td>
+  <td className="table-cell column-text" colSpan={3}>{row.text}</td>
 </tr>
-<tr key={row.id + "-subrow"} className={`table-row ${dropdown13Visible === index ? 'visible' : 'hidden'}`}>
+<tr key={row.id + "-subrow"} className={`${dropdown13Visible === index ? 'visible' : 'hidden'} dropdown13`}>
   <td colSpan="4" className="table-cell">
     {dropdown13Visible === index && (
-      <table className="table">
-       <tbody>
+      <table>
+       <tbody className="dropdown13">
           {dropdown13Data.map((dropdownRow, rowIndex) => (
             <React.Fragment key={rowIndex}>
-              <tr className="table-row">
+              <tr>
                 <td className="table-cell" rowSpan="2">{dropdownRow.text1}</td>
                 <td className="table-cell" rowSpan="2">{dropdownRow.text2}</td>
                 <td className="table-cell">
@@ -53,7 +53,7 @@ return(
                   />
                 </td>
               </tr>
-              <tr className="table-row">
+              <tr>
                 <td className="table-cell">
                   <input
                     type="text"
