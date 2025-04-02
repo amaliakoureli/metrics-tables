@@ -16,7 +16,7 @@ return(
                           <select
                             value={row.input1}
                             onChange={(e) => handleChange(index, "input1", e.target.value)}
-                            className="input-style input1"
+                            className="controller input1"
                             onKeyDown={(e) => handleEnterPress(e, index, true)}
                           >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -29,7 +29,7 @@ return(
                           <select
                             value={row.input2}
                             onChange={(e) => handleChange(index, "input2", e.target.value)}
-                            className="input-style input2"
+                            className="controller input2"
                             onKeyDown={(e) => handleEnterPress(e, index, true)}
                           >
                             <option value="ΔΑ">Δ.Α.</option>

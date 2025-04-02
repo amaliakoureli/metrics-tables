@@ -127,7 +127,7 @@ function ControlMetrics(){
       useEffect(() => {
         if (dropdown4Visible === 4) {
           setTimeout(() => {
-            const dropdownInputs = [...document.querySelectorAll(".dropdown4-middleInput, .input-style")];
+            const dropdownInputs = [...document.querySelectorAll(".dropdown4-middleInput, .controller")];
             if (dropdownInputs.length > 0) {
               dropdownInputs[0].focus(); 
             }
@@ -323,7 +323,7 @@ function ControlMetrics(){
           }
       
           if (e.target.id === "duration2BAT") {
-            const allInputs = [...document.querySelectorAll(".input-style")];
+            const allInputs = [...document.querySelectorAll(".controller")];
             const currentIndex = allInputs.indexOf(e.target);
             const nextIndex = currentIndex + 1;
             if (nextIndex < allInputs.length) {
@@ -358,7 +358,7 @@ function ControlMetrics(){
             let nextDropdownIndex = currentDropdownIndex + 1;
         
             if (nextDropdownIndex >= dropdown4Inputs.length) {
-                const allInputs = [...document.querySelectorAll(".input-style")];
+                const allInputs = [...document.querySelectorAll(".controller")];
                 const currentIndex = allInputs.indexOf(e.target);
                 const nextIndex = currentIndex + 1;
                 if (nextIndex < allInputs.length) {
@@ -419,7 +419,7 @@ function ControlMetrics(){
             let nextDropdownIndex = currentDropdownIndex + 1;
       
             if (nextDropdownIndex >= dropdown13Inputs.length) {
-              const allInputs = [...document.querySelectorAll(".input-style")];
+              const allInputs = [...document.querySelectorAll(".controller")];
               const currentIndex = allInputs.indexOf(e.target);
               const nextIndex = currentIndex + 1;
               if (nextIndex < allInputs.length) {
@@ -458,7 +458,7 @@ function ControlMetrics(){
                         let nextRow = allRows[currentRowIndex + 1]; 
                         
                         if (nextRow) {
-                            const nextRowInputs = [...nextRow.querySelectorAll(".input-style, .dropdown14-inline-input, .dropdown14-input1, .dropdown14-input2")];
+                            const nextRowInputs = [...nextRow.querySelectorAll(".controller, .dropdown14-inline-input, .dropdown14-input1, .dropdown14-input2")];
                             if (nextRowInputs.length > 0) {
                                 nextRowInputs[0].focus(); 
                             }
@@ -619,21 +619,14 @@ function ControlMetrics(){
     }
 
         if (e.target.id === "limit3") {
-          const firstMiddleInput = document.querySelector(".first-middle-input");
-          
-          console.log("Πατήθηκε Enter στο limit3!");
-          console.log("Βρέθηκε πρώτο middleInput:", firstMiddleInput);
-          
+          const firstMiddleInput = document.querySelector(".first-middle-input");          
           if (firstMiddleInput) {
               firstMiddleInput.focus();
-              console.log("Το focus δόθηκε στο πρώτο middleInput!");
-          } else {
-              console.log("⚠ Δεν βρέθηκε πρώτο middleInput!");
           }
           return;
       }
 
-          const allInputs = [...document.querySelectorAll(".input-style")];
+          const allInputs = [...document.querySelectorAll(".controller")];
           const currentIndex = allInputs.indexOf(e.target);
           const nextIndex = currentIndex + 1;
           if (nextIndex < allInputs.length) {
@@ -870,7 +863,7 @@ function ControlMetrics(){
                 setDropdown28Visible={setDropdown28Visible}
                 />
               );
-            }else if(index===23 || index===26 || index===28 || index===29|| index===35|| index===36 || index===39 || index===40 ){
+            }else if(index===9 ||index===23 || index===26 || index===28 || index===35|| index===36 || index===39 || index===40 ){
               return (
                 <RowsSingleOk
                 key={row.id}
@@ -969,7 +962,7 @@ function ControlMetrics(){
                                 }
                                 handleEnterPress(e, index, true);
                               }}
-                              className="input-style input1"
+                              className="controller input1"
                             />
                           </td>
                       </tr>
@@ -1085,7 +1078,7 @@ function ControlMetrics(){
                         <input
                             type="text"
                             value={row.input1 || ""}
-                            className="input-style"
+                            className="controller"
                             onKeyDown={(e) => handleEnterPress(e, index, true)}
                         />
                         )}
@@ -1095,7 +1088,7 @@ function ControlMetrics(){
                         <input
                             type="text"
                             value={row.input2 || ""}
-                            className="input-style"
+                            className="controller"
                             onKeyDown={(e) => handleEnterPress(e, index, true)}
                         />
                         )}

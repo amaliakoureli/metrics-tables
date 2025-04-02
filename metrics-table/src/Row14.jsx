@@ -81,7 +81,7 @@ return(
                       }
                       handleEnterPress(e, index, true);
                     }}
-                    className="input-style limit1 "
+                    className="controller limit1 "
                   />
           </td>
         </tr>
@@ -112,7 +112,7 @@ return(
                       }
                       handleEnterPress(e, index, true);
                     }}
-                    className="input-style limit2"
+                    className="controller limit2"
                   />
           </td>
         </tr>
@@ -143,7 +143,7 @@ return(
                       }
                       handleEnterPress(e, index, true);
                     }}
-                    className="input-style limit3"
+                    className="controller limit3"
                     id="limit3"
                   />
           </td>
@@ -177,7 +177,7 @@ return(
                                 type="text"
                                 value={dropdownRow.textInput1}
                                 onChange={(e) => handleDropdown14Change(rowIndex, "textInput1", e.target.value)}
-                                className={`input-style dropdown14-inline-input ${rowIndex === 0 ? "first-middle-input" : ""}`}
+                                className={`controller dropdown14-inline-input ${rowIndex === 0 ? "first-middle-input" : ""}`}
                                 onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown14")}
                               />
                               {parts[1]}
@@ -191,7 +191,7 @@ return(
                           type="text"
                           value={dropdownRow.input1}
                           onChange={(e) => handleDropdown14Change(rowIndex, "input1", e.target.value)}
-                          className="input-style dropdown14-input1"
+                          className="controller dropdown14-input1"
                           onKeyDown={(e) => handleEnterPress(e, index, true,"dropdown14")}
                         />
                       </td>
@@ -200,7 +200,7 @@ return(
                           type="text"
                           value={dropdownRow.input2}
                           onChange={(e) => handleDropdown14Change(rowIndex, "input2", e.target.value)}
-                          className="input-style dropdown14-input2"
+                          className="controller dropdown14-input2"
                           onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown14")}
                           id={rowIndex === dropdown14Data.length - 1 && !dropdownRow.input2 ? "dropdown14-last" : undefined}
                         />

@@ -45,7 +45,7 @@ return(
                 <select
                             value={dropdownRow.input1}
                             onChange={(e) => handleDropdown21Change(rowIndex, "input1", e.target.value)}
-                            className="input-style dropdown21-input1"
+                            className="controller dropdown21-input1"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown21")}
                             id={rowIndex === dropdown21Data.length - 1 && !dropdownRow.input1? "dropdown21-last" : undefined}
                           >

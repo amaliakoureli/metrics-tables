@@ -38,7 +38,7 @@ function Row19({ row, index, handleEnterPress, toggleDropdown19, dropdown19Visib
                           <select
                             value={dropdownRow.input1}
                             onChange={(e) => handleDropdown19Change(rowIndex, "input1", e.target.value)}
-                            className="input-style dropdown19-input1 smallerSize"
+                            className="controller dropdown19-input1 smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown19")}
                           >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -50,7 +50,7 @@ function Row19({ row, index, handleEnterPress, toggleDropdown19, dropdown19Visib
                           <select
                             value={dropdownRow.input2}
                             onChange={(e) => handleDropdown19Change(rowIndex, "input2", e.target.value)}
-                            className="input-style dropdown19-input2 smallerSize"
+                            className="controller dropdown19-input2 smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown19")}
                           >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -63,7 +63,7 @@ function Row19({ row, index, handleEnterPress, toggleDropdown19, dropdown19Visib
                         <select
                           value={dropdownRow.input1}
                           onChange={(e) => handleDropdown19Change(rowIndex, "input1", e.target.value)}
-                          className="input-style dropdown19-input1"
+                          className="controller dropdown19-input1"
                           onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown19")}
                         >
                           <option value="ΔΑ">Δ.Α.</option>
@@ -79,7 +79,7 @@ function Row19({ row, index, handleEnterPress, toggleDropdown19, dropdown19Visib
                           <select
                             value={dropdownRow.input3}
                             onChange={(e) => handleDropdown19Change(rowIndex, "input3", e.target.value)}
-                            className="input-style dropdown19-input3 smallerSize"
+                            className="controller dropdown19-input3 smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown19")}
                           >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -91,7 +91,7 @@ function Row19({ row, index, handleEnterPress, toggleDropdown19, dropdown19Visib
                           <select
                             value={dropdownRow.input4}
                             onChange={(e) => handleDropdown19Change(rowIndex, "input4", e.target.value)}
-                            className="input-style dropdown19-input4 smallerSize"
+                            className="controller dropdown19-input4 smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown19")}
                             id={rowIndex === dropdown19Data.length - 1 && !dropdownRow.input4 ? "dropdown19-last" : undefined}
                           >
@@ -105,7 +105,7 @@ function Row19({ row, index, handleEnterPress, toggleDropdown19, dropdown19Visib
                         <select
                           value={dropdownRow.input2}
                           onChange={(e) => handleDropdown19Change(rowIndex, "input2", e.target.value)}
-                          className="input-style dropdown19-input2 "
+                          className="controller dropdown19-input2 "
                           onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown19")}
                         >
                           <option value="ΔΑ">Δ.Α.</option>

@@ -8,12 +8,12 @@ function Row8({ row, index, handleChange, handleEnterPress}){
     <tr key={row.id} data-row={index === 0 ? "0" : undefined}>
       <td className="table-cell">{row.id}</td>
       <td className="table-cell" colSpan={2}>{row.text}</td>
-      <div>
+      <div >
         <td className="table-cell">
           <select
             value={row.input1}
             onChange={(e) => handleChange(index, "input1", e.target.value)}
-            className="input-style column-inputs row8select"
+            className="controller column-inputs row8select"
             onKeyDown={(e) => handleEnterPress(e, index, true)}
           >
             <option value="ΔΑ">Δ.Α.</option>
@@ -27,7 +27,7 @@ function Row8({ row, index, handleChange, handleEnterPress}){
             type="text"
             value={row.input2}
             onChange={(e) => handleChange(index, "input2", e.target.value)}
-            className="input-style column-inputs row8input"
+            className="controller column-inputs row8input"
             onKeyDown={(e) => handleEnterPress(e, index, true)}
           />
         </td>

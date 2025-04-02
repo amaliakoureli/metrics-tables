@@ -46,7 +46,7 @@ return(
                 <td className="table-cell">
                   <input
                     type="text"
-                    className="input-style dropdown31-input1"
+                    className="controller dropdown31-input1"
                     value={"Από μέτρηση: " + dropdownRow.input1.replace("Από μέτρηση: ", "")}
                     onChange={(e) => {
                       const inputValue = e.target.value;

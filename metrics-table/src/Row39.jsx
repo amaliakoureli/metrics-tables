@@ -1,5 +1,5 @@
 import React, {useState,useRef} from "react";
-import "./Rows5-6-7-9.css";
+
 
 
 function Row39({ row, index,  handleChange, handleEnterPress}){
@@ -13,7 +13,7 @@ return(
                         type="text"
                         value={row.input1}
                         onChange={(e) => handleChange(index, "input1", e.target.value)}
-                        className="input-style"
+                        className="controller"
                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                         />
                     </td>
@@ -22,7 +22,7 @@ return(
                         type="text"
                         value={row.input2}
                         onChange={(e) => handleChange(index, "input2", e.target.value)}
-                        className="input-style"
+                        className="controller"
                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                         />
                     </td>
@@ -31,7 +31,7 @@ return(
                         type="text"
                         value={row.input3}
                         onChange={(e) => handleChange(index, "input3", e.target.value)}
-                        className="input-style"
+                        className="controller"
                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                        />
                     </td>
@@ -40,7 +40,7 @@ return(
                         type="text"
                         value={row.input4}
                         onChange={(e) => handleChange(index, "input4", e.target.value)}
-                        className="input-style"
+                        className="controller"
                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                         />
                     </td>
@@ -49,7 +49,7 @@ return(
                         type="text"
                         value={row.input5}
                         onChange={(e) => handleChange(index, "input5", e.target.value)}
-                        className="input-style"
+                        className="controller"
                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                         />
                     </td>
@@ -58,7 +58,7 @@ return(
                         type="text"
                         value={row.input6}
                         onChange={(e) => handleChange(index, "input6", e.target.value)}
-                        className="input-style"
+                        className="controller"
                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                         />
                     </td>

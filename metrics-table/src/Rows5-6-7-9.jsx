@@ -14,7 +14,7 @@ return(
                         type="text"
                         value={row.input1}
                         onChange={(e) => handleChange(index, "input1", e.target.value)}
-                        className="input-style column-inputs input1"
+                        className="controller column-inputs input1"
                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                         />
                     </td>
@@ -23,7 +23,7 @@ return(
                         type="text"
                         value={row.input2}
                         onChange={(e) => handleChange(index, "input2", e.target.value)}
-                        className="input-style column-inputs input2"
+                        className="controller column-inputs input2"
                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                         />
                     </td>
@@ -32,7 +32,7 @@ return(
                         type="text"
                         value={row.input3}
                         onChange={(e) => handleChange(index, "input3", e.target.value)}
-                        className="input-style column-inputs input3"
+                        className="controller column-inputs input3"
                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                        />
                     </td>
@@ -41,7 +41,7 @@ return(
                         type="text"
                         value={row.input4}
                         onChange={(e) => handleChange(index, "input4", e.target.value)}
-                        className="input-style column-inputs input4"
+                        className="controller column-inputs input4"
                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                         />
                     </td>

@@ -54,7 +54,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                         type="text"
                         value={dropdownRow.input1}
                         onChange={(e) => handleDropdown38Change(rowIndex, "input1", e.target.value)}
-                        className="input-style smallerSize"
+                        className="controller smallerSize"
                         onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         ref={firstDropdown38InputRef}
                     />
@@ -64,7 +64,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                         type="text"
                         value={dropdownRow.input2}
                         onChange={(e) => handleDropdown38Change(rowIndex, "input2", e.target.value)}
-                        className="input-style smallerSize"
+                        className="controller smallerSize"
                         onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                     />
                 </td>
@@ -73,7 +73,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                         type="text"
                         value={dropdownRow.input3}
                         onChange={(e) => handleDropdown38Change(rowIndex, "input3", e.target.value)}
-                        className="input-style smallerSize"
+                        className="controller smallerSize"
                         onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                     />
                 </td>
@@ -82,7 +82,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                         type="text"
                         value={dropdownRow.input4}
                         onChange={(e) => handleDropdown38Change(rowIndex, "input4", e.target.value)}
-                        className="input-style smallerSize"
+                        className="controller smallerSize"
                         onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                     />
                 </td>
@@ -91,7 +91,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                         type="text"
                         value={dropdownRow.input5}
                         onChange={(e) => handleDropdown38Change(rowIndex, "input5", e.target.value)}
-                        className="input-style smallerSize"
+                        className="controller smallerSize"
                         onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                     />
                 </td>
@@ -100,7 +100,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                         type="text"
                         value={dropdownRow.input6}
                         onChange={(e) => handleDropdown38Change(rowIndex, "input6", e.target.value)}
-                        className="input-style smallerSize"
+                        className="controller smallerSize"
                         onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                     />
                 </td>
@@ -113,7 +113,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                             type="text"
                             value={dropdownRow.input1}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input1", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         />
                     </td>
@@ -122,7 +122,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                             type="text"
                             value={dropdownRow.input2}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input2", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         />
                     </td>
@@ -131,7 +131,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                             type="text"
                             value={dropdownRow.input3}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input3", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         />
                     </td>
@@ -140,7 +140,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                             type="text"
                             value={dropdownRow.input4}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input4", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         />
                     </td>
@@ -149,7 +149,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                             type="text"
                             value={dropdownRow.input5}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input5", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         />
                     </td>
@@ -158,7 +158,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                             type="text"
                             value={dropdownRow.input6}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input6", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         />
                     </td>
@@ -171,7 +171,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                             type="text"
                             value={dropdownRow.input1}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input1", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         />
                     </td>
@@ -180,7 +180,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                             type="text"
                             value={dropdownRow.input2}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input2", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         />
                     </td>
@@ -189,7 +189,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                             type="text"
                             value={dropdownRow.input3}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input3", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         />
                     </td>
@@ -197,7 +197,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                         <select
                             value={dropdownRow.input4}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input4", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -210,7 +210,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                         <select
                             value={dropdownRow.input5}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input5", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -223,7 +223,7 @@ function Row38({ row, index, handleEnterPress, toggleDropdown38, dropdown38Visib
                         <select
                             value={dropdownRow.input6}
                             onChange={(e) => handleDropdown38Change(rowIndex, "input6", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown38")}
                         >
                             <option value="ΔΑ">Δ.Α.</option>

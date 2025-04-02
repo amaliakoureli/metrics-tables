@@ -72,7 +72,7 @@ function Row4({ row,
                                 }
                                 handleEnterPress(e, index, true);
                             }}
-                            className="input-style column-inputs"
+                            className="controller column-inputs"
                         />
                         <span className="hoursOfDuration">h</span>
                     </div>
@@ -109,7 +109,7 @@ function Row4({ row,
                                 }
                                 handleEnterPress(e, index, true);
                             }}
-                            className="input-style column-inputs"
+                            className="controller column-inputs"
                         />
                         <span className="hoursOfDuration">h</span>
                     </div>
@@ -130,7 +130,7 @@ function Row4({ row,
                                         type="text"
                                         value={row.middleInput || ""}
                                         onChange={(e) => handleChange(index, "middleInput", e.target.value)}
-                                        className="input-style column-inputs dropdown4-middleInput"
+                                        className="controller column-inputs dropdown4-middleInput"
                                         onKeyDown={(e) => handleEnterPress(e, index, true)}
                                     />
                                     {textParts[1]}
@@ -169,7 +169,7 @@ function Row4({ row,
                                                             type="text"
                                                             value={dropdownRow.textInput2}
                                                             onChange={(e) => handleDropdown4Change(rowIndex, "textInput2", e.target.value)}
-                                                            className="input-style column-inputs dropdown4-middleInput2 "
+                                                            className="controller column-inputs dropdown4-middleInput2 "
                                                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown4")}
                                                         />
                                                         {parts[1]}
@@ -186,7 +186,7 @@ function Row4({ row,
                                                     type="text"
                                                     value={dropdownRow.input1}
                                                     onChange={(e) => handleDropdown4Change(rowIndex, "input1", e.target.value)}
-                                                    className="input-style column-inputs dropdown4-input1"
+                                                    className="controller column-inputs dropdown4-input1"
                                                     onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
                                                 />
                                             </td>
@@ -195,7 +195,7 @@ function Row4({ row,
                                                     type="text"
                                                     value={dropdownRow.input2}
                                                     onChange={(e) => handleDropdown4Change(rowIndex, "input2", e.target.value)}
-                                                    className="input-style column-inputs dropdown4-input2"
+                                                    className="controller column-inputs dropdown4-input2"
                                                     onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
                                                 />
                                             </td>
@@ -204,7 +204,7 @@ function Row4({ row,
                                                     type="text"
                                                     value={dropdownRow.input3}
                                                     onChange={(e) => handleDropdown4Change(rowIndex, "input3", e.target.value)}
-                                                    className="input-style column-inputs dropdown4-input3"
+                                                    className="controller column-inputs dropdown4-input3"
                                                     onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
                                                 />
                                             </td>
@@ -213,7 +213,7 @@ function Row4({ row,
                                                     type="text"
                                                     value={dropdownRow.input4}
                                                     onChange={(e) => handleDropdown4Change(rowIndex, "input4", e.target.value)}
-                                                    className="input-style column-inputs dropdown4-input4"
+                                                    className="controller column-inputs dropdown4-input4"
                                                     onKeyDown={(e) => handleEnterPress(e, index, true, true, rowIndex, "dropdown4")}
                                                 />
                                             </td>

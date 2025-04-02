@@ -53,7 +53,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                                                 type="text"
                                                 value={dropdownRow.input1}
                                                 onChange={(e) => handleDropdown34Change(rowIndex, "input1", e.target.value)}
-                                                className="input-style smallerSize"
+                                                className="controller smallerSize"
                                                 onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                                                 ref={firstDropdownInputRef}
                                             />
@@ -63,7 +63,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                                                 type="text"
                                                 value={dropdownRow.input2}
                                                 onChange={(e) => handleDropdown34Change(rowIndex, "input2", e.target.value)}
-                                                className="input-style smallerSize"
+                                                className="controller smallerSize"
                                                 onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                                             />
                                         </td>
@@ -72,17 +72,16 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                                                 type="text"
                                                 value={dropdownRow.input3}
                                                 onChange={(e) => handleDropdown34Change(rowIndex, "input3", e.target.value)}
-                                                className="input-style smallerSize"
+                                                className="controller smallerSize"
                                                 onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                                             />
                                         </td>
 
-                                        {/* 2η Ομάδα Select Inputs */}
                                         <td className="table-cell">
                                             <select
                                                 value={dropdownRow.input4}
                                                 onChange={(e) => handleDropdown34Change(rowIndex, "input4", e.target.value)}
-                                                className="input-style smallerSize"
+                                                className="controller smallerSize"
                                                 onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                                             >
                                                 <option value="ΔΑ">Δ.Α.</option>
@@ -95,7 +94,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                                             <select
                                                 value={dropdownRow.input5}
                                                 onChange={(e) => handleDropdown34Change(rowIndex, "input5", e.target.value)}
-                                                className="input-style smallerSize"
+                                                className="controller smallerSize"
                                                 onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                                             >
                                                 <option value="ΔΑ">Δ.Α.</option>
@@ -108,7 +107,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                                             <select
                                                 value={dropdownRow.input6}
                                                 onChange={(e) => handleDropdown34Change(rowIndex, "input6", e.target.value)}
-                                                className="input-style smallerSize"
+                                                className="controller smallerSize"
                                                 onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                                             >
                                                 <option value="ΔΑ">Δ.Α.</option>
@@ -125,7 +124,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                         <select
                             value={dropdownRow.input1}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input1", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -138,7 +137,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                         <select
                             value={dropdownRow.input2}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input2", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -151,7 +150,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                         <select
                             value={dropdownRow.input3}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input3", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -166,7 +165,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                             type="text"
                             value={dropdownRow.input4}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input4", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         />
                     </td>
@@ -175,7 +174,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                             type="text"
                             value={dropdownRow.input5}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input5", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         />
                     </td>
@@ -184,7 +183,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                             type="text"
                             value={dropdownRow.input6}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input6", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         />
                     </td>
@@ -196,7 +195,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                             type="text"
                             value={dropdownRow.input1}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input1", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         />
                     </td>
@@ -205,7 +204,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                             type="text"
                             value={dropdownRow.input2}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input2", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         />
                     </td>
@@ -214,7 +213,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                             type="text"
                             value={dropdownRow.input3}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input3", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         />
                     </td>
@@ -223,7 +222,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                             type="text"
                             value={dropdownRow.input4}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input4", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         />
                     </td>
@@ -232,7 +231,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                             type="text"
                             value={dropdownRow.input5}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input5", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         />
                     </td>
@@ -241,7 +240,7 @@ function Row34({ row, index, handleEnterPress, toggleDropdown34, dropdown34Visib
                             type="text"
                             value={dropdownRow.input6}
                             onChange={(e) => handleDropdown34Change(rowIndex, "input6", e.target.value)}
-                            className="input-style smallerSize"
+                            className="controller smallerSize"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown34")}
                         />
                     </td>

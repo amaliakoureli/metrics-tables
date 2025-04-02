@@ -48,7 +48,7 @@ return(
                     type="text"
                     value={dropdownRow.input1}
                     onChange={(e) => handleDropdown25Change(rowIndex, "input1", e.target.value)}
-                    className="input-style dropdown25-input1"
+                    className="controller dropdown25-input1"
                     onKeyDown={(e) =>
                       handleEnterPress(e, index, true,"dropdown25")
                     }
@@ -59,7 +59,7 @@ return(
                     type="text"
                     value={dropdownRow.input2}
                     onChange={(e) => handleDropdown25Change(rowIndex, "input2", e.target.value)}
-                    className="input-style dropdown25-input2"
+                    className="controller dropdown25-input2"
                     onKeyDown={(e) =>
                       handleEnterPress(e, index, true,"dropdown25")
                     }

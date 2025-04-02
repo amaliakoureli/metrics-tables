@@ -46,7 +46,7 @@ return(
                     type="text"
                     value={dropdownRow.input1}
                     onChange={(e) => handleDropdown13Change(rowIndex, "input1", e.target.value)}
-                    className="input-style dropdown13-input1"
+                    className="controller dropdown13-input1"
                     onKeyDown={(e) =>
                       handleEnterPress(e, index, true, "dropdown13")
                     }
@@ -80,7 +80,7 @@ return(
                       }
                       handleEnterPress(e, index, true, "dropdown13");
                     }}
-                    className="input-style dropdown13-text3"
+                    className="controller dropdown13-text3"
 
                     
                   />

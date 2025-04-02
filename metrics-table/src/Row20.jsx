@@ -70,7 +70,7 @@ return(
                       }
                       handleEnterPress(e, index, true, "dropdown20");
                     }}
-                    className="input-style dropdown20-input1"
+                    className="controller dropdown20-input1"
                   />
                    <input
                     type="text"
@@ -97,7 +97,7 @@ return(
                       }
                       handleEnterPress(e, index, true, "dropdown20");
                     }}
-                    className="input-style dropdown20-input2"
+                    className="controller dropdown20-input2"
                   />
                 </td>
               </tr>
@@ -128,7 +128,7 @@ return(
                       }
                       handleEnterPress(e, index, true, "dropdown20");
                     }}
-                    className="input-style dropdown20-input3"
+                    className="controllere dropdown20-input3"
                     id={rowIndex === dropdown20Data.length - 1 && !dropdownRow.input3 ? "dropdown20-last" : undefined}
                   />
                 </td>

@@ -3,9 +3,7 @@
     padding: 10px;
     border-bottom: 1px solid #ddd;
   }
-  .WidthOfRow{
-    width: 100%;
-  }
+
   .column-id{
     width: 10%;
   }
@@ -20,10 +18,15 @@
     border-radius: 4px;
   }
    .input1, .input2, .input3, .input4{
-    width: 50px;
+    width:50px !important
   }
 
-  .row8inputs{
-    width: 100px;
+  .row8input, .row8select{
+    width: 120px !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0;
+    margin: 0;
   }
+
 

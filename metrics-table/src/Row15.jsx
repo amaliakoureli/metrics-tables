@@ -47,7 +47,7 @@ return(
                       }
                       handleEnterPress(e, index, true);
                     }}
-                    className="input-style input1"
+                    className="controller input1"
                   />
             </td>
             </tr>
@@ -78,7 +78,7 @@ return(
                       }
                       handleEnterPress(e, index, true);
                     }}
-                    className="input-style input2"
+                    className="controller input2"
                   />
             </td>
             </tr>
@@ -109,7 +109,7 @@ return(
                       }
                       handleEnterPress(e, index, true);
                     }}
-                    className="input-style input3"
+                    className="controller input3"
 
                   />
                 </td>

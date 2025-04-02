@@ -55,7 +55,7 @@ return(
                            <select
                             value={dropdownRow.input1}
                             onChange={(e) => handleDropdown28Change(rowIndex, "input1", e.target.value)}
-                            className="input-style dropdown28-input1"
+                            className="controller dropdown28-input1"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown28")}
                           >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -68,7 +68,7 @@ return(
                            <select
                             value={dropdownRow.input2}
                             onChange={(e) => handleDropdown28Change(rowIndex, "input2", e.target.value)}
-                            className="input-style dropdown28-input2"
+                            className="controller dropdown28-input2"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown28")}
                           >
                             <option value="ΔΑ">Δ.Α.</option>
@@ -83,7 +83,7 @@ return(
                        <select
                             value={dropdownRow.input1}
                             onChange={(e) => handleDropdown28Change(rowIndex, "input1", e.target.value)}
-                            className="input-style dropdown28-input1"
+                            className="controller dropdown28-input1"
                             onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown28")}
                             id={rowIndex === dropdown28Data.length - 1 && !dropdownRow.input1 ? "dropdown28-last" : undefined}
                           >

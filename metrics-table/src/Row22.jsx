@@ -53,7 +53,7 @@ return(
                     <select
                     value={dropdownRow.input1}
                     onChange={(e) => handleDropdown22Change(rowIndex, "input1", e.target.value)}
-                    className="input-style dropdown22-input1 "
+                    className="controller dropdown22-input1 "
                     onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown22")}
                     >
                     <option value="ΔΑ">Δ.Α.</option>
@@ -66,7 +66,7 @@ return(
                     <select
                     value={dropdownRow.input2}
                     onChange={(e) => handleDropdown22Change(rowIndex, "input2", e.target.value)}
-                    className="input-style dropdown22-input2 "
+                    className="controller dropdown22-input2 "
                     onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown22")}
                     id={rowIndex === dropdown22Data.length - 1 && !dropdownRow.input1 ? "dropdown22-last" : undefined}
                     >
@@ -82,7 +82,7 @@ return(
                 <select
                     value={dropdownRow.input1}
                     onChange={(e) => handleDropdown22Change(rowIndex, "input1", e.target.value)}
-                    className="input-style dropdown22-input1"
+                    className="controller dropdown22-input1"
                     onKeyDown={(e) => handleEnterPress(e, index, true, "dropdown22")}
                 >
                     <option value="ΔΑ">Δ.Α.</option>

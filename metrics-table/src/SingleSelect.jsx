@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./SingleSelect.css"
 
 
 function RowsSingleOk({ row, 
@@ -10,13 +11,13 @@ function RowsSingleOk({ row,
       
 return(
 <tr key={row.id} className="table-row" data-row={index === 0 ? "0" : undefined}>
-                    <td className="table-cell">{row.id}</td>
-                    <td className="table-cell">{row.text}</td>
+                    <td className="table-cell column-id">{row.id}</td>
+                    <td className="table-cell column-text" colSpan={2}>{row.text}</td>
                     <td className="table-cell">
                           <select
                             value={row.input1}
                             onChange={(e) => handleChange(index, "input1", e.target.value)}
-                            className="input-style"
+                            className="controller  sel1"
                             onKeyDown={(e) => handleEnterPress(e, index, true)}
                           >
                             <option value="ΔΑ">Δ.Α.</option>

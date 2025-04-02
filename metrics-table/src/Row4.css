@@ -106,11 +106,4 @@ table {
       pointer-events: none;
     }
 
-    .row8input, .row8select{
-      width: 120px !important;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 0;
-      margin: 0;
-      
-    }
+

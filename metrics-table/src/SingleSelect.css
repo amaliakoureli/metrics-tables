@@ -1,0 +1,27 @@
+
+.table-row{
+    width: 100%;
+  }
+
+  .table-cell {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .sel1{
+    width: 260px !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .column-id{
+    width: 10%;
+  }
+
+  .column-text{
+    width: 100%;
+  }
+
+
