@@ -1,128 +1,185 @@
-  .row-width{
-    background-color: #afc7d9 !important;
-    width: 100%;
-  }
+.row-width {
+  background-color: #afc7d9 !important;
+  width: 100%;
+}
 
-  .table-cell {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    
-  }
-  .bat1{
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
-  }
-  .bat2{
-    padding: 30px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .column-id{
-    width: 10%;
-  }
+.table-cell {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.bat1 {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+.bat2 {
+  padding: 30px;
+  border-bottom: 1px solid #ddd;
+}
 
-  .column-text{
-    width: 100%;
-  }
+.column-id {
+  width: 10%;
+}
 
- .dropdown4-input1,
-  .dropdown4-input2,
-  .dropdown4-input3,
-  .dropdown4-input4{
-    width: 50px !important;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0;
-    margin: 0;
-  }
+.column-text {
+  width: 100%;
+}
 
-  .dropdown11-input1, .dropdown11-input2, .dropdown12-input1, .dropdown12-input2, .dropdown14-input1, .dropdown14-input2{
-    width: 120px !important;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .inputs-alignment{
+.dropdown4-input1,
+.dropdown4-input2,
+.dropdown4-input3,
+.dropdown4-input4 {
+  width: 50px !important;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown11-input1,
+.dropdown11-input2,
+.dropdown12-input1,
+.dropdown12-input2,
+.dropdown14-input1,
+.dropdown14-input2 {
+  width: 120px !important;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+
+.inputs-alignment {
   position: relative;
   padding-right: 10px;
   justify-items: right;
-  }
+}
 
-  .column-inputs {
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0;
-    margin: 0;
-  }
+.column-inputs {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
 
 table {
   width: 100%;
 }
 
-  .dropdown-button {
-    cursor: pointer;
-    font-size: 16px;
-    color: #000000;
-    font-weight: bold;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-  }
+.dropdown-button {
+  cursor: pointer;
+  font-size: 16px;
+  color: #000000;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
 
-  .hidden {
-    display: none;
-  }
+.hidden {
+  display: none;
+}
 
-  .visible {
-    display: table-row;
-  }
+.visible {
+  display: table-row;
+}
 
-  .dropdown4-middleInput, .dropdown4-middleInput2, .dropdown14-middleInput {
-    width: 60px !important;
-    max-width: 60px;
-    padding: 4px 6px;
-    font-size: 0.85rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: inline-block;
-    box-sizing: border-box;
-    text-align: right;
-  }
-  
-  .dropdown4, .dropdown11, .dropdown12, .dropdown13 , .dropdown14{
-    background-color:#d8e5f0 !important;
-  }
+.dropdown4-middleInput,
+.dropdown4-middleInput2,
+.dropdown14-middleInput {
+  width: 60px !important;
+  max-width: 60px;
+  padding: 4px 6px;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: right;
+}
 
-    .input-wrapper {
-      position: relative;
-      display: inline-block;
-      width: 100%;
-    }
-    
-    .input-wrapper input {
-      padding-right: 20px;
-    }
-    
-    .input-wrapper .hoursOfDuration {
-      position: absolute;
-      right: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 14px;
-      color: #000000;
-      pointer-events: none;
-    }
+.dropdown4,
+.dropdown11,
+.dropdown12,
+.dropdown13,
+.dropdown14,
+.dropdown16 {
+  background-color: #d8e5f0 !important;
+}
 
-    .dropdown13-input1, .dropdown13-text3, .limit1, .limit2, .limit3{
-      width: 260px ;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 0;
-      margin: 0;
-    }
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
 
+.input-wrapper input {
+  padding-right: 20px;
+}
 
+.input-wrapper .hoursOfDuration {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #000000;
+  pointer-events: none;
+}
 
+.dropdown13-input1,
+.dropdown13-text3,
+.limit1,
+.limit2,
+.limit3,
+.row15input1,
+.row15input2,
+.row15input3 {
+  width: 260px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown16-input1,
+.dropdown16-input2,
+.dropdown16-input3,
+.dropdown16-input4,
+.dropdown16-input5,
+.dropdown16-input6,
+.dropdown16-input7,
+.dropdown16-input8,
+.dropdown16-input9,
+.dropdown16-input10,
+.dropdown16-input11,
+.dropdown16-input12 {
+  width: 50px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+.dropdown16-input13,
+.dropdown16-input14 {
+  width: 50px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+  height: 80px;
+}
+
+.wider {
+  width: 120px;
+}
+
+.CenterText {
+  text-align: center;
+  vertical-align: middle;
+}
+.col-width {
+  width: 130px;
+  text-align: center;
+  vertical-align: middle;
+}
