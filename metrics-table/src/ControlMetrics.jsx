@@ -731,9 +731,9 @@ function ControlMetrics() {
         if (isLastInput) {
           toggleDropdown22(21);
           setTimeout(() => {
-            const firstInput = document.querySelector(".dropdown22-input1");
+            const firstInput = document.querySelector(".dropdown22-Dselect1");
             if (firstInput) firstInput.focus();
-          }, 100);
+          }, 50);
         } else {
           const dropdown21Inputs = [
             ...document.querySelectorAll(".dropdown21-input1"),
@@ -753,7 +753,7 @@ function ControlMetrics() {
             ".dropdown25-input1, .dropdown25-input2"
           );
           if (firstInput) firstInput.focus();
-        }, 100);
+        }, 50);
 
         return;
       }
@@ -763,10 +763,10 @@ function ControlMetrics() {
 
         setTimeout(() => {
           const firstInput = document.querySelector(
-            ".dropdown28-input1, .dropdown28-input2"
+            ".dropdown28-Dselect1, .dropdown28-Dselect2, .dropdown28-input1"
           );
           if (firstInput) firstInput.focus();
-        }, 100);
+        }, 50);
 
         return;
       }
@@ -777,7 +777,7 @@ function ControlMetrics() {
         setTimeout(() => {
           const firstInput = document.querySelector(".dropdown31-input1");
           if (firstInput) firstInput.focus();
-        }, 100);
+        }, 50);
 
         return;
       }

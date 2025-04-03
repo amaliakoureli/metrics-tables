@@ -55,7 +55,13 @@
 .dropdown14-input1,
 .dropdown14-input2,
 .dropdown18-input1,
-.dropdown18-input2 {
+.dropdown18-input2,
+.dropdown22-Dselect1,
+.dropdown22-Dselect2,
+.dropdown25-input1,
+.dropdown25-input2,
+.dropdown28-Dselect1,
+.dropdown28-Dselect2 {
   width: 120px !important;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -126,7 +132,13 @@ table {
 .dropdown16,
 .dropdown18,
 .dropdown19,
-.dropdown20 {
+.dropdown20,
+.dropdown21,
+.dropdown22,
+.dropdown25,
+.dropdown28,
+.dropdown31,
+.dropdown34 {
   background-color: #d8e5f0;
 }
 
@@ -158,7 +170,11 @@ table {
 .row15input1,
 .row15input2,
 .row15input3,
-.dropdown20-input3 {
+.dropdown20-input3,
+.dropdown21-input1,
+.dropdown22-select1,
+.dropdown28-select1,
+.dropdown31-input1 {
   width: 260px;
   border: 1px solid #ccc;
   border-radius: 4px;
