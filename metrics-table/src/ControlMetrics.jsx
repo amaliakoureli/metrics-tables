@@ -693,7 +693,7 @@ function ControlMetrics() {
         } else {
           const dropdown19Inputs = [
             ...document.querySelectorAll(
-              ".dropdown19-input1, .dropdown19-input2, .dropdown19-input3, .dropdown19-input4"
+              ".dropdown19-input1, .dropdown19-input2,.dropdown19-Dinput1, .dropdown19-Dinput2, .dropdown19-Dinput3, .dropdown19-Dinput4"
             ),
           ];
           const currentIndex = dropdown19Inputs.indexOf(e.target);

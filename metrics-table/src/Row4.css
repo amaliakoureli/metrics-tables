@@ -27,7 +27,20 @@
 .dropdown4-input1,
 .dropdown4-input2,
 .dropdown4-input3,
-.dropdown4-input4 {
+.dropdown4-input4,
+.dropdown16-input1,
+.dropdown16-input2,
+.dropdown16-input3,
+.dropdown16-input4,
+.dropdown16-input5,
+.dropdown16-input6,
+.dropdown16-input7,
+.dropdown16-input8,
+.dropdown16-input9,
+.dropdown16-input10,
+.dropdown16-input11,
+.dropdown16-input12,
+.dropdown18-input1 {
   width: 50px !important;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -40,7 +53,9 @@
 .dropdown12-input1,
 .dropdown12-input2,
 .dropdown14-input1,
-.dropdown14-input2 {
+.dropdown14-input2,
+.dropdown18-input1,
+.dropdown18-input2 {
   width: 120px !important;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -52,6 +67,11 @@
   position: relative;
   padding-right: 10px;
   justify-items: right;
+}
+.inputs20-alignment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .column-inputs {
@@ -87,7 +107,7 @@ table {
 .dropdown4-middleInput,
 .dropdown4-middleInput2,
 .dropdown14-middleInput {
-  width: 60px !important;
+  width: 60px;
   max-width: 60px;
   padding: 4px 6px;
   font-size: 0.85rem;
@@ -103,8 +123,11 @@ table {
 .dropdown12,
 .dropdown13,
 .dropdown14,
-.dropdown16 {
-  background-color: #d8e5f0 !important;
+.dropdown16,
+.dropdown18,
+.dropdown19,
+.dropdown20 {
+  background-color: #d8e5f0;
 }
 
 .input-wrapper {
@@ -134,7 +157,8 @@ table {
 .limit3,
 .row15input1,
 .row15input2,
-.row15input3 {
+.row15input3,
+.dropdown20-input3 {
   width: 260px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -142,20 +166,19 @@ table {
   margin: 0;
 }
 
-.dropdown16-input1,
-.dropdown16-input2,
-.dropdown16-input3,
-.dropdown16-input4,
-.dropdown16-input5,
-.dropdown16-input6,
-.dropdown16-input7,
-.dropdown16-input8,
-.dropdown16-input9,
-.dropdown16-input10,
-.dropdown16-input11,
-.dropdown16-input12 {
-  width: 50px;
+.dropdown20-input1 {
+  width: 260px;
   border: 1px solid #ccc;
+  border-bottom: 0px;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown20-input2 {
+  width: 260px;
+  border: 1px solid #ccc;
+  border-top: 0px;
   border-radius: 4px;
   padding: 0;
   margin: 0;
@@ -179,7 +202,27 @@ table {
   vertical-align: middle;
 }
 .col-width {
-  width: 130px;
+  width: 120px;
   text-align: center;
   vertical-align: middle;
+}
+
+.dropdown19-Dinput1,
+.dropdown19-Dinput2,
+.dropdown19-Dinput3,
+.dropdown19-Dinput4 {
+  width: 80px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown19-input1,
+.dropdown19-input2 {
+  width: 165px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
 }
