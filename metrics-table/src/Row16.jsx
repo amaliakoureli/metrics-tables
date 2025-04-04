@@ -320,7 +320,7 @@ function Row16({
                                   e.target.value
                                 )
                               }
-                              className="controller dropdown16-input13 wider"
+                              className="controller dropdown16-input13-wider"
                               onKeyDown={(e) =>
                                 handleEnterPress(e, index, true, "dropdown16")
                               }

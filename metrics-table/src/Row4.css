@@ -7,12 +7,13 @@
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
+
 .bat1 {
-  padding: 5px;
+  padding-right: 5px;
   border-bottom: 1px solid #ddd;
 }
 .bat2 {
-  padding: 30px;
+  padding-left: 30px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -61,7 +62,11 @@
 .dropdown25-input1,
 .dropdown25-input2,
 .dropdown28-Dselect1,
-.dropdown28-Dselect2 {
+.dropdown28-Dselect2,
+.double-selectInput1,
+.double-selectInput2,
+.double-input1,
+.double-input2 {
   width: 120px !important;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -74,6 +79,17 @@
   padding-right: 10px;
   justify-items: right;
 }
+.dropdownInputs-alignment {
+  position: relative;
+  padding-right: 5px;
+  justify-items: right;
+}
+.bats-alignment {
+  position: relative;
+  padding-left: 10px;
+  justify-items: right;
+}
+
 .inputs20-alignment {
   display: flex;
   flex-direction: column;
@@ -138,28 +154,42 @@ table {
 .dropdown25,
 .dropdown28,
 .dropdown31,
-.dropdown34 {
+.dropdown34,
+.dropdown38 {
   background-color: #d8e5f0;
 }
 
 .input-wrapper {
   position: relative;
-  display: inline-block;
-  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
 }
 
 .input-wrapper input {
-  padding-right: 20px;
+  padding-right: 15px;
 }
 
 .input-wrapper .hoursOfDuration {
   position: absolute;
-  right: 8px;
+  right: 15px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 14px;
   color: #000000;
   pointer-events: none;
+}
+
+.input1,
+.input2,
+.input3,
+.input4 {
+  width: 50px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
 }
 
 .dropdown13-input1,
@@ -174,7 +204,11 @@ table {
 .dropdown21-input1,
 .dropdown22-select1,
 .dropdown28-select1,
-.dropdown31-input1 {
+.dropdown31-input1,
+.single-select1,
+.single-input1,
+.duration1BAT,
+.duration2BAT {
   width: 260px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -202,6 +236,7 @@ table {
 .dropdown16-input13,
 .dropdown16-input14 {
   width: 50px;
+  max-width: 100px;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 0;
@@ -209,13 +244,19 @@ table {
   height: 80px;
 }
 
-.wider {
+.dropdown16-input13-wider {
   width: 120px;
+  padding: 0;
+  margin: 0;
+  height: 80px;
+  position: relative;
+  justify-items: center;
 }
 
 .CenterText {
   text-align: center;
   vertical-align: middle;
+  padding-right: 40px;
 }
 .col-width {
   width: 120px;
@@ -226,7 +267,25 @@ table {
 .dropdown19-Dinput1,
 .dropdown19-Dinput2,
 .dropdown19-Dinput3,
-.dropdown19-Dinput4 {
+.dropdown19-Dinput4,
+.dropdown34-select1,
+.dropdown34-select2,
+.dropdown34-select3,
+.dropdown34-select4,
+.dropdown34-select5,
+.dropdown34-select6,
+.dropdown38-select1,
+.dropdown38-select2,
+.dropdown38-select3,
+.dropdown38-select4,
+.dropdown38-select5,
+.dropdown38-select6,
+.dropdown39-select1,
+.dropdown39-select2,
+.dropdown39-select3,
+.dropdown39-select4,
+.dropdown39-select5,
+.dropdown39-select6 {
   width: 80px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -239,6 +298,12 @@ table {
   width: 165px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+.inputs-alignment th {
+  width: 100px;
+  text-align: center;
   padding: 0;
   margin: 0;
 }

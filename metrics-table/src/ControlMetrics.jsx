@@ -3,7 +3,7 @@ import "./ControlMetrics.css";
 import Row1 from "./Row1";
 import Row4 from "./Row4";
 import Rows5679 from "./Rows5-6-7-9";
-import Row8 from "./Row8";
+import SingleInput from "./SingleInput";
 import Row11 from "./Row11";
 import Row12 from "./Row12";
 import Row13 from "./Row13";
@@ -15,6 +15,7 @@ import Row20 from "./Row20";
 import Row21 from "./Row21";
 import Row22 from "./Row22";
 import Row25 from "./Row25";
+import Row26 from "./Row26";
 import Row28 from "./Row28";
 import SingleSelect from "./SingleSelect";
 import Row16 from "./Row16";
@@ -440,10 +441,10 @@ function ControlMetrics() {
     }
   };
 
-  const firstDropdownInputRef = useRef(null);
+  const firstDropdown34InputRef = useRef(null);
   useEffect(() => {
-    if (dropdown34Visible === 33 && firstDropdownInputRef.current) {
-      firstDropdownInputRef.current.focus();
+    if (dropdown34Visible === 33 && firstDropdown34InputRef.current) {
+      firstDropdown34InputRef.current.focus();
     }
   }, [dropdown34Visible]);
 
@@ -830,6 +831,26 @@ function ControlMetrics() {
                   handleEnterPress={handleEnterPress}
                 />
               );
+            } else if (
+              index === 1 ||
+              index === 2 ||
+              index === 16 ||
+              index === 22 ||
+              index === 29 ||
+              index === 41 ||
+              index === 42 ||
+              index === 43 ||
+              index === 44
+            ) {
+              return (
+                <SingleInput
+                  key={row.id}
+                  row={row}
+                  index={index}
+                  handleChange={handleChange}
+                  handleEnterPress={handleEnterPress}
+                />
+              );
             } else if (index === 3) {
               return (
                 <Row4
@@ -857,16 +878,6 @@ function ControlMetrics() {
             ) {
               return (
                 <Rows5679
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                />
-              );
-            } else if (index === 7) {
-              return (
-                <Row8
                   key={row.id}
                   row={row}
                   index={index}
@@ -1045,7 +1056,6 @@ function ControlMetrics() {
               index === 23 ||
               index === 26 ||
               index === 28 ||
-              index === 29 ||
               index === 35 ||
               index === 36 ||
               index === 39 ||
@@ -1060,7 +1070,12 @@ function ControlMetrics() {
                   handleEnterPress={handleEnterPress}
                 />
               );
-            } else if (index === 32 || index === 34) {
+            } else if (
+              index === 7 ||
+              index === 31 ||
+              index === 32 ||
+              index === 34
+            ) {
               return (
                 <DoubleSelect
                   key={row.id}
@@ -1092,7 +1107,7 @@ function ControlMetrics() {
                   toggleDropdown34={toggleDropdown34}
                   dropdown34Visible={dropdown34Visible}
                   setDropdown34Visible={setDropdown34Visible}
-                  firstDropdownInputRef={firstDropdownInputRef}
+                  firstDropdown34InputRef={firstDropdown34InputRef}
                 />
               );
             } else if (index === 37) {
@@ -1303,32 +1318,17 @@ function ControlMetrics() {
                 </>
               );
             } else {
-              return (
-                <tr key={row.id} data-row={index === 0 ? "0" : undefined}>
-                  <td className="table-cell">{row.id}</td>
-                  <td className="table-cell">{row.text}</td>
-                  <td className="table-cell">
-                    {"input1" in row && (
-                      <input
-                        type="text"
-                        value={row.input1 || ""}
-                        className="controller"
-                        onKeyDown={(e) => handleEnterPress(e, index, true)}
-                      />
-                    )}
-                  </td>
-                  <td className="table-cell">
-                    {"input2" in row && (
-                      <input
-                        type="text"
-                        value={row.input2 || ""}
-                        className="controller"
-                        onKeyDown={(e) => handleEnterPress(e, index, true)}
-                      />
-                    )}
-                  </td>
-                </tr>
-              );
+              {
+                return (
+                  <Row26
+                    key={row.id}
+                    row={row}
+                    index={index}
+                    handleChange={handleChange}
+                    handleEnterPress={handleEnterPress}
+                  />
+                );
+              }
             }
           })}
         </tbody>

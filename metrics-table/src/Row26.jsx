@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Row4.css";
 
-function SingleSelect({ row, index, handleEnterPress, handleChange }) {
+function Row26({ row, index, handleEnterPress, handleChange }) {
   return (
     <tr
       key={row.id}
@@ -14,21 +14,26 @@ function SingleSelect({ row, index, handleEnterPress, handleChange }) {
       </td>
       <div className="inputs-alignment">
         <td className="table-cell">
-          <select
+          <input
+            type="text"
             value={row.input1}
             onChange={(e) => handleChange(index, "input1", e.target.value)}
-            className="controller  single-select1"
+            className="controller double-input1"
             onKeyDown={(e) => handleEnterPress(e, index, true)}
-          >
-            <option value="ΔΑ">Δ.Α.</option>
-            <option value="ΔΕ">Δ.Ε.</option>
-            <option value="ΟΚ">ΟΚ</option>
-            <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
-          </select>
+          />
+        </td>
+        <td className="table-cell">
+          <input
+            type="text"
+            value={row.input1}
+            onChange={(e) => handleChange(index, "input1", e.target.value)}
+            className="controller double-input2"
+            onKeyDown={(e) => handleEnterPress(e, index, true)}
+          />
         </td>
       </div>
     </tr>
   );
 }
 
-export default SingleSelect;
+export default Row26;

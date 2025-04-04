@@ -24,7 +24,7 @@ function Row15({
         <td className="table-cell">
           <table>
             <tbody>
-              <div className="input-alignment">
+              <div className="dropdownInputs-alignment">
                 <tr>
                   <td className="table-cell">
                     <input

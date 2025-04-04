@@ -109,107 +109,116 @@ function Row14({
           <table>
             <tbody>
               <tr>
-                <td className="table-cell">
-                  <input
-                    type="text"
-                    value={
-                      "Όριο (1H) = " +
-                      (limit1?.replace("Όριο (1H) = ", "") ?? "")
-                    }
-                    onChange={(e) => {
-                      const inputValue = e.target.value;
-                      const prefix = "Όριο (1H) = ";
-
-                      if (inputValue.startsWith(prefix)) {
-                        handleChange(index, "limit1", inputValue);
-                      } else {
-                        handleChange(index, "limit1", prefix + inputValue);
+                <div className="dropdownInputs-alignment ">
+                  <td className="table-cell">
+                    <input
+                      type="text"
+                      value={
+                        "Όριο (1H) = " +
+                        (limit1?.replace("Όριο (1H) = ", "") ?? "")
                       }
-                    }}
-                    onKeyDown={(e) => {
-                      const prefix = "Όριο (1H) = ";
-                      const cursorPos = e.target.selectionStart;
+                      onChange={(e) => {
+                        const inputValue = e.target.value;
+                        const prefix = "Όριο (1H) = ";
 
-                      if (
-                        (e.key === "Backspace" && cursorPos <= prefix.length) ||
-                        (e.key === "Delete" && cursorPos < prefix.length)
-                      ) {
-                        e.preventDefault();
-                      }
-                      handleEnterPress(e, index, true);
-                    }}
-                    className="controller limit1"
-                  />
-                </td>
+                        if (inputValue.startsWith(prefix)) {
+                          handleChange(index, "limit1", inputValue);
+                        } else {
+                          handleChange(index, "limit1", prefix + inputValue);
+                        }
+                      }}
+                      onKeyDown={(e) => {
+                        const prefix = "Όριο (1H) = ";
+                        const cursorPos = e.target.selectionStart;
+
+                        if (
+                          (e.key === "Backspace" &&
+                            cursorPos <= prefix.length) ||
+                          (e.key === "Delete" && cursorPos < prefix.length)
+                        ) {
+                          e.preventDefault();
+                        }
+                        handleEnterPress(e, index, true);
+                      }}
+                      className="controller limit1"
+                    />
+                  </td>
+                </div>
               </tr>
               <tr>
-                <td className="table-cell">
-                  <input
-                    type="text"
-                    value={
-                      "Όριο (3H) = " +
-                      (limit2?.replace("Όριο (3H) = ", "") ?? "")
-                    }
-                    onChange={(e) => {
-                      const inputValue = e.target.value;
-                      const prefix = "Όριο (3H) = ";
-
-                      if (inputValue.startsWith(prefix)) {
-                        handleChange(index, "limit2", inputValue);
-                      } else {
-                        handleChange(index, "limit2", prefix + inputValue);
+                <div className="dropdownInputs-alignment ">
+                  <td className="table-cell">
+                    <input
+                      type="text"
+                      value={
+                        "Όριο (3H) = " +
+                        (limit2?.replace("Όριο (3H) = ", "") ?? "")
                       }
-                    }}
-                    onKeyDown={(e) => {
-                      const prefix = "Όριο (3H) = ";
-                      const cursorPos = e.target.selectionStart;
+                      onChange={(e) => {
+                        const inputValue = e.target.value;
+                        const prefix = "Όριο (3H) = ";
 
-                      if (
-                        (e.key === "Backspace" && cursorPos <= prefix.length) ||
-                        (e.key === "Delete" && cursorPos < prefix.length)
-                      ) {
-                        e.preventDefault();
-                      }
-                      handleEnterPress(e, index, true);
-                    }}
-                    className="controller limit2"
-                  />
-                </td>
+                        if (inputValue.startsWith(prefix)) {
+                          handleChange(index, "limit2", inputValue);
+                        } else {
+                          handleChange(index, "limit2", prefix + inputValue);
+                        }
+                      }}
+                      onKeyDown={(e) => {
+                        const prefix = "Όριο (3H) = ";
+                        const cursorPos = e.target.selectionStart;
+
+                        if (
+                          (e.key === "Backspace" &&
+                            cursorPos <= prefix.length) ||
+                          (e.key === "Delete" && cursorPos < prefix.length)
+                        ) {
+                          e.preventDefault();
+                        }
+                        handleEnterPress(e, index, true);
+                      }}
+                      className="controller limit2"
+                    />
+                  </td>
+                </div>
               </tr>
               <tr>
-                <td className="table-cell">
-                  <input
-                    type="text"
-                    value={
-                      "Όριο (8H) = " +
-                      (limit3?.replace("Όριο (8H) = ", "") ?? "")
-                    }
-                    onChange={(e) => {
-                      const inputValue = e.target.value;
-                      const prefix = "Όριο (8H) = ";
-
-                      if (inputValue.startsWith(prefix)) {
-                        handleChange(index, "limit3", inputValue);
-                      } else {
-                        handleChange(index, "limit3", prefix + inputValue);
+                <div className="dropdownInputs-alignment ">
+                  <td className="table-cell">
+                    <input
+                      type="text"
+                      value={
+                        "Όριο (8H) = " +
+                        (limit3?.replace("Όριο (8H) = ", "") ?? "")
                       }
-                    }}
-                    onKeyDown={(e) => {
-                      const prefix = "Όριο (8H) = ";
-                      const cursorPos = e.target.selectionStart;
+                      onChange={(e) => {
+                        const inputValue = e.target.value;
+                        const prefix = "Όριο (8H) = ";
 
-                      if (
-                        (e.key === "Backspace" && cursorPos <= prefix.length) ||
-                        (e.key === "Delete" && cursorPos < prefix.length)
-                      ) {
-                        e.preventDefault();
-                      }
-                      handleEnterPress(e, index, true);
-                    }}
-                    className="controller limit3"
-                    id="limit3"
-                  />
-                </td>
+                        if (inputValue.startsWith(prefix)) {
+                          handleChange(index, "limit3", inputValue);
+                        } else {
+                          handleChange(index, "limit3", prefix + inputValue);
+                        }
+                      }}
+                      onKeyDown={(e) => {
+                        const prefix = "Όριο (8H) = ";
+                        const cursorPos = e.target.selectionStart;
+
+                        if (
+                          (e.key === "Backspace" &&
+                            cursorPos <= prefix.length) ||
+                          (e.key === "Delete" && cursorPos < prefix.length)
+                        ) {
+                          e.preventDefault();
+                        }
+                        handleEnterPress(e, index, true);
+                      }}
+                      className="controller limit3"
+                      id="limit3"
+                    />
+                  </td>
+                </div>
               </tr>
             </tbody>
           </table>
@@ -262,7 +271,7 @@ function Row14({
                           );
                         })()}
                       </td>
-                      <div className="inputs-alignment">
+                      <div className="dropdownInputs-alignment ">
                         <td className="table-cell">
                           <input
                             type="text"
