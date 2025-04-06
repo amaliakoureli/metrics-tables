@@ -83,46 +83,48 @@ function Row18({
                     <tr>
                       <td className="table-cell">{dropdownRow.text1}</td>
                       <td className="table-cell">{dropdownRow.text2}</td>
-                      <td className="table-cell">
-                        <input
-                          type="text"
-                          value={dropdownRow.input1}
-                          onChange={(e) =>
-                            handleDropdown18Change(
-                              rowIndex,
-                              "input1",
-                              e.target.value
-                            )
-                          }
-                          className="controller dropdown18-input1"
-                          onKeyDown={(e) =>
-                            handleEnterPress(e, index, true, "dropdown18")
-                          }
-                        />
-                      </td>
-                      <td className="table-cell">
-                        <input
-                          type="text"
-                          value={dropdownRow.input2}
-                          onChange={(e) =>
-                            handleDropdown18Change(
-                              rowIndex,
-                              "input2",
-                              e.target.value
-                            )
-                          }
-                          className="controller dropdown18-input2"
-                          onKeyDown={(e) =>
-                            handleEnterPress(e, index, true, "dropdown18")
-                          }
-                          id={
-                            rowIndex === dropdown18Data.length - 1 &&
-                            !dropdownRow.input2
-                              ? "dropdown18-last"
-                              : undefined
-                          }
-                        />
-                      </td>
+                      <div className="dropdownInputs-alignment">
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input1}
+                            onChange={(e) =>
+                              handleDropdown18Change(
+                                rowIndex,
+                                "input1",
+                                e.target.value
+                              )
+                            }
+                            className="controller dropdown18-input1"
+                            onKeyDown={(e) =>
+                              handleEnterPress(e, index, true, "dropdown18")
+                            }
+                          />
+                        </td>
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input2}
+                            onChange={(e) =>
+                              handleDropdown18Change(
+                                rowIndex,
+                                "input2",
+                                e.target.value
+                              )
+                            }
+                            className="controller dropdown18-input2"
+                            onKeyDown={(e) =>
+                              handleEnterPress(e, index, true, "dropdown18")
+                            }
+                            id={
+                              rowIndex === dropdown18Data.length - 1 &&
+                              !dropdownRow.input2
+                                ? "dropdown18-last"
+                                : undefined
+                            }
+                          />
+                        </td>
+                      </div>
                     </tr>
                   </React.Fragment>
                 ))}

@@ -166,7 +166,7 @@ function Row20({
                       </td>
                     </tr>
                     <tr className="table-row">
-                      <td className="table-cell">
+                      <td className="table-cell inputs20-alignment">
                         <input
                           type="text"
                           value={

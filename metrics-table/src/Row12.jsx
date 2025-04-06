@@ -62,12 +62,8 @@ function Row12({
                 {dropdown12Data.map((dropdownRow, rowIndex) => (
                   <React.Fragment key={rowIndex}>
                     <tr>
-                      <td className="table-cell" rowSpan="2">
-                        {dropdownRow.text1}
-                      </td>
-                      <td className="table-cell" rowSpan="2">
-                        {dropdownRow.text2}
-                      </td>
+                      <td className="table-cell">{dropdownRow.text1}</td>
+                      <td className="table-cell">{dropdownRow.text2}</td>
                       <div className="dropdownInputs-alignment ">
                         <td className="table-cell">
                           <input
@@ -109,13 +105,11 @@ function Row12({
                             }
                           />
                         </td>
-                      </div>
-                    </tr>
-                    <tr>
-                      <div className="dropdownInputs-alignment ">
-                        <td className="table-cell" colSpan="2">
-                          {dropdownRow.text3}
-                        </td>
+                        <tr>
+                          <td className="table-cell Limit-fontWeight">
+                            {dropdownRow.text3}
+                          </td>
+                        </tr>
                       </div>
                     </tr>
                   </React.Fragment>

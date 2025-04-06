@@ -72,40 +72,42 @@ function Row25({
                     <tr className="table-row">
                       <td className="table-cell">{dropdownRow.text1}</td>
                       <td className="table-cell">{dropdownRow.text2}</td>
-                      <td className="table-cell">
-                        <input
-                          type="text"
-                          value={dropdownRow.input1}
-                          onChange={(e) =>
-                            handleDropdown25Change(
-                              rowIndex,
-                              "input1",
-                              e.target.value
-                            )
-                          }
-                          className="controller dropdown25-input1"
-                          onKeyDown={(e) =>
-                            handleEnterPress(e, index, true, "dropdown25")
-                          }
-                        />
-                      </td>
-                      <td className="table-cell">
-                        <input
-                          type="text"
-                          value={dropdownRow.input2}
-                          onChange={(e) =>
-                            handleDropdown25Change(
-                              rowIndex,
-                              "input2",
-                              e.target.value
-                            )
-                          }
-                          className="controller dropdown25-input2"
-                          onKeyDown={(e) =>
-                            handleEnterPress(e, index, true, "dropdown25")
-                          }
-                        />
-                      </td>
+                      <div className="dropdownInputs-alignment">
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input1}
+                            onChange={(e) =>
+                              handleDropdown25Change(
+                                rowIndex,
+                                "input1",
+                                e.target.value
+                              )
+                            }
+                            className="controller dropdown25-input1"
+                            onKeyDown={(e) =>
+                              handleEnterPress(e, index, true, "dropdown25")
+                            }
+                          />
+                        </td>
+                        <td className="table-cell">
+                          <input
+                            type="text"
+                            value={dropdownRow.input2}
+                            onChange={(e) =>
+                              handleDropdown25Change(
+                                rowIndex,
+                                "input2",
+                                e.target.value
+                              )
+                            }
+                            className="controller dropdown25-input2"
+                            onKeyDown={(e) =>
+                              handleEnterPress(e, index, true, "dropdown25")
+                            }
+                          />
+                        </td>
+                      </div>
                     </tr>
                   </React.Fragment>
                 ))}

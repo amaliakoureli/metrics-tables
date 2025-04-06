@@ -538,7 +538,7 @@ function ControlMetrics() {
         } else {
           const dropdown11Inputs = [
             ...document.querySelectorAll(
-              ".dropdown11-input1, .dropdown11-input2"
+              ".dropdown11-input1, .dropdown11-input2, .single-dropdown11-input1"
             ),
           ];
           const currentIndex = dropdown11Inputs.indexOf(e.target);
@@ -834,7 +834,6 @@ function ControlMetrics() {
             } else if (
               index === 1 ||
               index === 2 ||
-              index === 16 ||
               index === 22 ||
               index === 29 ||
               index === 41 ||
@@ -1059,6 +1058,7 @@ function ControlMetrics() {
               index === 35 ||
               index === 36 ||
               index === 39 ||
+              index === 16 ||
               index === 40
             ) {
               return (

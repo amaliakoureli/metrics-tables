@@ -83,7 +83,7 @@ function Row38({
         <td colSpan="4" className="table-cell">
           {dropdown38Visible === index && (
             <table>
-              <thead className="dropdown38">
+              <thead>
                 <tr>
                   <th></th>
                   <th></th>
@@ -106,7 +106,7 @@ function Row38({
                   <tr key={rowIndex} className="table-row">
                     <td className="table-cell">{dropdownRow.text1}</td>
                     <td className="table-cell">{dropdownRow.text2}</td>
-                    <div className="inputs-alignment">
+                    <div className="dropdownInputs-alignment">
                       {dropdownRow.text1 === "α" ? (
                         <>
                           <td className="table-cell">
@@ -177,8 +177,7 @@ function Row38({
                             </select>
                           </td>
                           <td className="table-cell">
-                            <input
-                              type="text"
+                            <select
                               value={dropdownRow.input4}
                               onChange={(e) =>
                                 handleDropdown38Change(
@@ -191,11 +190,16 @@ function Row38({
                               onKeyDown={(e) =>
                                 handleEnterPress(e, index, true, "dropdown38")
                               }
-                            />
+                            >
+                              <option value=""></option>
+                              <option value="ΔΑ">Δ.Α.</option>
+                              <option value="ΔΕ">Δ.Ε.</option>
+                              <option value="ΟΚ">ΟΚ</option>
+                              <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+                            </select>
                           </td>
                           <td className="table-cell">
-                            <input
-                              type="text"
+                            <select
                               value={dropdownRow.input5}
                               onChange={(e) =>
                                 handleDropdown38Change(
@@ -208,11 +212,16 @@ function Row38({
                               onKeyDown={(e) =>
                                 handleEnterPress(e, index, true, "dropdown38")
                               }
-                            />
+                            >
+                              <option value=""></option>
+                              <option value="ΔΑ">Δ.Α.</option>
+                              <option value="ΔΕ">Δ.Ε.</option>
+                              <option value="ΟΚ">ΟΚ</option>
+                              <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+                            </select>
                           </td>
                           <td className="table-cell">
-                            <input
-                              type="text"
+                            <select
                               value={dropdownRow.input6}
                               onChange={(e) =>
                                 handleDropdown38Change(
@@ -225,7 +234,13 @@ function Row38({
                               onKeyDown={(e) =>
                                 handleEnterPress(e, index, true, "dropdown38")
                               }
-                            />
+                            >
+                              <option value=""></option>
+                              <option value="ΔΑ">Δ.Α.</option>
+                              <option value="ΔΕ">Δ.Ε.</option>
+                              <option value="ΟΚ">ΟΚ</option>
+                              <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+                            </select>
                           </td>
                         </>
                       ) : dropdownRow.text1 === "β" ? (
@@ -297,8 +312,7 @@ function Row38({
                             </select>
                           </td>
                           <td className="table-cell">
-                            <input
-                              type="text"
+                            <select
                               value={dropdownRow.input4}
                               onChange={(e) =>
                                 handleDropdown38Change(
@@ -311,11 +325,16 @@ function Row38({
                               onKeyDown={(e) =>
                                 handleEnterPress(e, index, true, "dropdown38")
                               }
-                            />
+                            >
+                              <option value=""></option>
+                              <option value="ΔΑ">Δ.Α.</option>
+                              <option value="ΔΕ">Δ.Ε.</option>
+                              <option value="ΟΚ">ΟΚ</option>
+                              <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+                            </select>
                           </td>
                           <td className="table-cell">
-                            <input
-                              type="text"
+                            <select
                               value={dropdownRow.input5}
                               onChange={(e) =>
                                 handleDropdown38Change(
@@ -328,11 +347,16 @@ function Row38({
                               onKeyDown={(e) =>
                                 handleEnterPress(e, index, true, "dropdown38")
                               }
-                            />
+                            >
+                              <option value=""></option>
+                              <option value="ΔΑ">Δ.Α.</option>
+                              <option value="ΔΕ">Δ.Ε.</option>
+                              <option value="ΟΚ">ΟΚ</option>
+                              <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+                            </select>
                           </td>
                           <td className="table-cell">
-                            <input
-                              type="text"
+                            <select
                               value={dropdownRow.input6}
                               onChange={(e) =>
                                 handleDropdown38Change(
@@ -345,7 +369,13 @@ function Row38({
                               onKeyDown={(e) =>
                                 handleEnterPress(e, index, true, "dropdown38")
                               }
-                            />
+                            >
+                              <option value=""></option>
+                              <option value="ΔΑ">Δ.Α.</option>
+                              <option value="ΔΕ">Δ.Ε.</option>
+                              <option value="ΟΚ">ΟΚ</option>
+                              <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+                            </select>
                           </td>
                         </>
                       ) : (

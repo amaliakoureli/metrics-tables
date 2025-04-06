@@ -201,7 +201,7 @@ function Row4({
                   onChange={(e) =>
                     handleChange(index, "middleInput", e.target.value)
                   }
-                  className="controller column-inputs dropdown4-middleInput"
+                  className="controller dropdown4-middleInput"
                   onKeyDown={(e) => handleEnterPress(e, index, true)}
                 />
                 {textParts[1]}
@@ -209,13 +209,12 @@ function Row4({
             );
           })()}
         </td>
-
         <div className="bats-alignment">
           <tr>
-            <td className="bat1">1BAT</td>
-            <td className="bat2">2BAT</td>
-            <td className="bat1">1BAT</td>
-            <td className="bat2">2BAT</td>
+            <td className="table-cell bat1-1">1BAT</td>
+            <td className="table-cell bat2-1">2BAT</td>
+            <td className="table-cell bat1-2">1BAT</td>
+            <td className="table-cell bat2-2">2BAT</td>
           </tr>
         </div>
       </tr>
@@ -251,7 +250,7 @@ function Row4({
                                       e.target.value
                                     )
                                   }
-                                  className="controller column-inputs dropdown4-middleInput2 "
+                                  className="controller  dropdown4-middleInput2 "
                                   onKeyDown={(e) =>
                                     handleEnterPress(
                                       e,

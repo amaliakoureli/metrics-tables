@@ -54,7 +54,7 @@ function Row21({
                     <tr>
                       <td className="table-cell">{dropdownRow.text1}</td>
                       <td className="table-cell">{dropdownRow.text2}</td>
-                      <div className="inputs-alignment">
+                      <div className="dropdownInputs-alignment">
                         <td className="table-cell">
                           <select
                             value={dropdownRow.input1}
@@ -76,10 +76,11 @@ function Row21({
                                 : undefined
                             }
                           >
-                            <option value="ΔΑ">Δ.Α.</option>
-                            <option value="ΔΕ">Δ.Ε.</option>
+                            <option value=""></option>
+                            <option value="Δ.Α.">Δ.Α.</option>
+                            <option value="Δ.Ε.">Δ.Ε.</option>
                             <option value="ΟΚ">ΟΚ</option>
-                            <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+                            <option value="NOT ΟΚ">NOT ΟΚ</option>
                           </select>
                         </td>
                       </div>

@@ -12,60 +12,90 @@ function Row39({ row, index, handleChange, handleEnterPress }) {
       <td className="table-cell column-text" colSpan={2}>
         {row.text}
       </td>
-      <div>
+      <div className="inputs-alignment">
         <td className="table-cell">
-          <input
-            type="text"
+          <select
             value={row.input1}
             onChange={(e) => handleChange(index, "input1", e.target.value)}
-            className="controller dropdown39-select1"
+            className="controller row39-select1"
             onKeyDown={(e) => handleEnterPress(e, index, true)}
-          />
+          >
+            <option value=""></option>
+            <option value="ΔΑ">Δ.Α.</option>
+            <option value="ΔΕ">Δ.Ε.</option>
+            <option value="ΟΚ">ΟΚ</option>
+            <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+          </select>
         </td>
         <td className="table-cell">
-          <input
-            type="text"
+          <select
             value={row.input2}
             onChange={(e) => handleChange(index, "input2", e.target.value)}
-            className="controller dropdown39-select2"
+            className="controller row39-select2"
             onKeyDown={(e) => handleEnterPress(e, index, true)}
-          />
+          >
+            <option value=""></option>
+            <option value="ΔΑ">Δ.Α.</option>
+            <option value="ΔΕ">Δ.Ε.</option>
+            <option value="ΟΚ">ΟΚ</option>
+            <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+          </select>
         </td>
         <td className="table-cell">
-          <input
-            type="text"
+          <select
             value={row.input3}
             onChange={(e) => handleChange(index, "input3", e.target.value)}
-            className="controller dropdown39-select3"
+            className="controller row39-select3"
             onKeyDown={(e) => handleEnterPress(e, index, true)}
-          />
+          >
+            <option value=""></option>
+            <option value="ΔΑ">Δ.Α.</option>
+            <option value="ΔΕ">Δ.Ε.</option>
+            <option value="ΟΚ">ΟΚ</option>
+            <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+          </select>
         </td>
         <td className="table-cell">
-          <input
-            type="text"
+          <select
             value={row.input4}
             onChange={(e) => handleChange(index, "input4", e.target.value)}
-            className="controller dropdown39-select4"
+            className="controller row39-select4"
             onKeyDown={(e) => handleEnterPress(e, index, true)}
-          />
+          >
+            <option value=""></option>
+            <option value="ΔΑ">Δ.Α.</option>
+            <option value="ΔΕ">Δ.Ε.</option>
+            <option value="ΟΚ">ΟΚ</option>
+            <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+          </select>
         </td>
         <td className="table-cell">
-          <input
-            type="text"
+          <select
             value={row.input5}
             onChange={(e) => handleChange(index, "input5", e.target.value)}
-            className="controller dropdown39-select5"
+            className="controller row39-select5"
             onKeyDown={(e) => handleEnterPress(e, index, true)}
-          />
+          >
+            <option value=""></option>
+            <option value="ΔΑ">Δ.Α.</option>
+            <option value="ΔΕ">Δ.Ε.</option>
+            <option value="ΟΚ">ΟΚ</option>
+            <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+          </select>
         </td>
         <td className="table-cell">
-          <input
-            type="text"
+          <select
             value={row.input6}
             onChange={(e) => handleChange(index, "input6", e.target.value)}
-            className="controller dropdown39-select6"
+            className="controller row39-select6"
             onKeyDown={(e) => handleEnterPress(e, index, true)}
-          />
+          >
+            <option value=""></option>
+            <option value="ΔΑ">Δ.Α.</option>
+            <option value="ΔΕ">Δ.Ε.</option>
+            <option value="ΟΚ">ΟΚ</option>
+            <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+          </select>
         </td>
       </div>
     </tr>

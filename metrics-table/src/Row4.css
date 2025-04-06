@@ -8,13 +8,17 @@
   border-bottom: 1px solid #ddd;
 }
 
-.bat1 {
-  padding-right: 5px;
-  border-bottom: 1px solid #ddd;
+.bat1-2,
+.bat1-1,
+.bat2-1 {
+  padding-right: 22px;
+  border-bottom: 0px;
+  font-weight: bold;
 }
-.bat2 {
-  padding-left: 30px;
-  border-bottom: 1px solid #ddd;
+.bat2-2 {
+  padding-right: 25px;
+  border-bottom: 0px;
+  font-weight: bold;
 }
 
 .column-id {
@@ -23,6 +27,7 @@
 
 .column-text {
   width: 100%;
+  font-weight: bold;
 }
 
 .dropdown4-input1,
@@ -47,6 +52,7 @@
   border-radius: 4px;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 .dropdown11-input1,
@@ -65,8 +71,8 @@
 .dropdown28-Dselect2,
 .double-selectInput1,
 .double-selectInput2,
-.double-input1,
-.double-input2 {
+.dropdown18-input1,
+.dropdown18-input2 {
   width: 120px !important;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -74,20 +80,36 @@
   margin: 0;
 }
 
+.double-input1,
+.double-input2 {
+  width: 120px !important;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  text-align: center;
+}
+
 .inputs-alignment {
   position: relative;
   padding-right: 10px;
   justify-items: right;
 }
+.Limit-fontWeight {
+  font-weight: 600;
+}
+
 .dropdownInputs-alignment {
   position: relative;
-  padding-right: 5px;
+  padding-right: 0px;
   justify-items: right;
 }
 .bats-alignment {
   position: relative;
-  padding-left: 10px;
   justify-items: right;
+  justify-content: center;
+  margin-top: 70px;
 }
 
 .inputs20-alignment {
@@ -200,20 +222,37 @@ table {
 .row15input1,
 .row15input2,
 .row15input3,
-.dropdown20-input3,
+.dropdown31-input1,
 .dropdown21-input1,
 .dropdown22-select1,
 .dropdown28-select1,
-.dropdown31-input1,
 .single-select1,
 .single-input1,
 .duration1BAT,
-.duration2BAT {
+.duration2BAT,
+.single-dropdown11-input1 {
   width: 260px;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 0;
   margin: 0;
+}
+
+.duration1BAT,
+.duration2BAT,
+.dropdown4-middleInput,
+.limit1,
+.limit2,
+.limit3 {
+  font-weight: 600;
+  background-color: #d9e5ee;
+}
+.dropdown13-text3,
+.row15input1,
+.row15input2,
+.row15input3,
+.dropdown31-input1 {
+  font-weight: 600;
 }
 
 .dropdown20-input1 {
@@ -221,8 +260,11 @@ table {
   border: 1px solid #ccc;
   border-bottom: 0px;
   border-radius: 4px;
+  border-bottom-right-radius: 0%;
+  border-bottom-left-radius: 0%;
   padding: 0;
   margin: 0;
+  font-weight: 600;
 }
 
 .dropdown20-input2 {
@@ -230,44 +272,67 @@ table {
   border: 1px solid #ccc;
   border-top: 0px;
   border-radius: 4px;
+  border-top-right-radius: 0%;
+  border-top-left-radius: 0%;
   padding: 0;
   margin: 0;
+  font-weight: 600;
+}
+
+.dropdown20-input3 {
+  width: 260px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
 }
 .dropdown16-input13,
 .dropdown16-input14 {
   width: 50px;
-  max-width: 100px;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 0;
   margin: 0;
   height: 80px;
+  font-weight: 600;
+  text-align: center;
+}
+.dropdown16-text7 {
+  width: 50px;
+  font-weight: 600;
 }
 
 .dropdown16-input13-wider {
-  width: 120px;
-  padding: 0;
-  margin: 0;
+  width: 114px;
+  max-width: 120px;
+  border-radius: 4px;
   height: 80px;
-  position: relative;
-  justify-items: center;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-weight: 600;
+}
+
+.dropdown16-input13-width,
+.dropdown16-input14-width {
+  width: 50px;
+  max-width: 120px;
+  height: 80px;
 }
 
 .CenterText {
   text-align: center;
   vertical-align: middle;
-  padding-right: 40px;
-}
-.col-width {
-  width: 120px;
-  text-align: center;
-  vertical-align: middle;
+  padding-right: 20px;
 }
 
-.dropdown19-Dinput1,
-.dropdown19-Dinput2,
-.dropdown19-Dinput3,
-.dropdown19-Dinput4,
+.col-width {
+  width: 120px;
+  max-width: 120px;
+  text-align: center;
+  padding-right: 20px;
+}
+
 .dropdown34-select1,
 .dropdown34-select2,
 .dropdown34-select3,
@@ -280,12 +345,12 @@ table {
 .dropdown38-select4,
 .dropdown38-select5,
 .dropdown38-select6,
-.dropdown39-select1,
-.dropdown39-select2,
-.dropdown39-select3,
-.dropdown39-select4,
-.dropdown39-select5,
-.dropdown39-select6 {
+.row39-select1,
+.row39-select2,
+.row39-select3,
+.row39-select4,
+.row39-select5,
+.row39-select6 {
   width: 80px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -293,9 +358,28 @@ table {
   margin: 0;
 }
 
+.dropdown19-Dinput1,
+.dropdown19-Dinput2,
+.dropdown19-Dinput3,
+.dropdown19-Dinput4 {
+  width: 80px;
+  border: 0px;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+
+.doubleSelect19-alignment {
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+
 .dropdown19-input1,
 .dropdown19-input2 {
-  width: 165px;
+  width: 168px;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 0;
