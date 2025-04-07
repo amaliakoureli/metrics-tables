@@ -221,6 +221,10 @@ function Row4({
             <td className="table-cell bat2-1">2BAT</td>
             <td className="table-cell bat1-2">1BAT</td>
             <td className="table-cell bat2-2">2BAT</td>
+            <td className="table-cell bat1-1">1BAT</td>
+            <td className="table-cell bat2-1">2BAT</td>
+            <td className="table-cell bat1-2">1BAT</td>
+            <td className="table-cell bat2-2">2BAT</td>
           </tr>
         </div>
       </tr>

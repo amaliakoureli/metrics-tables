@@ -37,6 +37,7 @@
 .column-text {
   width: 100%;
   font-weight: bold;
+  font-weight: bold;
 }
 
 .dropdown4-input1,
@@ -61,6 +62,7 @@
   border-radius: 4px;
   padding: 0;
   margin: 0;
+  text-align: center;
   text-align: center;
 }
 
@@ -98,6 +100,8 @@
   margin: 0;
   height: 50px;
   text-align: center;
+  height: 50px;
+  text-align: center;
 }
 
 .inputs-alignment {
@@ -118,11 +122,14 @@
 .dropdownInputs-alignment {
   position: relative;
   padding-right: 0px;
+  padding-right: 0px;
   justify-items: right;
 }
 .bats-alignment {
   position: relative;
   justify-items: right;
+  justify-content: center;
+  margin-top: 70px;
   justify-content: center;
   margin-top: 70px;
 }
@@ -268,6 +275,7 @@ table {
 .row15input2,
 .row15input3,
 .dropdown31-input1,
+.dropdown31-input1,
 .dropdown21-input1,
 .dropdown22-select1,
 .dropdown28-select1,
@@ -311,8 +319,11 @@ table {
   border-radius: 4px;
   border-bottom-right-radius: 0%;
   border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  border-bottom-left-radius: 0%;
   padding: 0;
   margin: 0;
+  font-weight: 600;
   font-weight: 600;
 }
 
@@ -332,8 +343,20 @@ table {
   width: 260px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  border-top-right-radius: 0%;
+  border-top-left-radius: 0%;
   padding: 0;
   margin: 0;
+  font-weight: 600;
+}
+
+.dropdown20-input3 {
+  width: 260px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
   font-weight: 600;
 }
 .dropdown16-input13,
@@ -344,6 +367,12 @@ table {
   padding: 0;
   margin: 0;
   height: 80px;
+  font-weight: 600;
+  text-align: center;
+}
+.dropdown16-text7 {
+  width: 50px;
+  font-weight: 600;
   font-weight: 600;
   text-align: center;
 }
@@ -366,6 +395,19 @@ table {
 .dropdown16-input14-width {
   width: 50px;
   max-width: 120px;
+  width: 114px;
+  max-width: 120px;
+  border-radius: 4px;
+  height: 80px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-weight: 600;
+}
+
+.dropdown16-input13-width,
+.dropdown16-input14-width {
+  width: 50px;
+  max-width: 120px;
   height: 80px;
 }
 
@@ -373,12 +415,15 @@ table {
   text-align: center;
   vertical-align: middle;
   padding-right: 20px;
+  padding-right: 20px;
 }
 
 .col-width {
   width: 120px;
   max-width: 120px;
+  max-width: 120px;
   text-align: center;
+  padding-right: 20px;
   padding-right: 20px;
 }
 
@@ -426,8 +471,28 @@ table {
   margin: 0;
 }
 
+.dropdown19-Dinput1,
+.dropdown19-Dinput2,
+.dropdown19-Dinput3,
+.dropdown19-Dinput4 {
+  width: 80px;
+  border: 0px;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+
+.doubleSelect19-alignment {
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+
 .dropdown19-input1,
 .dropdown19-input2 {
+  width: 168px;
   width: 168px;
   border: 1px solid #ccc;
   border-radius: 4px;
