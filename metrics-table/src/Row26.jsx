@@ -14,22 +14,28 @@ function Row26({ row, index, handleEnterPress, handleChange }) {
       </td>
       <div className="inputs-alignment">
         <td className="table-cell">
-          <input
-            type="text"
-            value={row.input1}
-            onChange={(e) => handleChange(index, "input1", e.target.value)}
-            className="controller double-input1"
-            onKeyDown={(e) => handleEnterPress(e, index, true)}
-          />
+          <div className="input-wrapper">
+            <input
+              type="text"
+              value={row.input1}
+              onChange={(e) => handleChange(index, "input1", e.target.value)}
+              className="controller double-input1"
+              onKeyDown={(e) => handleEnterPress(e, index, true)}
+            />
+            <span className="unit">°C</span>
+          </div>
         </td>
         <td className="table-cell">
-          <input
-            type="text"
-            value={row.input1}
-            onChange={(e) => handleChange(index, "input1", e.target.value)}
-            className="controller double-input2"
-            onKeyDown={(e) => handleEnterPress(e, index, true)}
-          />
+          <div className="input-wrapper">
+            <input
+              type="text"
+              value={row.input1}
+              onChange={(e) => handleChange(index, "input1", e.target.value)}
+              className="controller double-input2"
+              onKeyDown={(e) => handleEnterPress(e, index, true)}
+            />
+            <span className="unit">°C</span>
+          </div>
         </td>
       </div>
     </tr>

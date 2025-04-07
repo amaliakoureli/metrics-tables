@@ -1,11 +1,11 @@
-  .MetricsTable {
-    width: 100%;
-    padding: 0px 50px;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
+.MetricsTable {
+  width: 100%;
+  padding: 0px 100px;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
 
-h2{
+h2 {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 10px;

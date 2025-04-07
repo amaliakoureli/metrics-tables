@@ -67,23 +67,49 @@ function Row13({
                         {dropdownRow.text2}
                       </td>
                       <div className="dropdownInputs-alignment ">
-                        <td className="table-cell">
-                          <input
-                            type="text"
-                            value={dropdownRow.input1}
-                            onChange={(e) =>
-                              handleDropdown13Change(
-                                rowIndex,
-                                "input1",
-                                e.target.value
-                              )
-                            }
-                            className="controller dropdown13-input1"
-                            onKeyDown={(e) =>
-                              handleEnterPress(e, index, true, "dropdown13")
-                            }
-                          />
-                        </td>
+                        {dropdownRow.text1 === "α" ? (
+                          <td className="table-cell">
+                            <div className="input-wrapper">
+                              <input
+                                type="text"
+                                value={dropdownRow.input1}
+                                onChange={(e) =>
+                                  handleDropdown13Change(
+                                    rowIndex,
+                                    "input1",
+                                    e.target.value
+                                  )
+                                }
+                                className="controller dropdown13-input1"
+                                onKeyDown={(e) =>
+                                  handleEnterPress(e, index, true, "dropdown13")
+                                }
+                              />
+                              <span className="unit">V</span>
+                            </div>
+                          </td>
+                        ) : (
+                          <td className="table-cell">
+                            <div className="input-wrapper">
+                              <input
+                                type="text"
+                                value={dropdownRow.input1}
+                                onChange={(e) =>
+                                  handleDropdown13Change(
+                                    rowIndex,
+                                    "input1",
+                                    e.target.value
+                                  )
+                                }
+                                className="controller dropdown13-input1"
+                                onKeyDown={(e) =>
+                                  handleEnterPress(e, index, true, "dropdown13")
+                                }
+                              />
+                              <span className="unit">uA</span>
+                            </div>
+                          </td>
+                        )}
                       </div>
                     </tr>
                     <tr>

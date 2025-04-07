@@ -21,8 +21,8 @@ function Row16({
         ["230V", "2BAT"],
         ["240V", "1BAT"],
         ["240V", "2BAT"],
-        ["", "1BAT"],
-        ["", "2BAT"],
+        ["1BAT", ""],
+        ["2BAT", ""],
       ],
     },
     {
@@ -150,7 +150,7 @@ function Row16({
                     Κάτω τάση λειτουργίας
                   </th>
                   <th colSpan="2" className="col-width">
-                    Ονομασt. τάση λειτουργίας
+                    Ονομαστ. τάση λειτουργίας
                   </th>
                   <th colSpan="2" className="col-width">
                     Πάνω τάση λειτουργίας
@@ -167,9 +167,7 @@ function Row16({
                       <tr>
                         <td className="table-cell">{dropdownRow.text1}</td>
                         <td className="table-cell">{dropdownRow.text2}</td>
-                        <td className="table-cellSpecial">
-                          {dropdownRow.text3}
-                        </td>
+                        <td className="table-cell">{dropdownRow.text3}</td>
                         {dropdownRow.values.map((value, valueIndex) => (
                           <td key={valueIndex} className="table-cell">
                             <div>
@@ -193,7 +191,10 @@ function Row16({
                         <td className="table-cell CenterText" colSpan="2">
                           {dropdownRow.text6}
                         </td>
-                        <td className="table-cell CenterText" colSpan="2">
+                        <td
+                          className="table-cell dropdown16-text7 CenterText"
+                          colSpan="2"
+                        >
                           {dropdownRow.text7}
                         </td>
                       </tr>
@@ -546,7 +547,10 @@ function Row16({
                               }
                             />
                           </td>
-                          <td className="table-cell" rowSpan="2">
+                          <td
+                            className="table-cell dropdown16-input13-width"
+                            rowSpan="2"
+                          >
                             <input
                               type="text"
                               value={dropdownRow.input13}
@@ -563,7 +567,7 @@ function Row16({
                               }
                             />
                           </td>
-                          <td className="table-cell" rowSpan="2">
+                          <td className=" dropdown16-input14-width" rowSpan="2">
                             <input
                               type="text"
                               value={dropdownRow.input14}
@@ -799,7 +803,10 @@ function Row16({
                               }
                             />
                           </td>
-                          <td className="table-cell" rowSpan="2">
+                          <td
+                            className="table-cell dropdown16-input13-width"
+                            rowSpan="2"
+                          >
                             <input
                               type="text"
                               value={dropdownRow.input13}
@@ -816,7 +823,7 @@ function Row16({
                               }
                             />
                           </td>
-                          <td className="table-cell" rowSpan="2">
+                          <td className="dropdown16-input14-width" rowSpan="2">
                             <input
                               type="text"
                               value={dropdownRow.input14}

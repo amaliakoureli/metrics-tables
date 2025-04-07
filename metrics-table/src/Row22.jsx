@@ -68,7 +68,7 @@ function Row22({
                     <tr>
                       <td className="table-cell">{dropdownRow.text1}</td>
                       <td className="table-cell">{dropdownRow.text2}</td>
-                      <div className="inputs-alignment">
+                      <div className="dropdownInputs-alignment">
                         {dropdownRow.text1 === "α" ||
                         dropdownRow.text1 === "ζ" ? (
                           <>
@@ -87,10 +87,11 @@ function Row22({
                                   handleEnterPress(e, index, true, "dropdown22")
                                 }
                               >
-                                <option value="ΔΑ">Δ.Α.</option>
-                                <option value="ΔΕ">Δ.Ε.</option>
+                                <option value=""></option>
+                                <option value="Δ.Α.">Δ.Α.</option>
+                                <option value="Δ.Ε.">Δ.Ε.</option>
                                 <option value="ΟΚ">ΟΚ</option>
-                                <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+                                <option value="NOT ΟΚ">NOT ΟΚ</option>
                               </select>
                             </td>
                             <td className="table-cell">
@@ -114,10 +115,11 @@ function Row22({
                                     : undefined
                                 }
                               >
-                                <option value="ΔΑ">Δ.Α.</option>
-                                <option value="ΔΕ">Δ.Ε.</option>
+                                <option value=""></option>
+                                <option value="Δ.Α.">Δ.Α.</option>
+                                <option value="Δ.Ε.">Δ.Ε.</option>
                                 <option value="ΟΚ">ΟΚ</option>
-                                <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+                                <option value="NOT ΟΚ">NOT ΟΚ</option>
                               </select>
                             </td>
                           </>
@@ -137,10 +139,11 @@ function Row22({
                                 handleEnterPress(e, index, true, "dropdown22")
                               }
                             >
-                              <option value="ΔΑ">Δ.Α.</option>
-                              <option value="ΔΕ">Δ.Ε.</option>
+                              <option value=""></option>
+                              <option value="Δ.Α.">Δ.Α.</option>
+                              <option value="Δ.Ε.">Δ.Ε.</option>
                               <option value="ΟΚ">ΟΚ</option>
-                              <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
+                              <option value="NOT ΟΚ">NOT ΟΚ</option>
                             </select>
                           </td>
                         )}

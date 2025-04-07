@@ -16,63 +16,63 @@ function Row14({
   const [dropdown14Data, setDropdown14Data] = useState([
     {
       text1: "α",
-      text2: "Για Τάση Μπαταρίας {middleInput}V (σε mA).(1 ώρα αυτονομία)",
+      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(1 ώρα αυτονομία)",
       textInput1: "",
       input1: "",
       input2: "",
     },
     {
       text1: "β",
-      text2: "Για Τάση Μπαταρίας {middleInput}V (σε mA).(1 ώρα αυτονομία)",
+      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(1 ώρα αυτονομία)",
       textInput1: "",
       input1: "",
       input2: "",
     },
     {
       text1: "γ",
-      text2: "Για Τάση Μπαταρίας {middleInput}V (σε mA).(1 ώρα αυτονομία)",
+      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(1 ώρα αυτονομία)",
       textInput1: "",
       input1: "",
       input2: "",
     },
     {
       text1: "α",
-      text2: "Για Τάση Μπαταρίας {middleInput}V (σε mA).(3 ώρα αυτονομία)",
+      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(3 ώρα αυτονομία)",
       textInput1: "",
       input1: "",
       input2: "",
     },
     {
       text1: "β",
-      text2: "Για Τάση Μπαταρίας {middleInput}V (σε mA).(3 ώρα αυτονομία)",
+      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(3 ώρα αυτονομία)",
       textInput1: "",
       input1: "",
       input2: "",
     },
     {
       text1: "γ",
-      text2: "Για Τάση Μπαταρίας {middleInput}V (σε mA).(3 ώρα αυτονομία)",
+      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(3 ώρα αυτονομία)",
       textInput1: "",
       input1: "",
       input2: "",
     },
     {
       text1: "α",
-      text2: "Για Τάση Μπαταρίας {middleInput}V (σε mA).(8 ώρα αυτονομία)",
+      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(8 ώρα αυτονομία)",
       textInput1: "",
       input1: "",
       input2: "",
     },
     {
       text1: "β",
-      text2: "Για Τάση Μπαταρίας {middleInput}V (σε mA).(8 ώρα αυτονομία)",
+      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(8 ώρα αυτονομία)",
       textInput1: "",
       input1: "",
       input2: "",
     },
     {
       text1: "γ",
-      text2: "Για Τάση Μπαταρίας {middleInput}V (σε mA).(8 ώρα αυτονομία)",
+      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(8 ώρα αυτονομία)",
       textInput1: "",
       input1: "",
       input2: "",
@@ -105,7 +105,7 @@ function Row14({
           />
         </td>
 
-        <td className="table-cell">
+        <td className="table-cell table-greenCell">
           <table>
             <tbody>
               <tr>
@@ -220,6 +220,16 @@ function Row14({
                   </td>
                 </div>
               </tr>
+              <tr>
+                <td className="table-greenCell">
+                  <p className="green-column">
+                    {" "}
+                    <b>
+                      No WL <br /> module
+                    </b>
+                  </p>
+                </td>
+              </tr>
             </tbody>
           </table>
         </td>
@@ -238,41 +248,83 @@ function Row14({
                 {dropdown14Data.map((dropdownRow, rowIndex) => (
                   <React.Fragment key={rowIndex}>
                     <tr>
-                      <td className="table-cell">{dropdownRow.text1}</td>
+                      <td
+                        className={`table-cell ${
+                          rowIndex < 3
+                            ? "blue-text"
+                            : rowIndex < 6
+                            ? "green-text"
+                            : "brown-text"
+                        }`}
+                      >
+                        {dropdownRow.text1}
+                      </td>
 
-                      <td className="table-cell">
+                      <td
+                        className={`table-cell ${
+                          rowIndex < 3
+                            ? "blue-text"
+                            : rowIndex < 6
+                            ? "green-text"
+                            : "brown-text"
+                        }`}
+                      >
                         {(() => {
                           const parts =
                             dropdownRow.text2.split("{middleInput}");
                           return (
-                            <>
-                              {parts[0]}
-                              <input
-                                type="text"
-                                value={dropdownRow.textInput1}
-                                onChange={(e) =>
-                                  handleDropdown14Change(
-                                    rowIndex,
-                                    "textInput1",
-                                    e.target.value
-                                  )
-                                }
-                                className={`controller dropdown14-middleInput ${
-                                  rowIndex === 0
-                                    ? "dropdown14-firstMiddleInput"
-                                    : ""
-                                }`}
-                                onKeyDown={(e) =>
-                                  handleEnterPress(e, index, true, "dropdown14")
-                                }
-                              />
-                              {parts[1]}
-                            </>
+                            <div className="middleInput-alignment">
+                              <div className="input-wrapper-start">
+                                {parts[0]}
+                                <input
+                                  type="text"
+                                  value={dropdownRow.textInput1}
+                                  onChange={(e) =>
+                                    handleDropdown14Change(
+                                      rowIndex,
+                                      "textInput1",
+                                      e.target.value
+                                    )
+                                  }
+                                  className={`controller dropdown14-middleInput ${
+                                    rowIndex < 3
+                                      ? "blue-text"
+                                      : rowIndex < 6
+                                      ? "green-text"
+                                      : "brown-text"
+                                  }${
+                                    rowIndex === 0
+                                      ? "dropdown14-firstMiddleInput"
+                                      : ""
+                                  }`}
+                                  onKeyDown={(e) =>
+                                    handleEnterPress(
+                                      e,
+                                      index,
+                                      true,
+                                      "dropdown14"
+                                    )
+                                  }
+                                />
+                                <span
+                                  className={`unit3 ${
+                                    rowIndex < 3
+                                      ? "blue-text"
+                                      : rowIndex < 6
+                                      ? "green-text"
+                                      : "brown-text"
+                                  }`}
+                                >
+                                  V
+                                </span>
+                                {parts[1]}
+                              </div>
+                            </div>
                           );
                         })()}
                       </td>
                       <div className="dropdownInputs-alignment ">
-                        <td className="table-cell">
+                        <td className="table-cell ">
                           <input
                             type="text"
                             value={dropdownRow.input1}
@@ -283,7 +335,13 @@ function Row14({
                                 e.target.value
                               )
                             }
-                            className="controller dropdown14-input1"
+                            className={`controller dropdown14-input1 ${
+                              rowIndex < 3
+                                ? "blue-text"
+                                : rowIndex < 6
+                                ? "green-text"
+                                : "brown-text"
+                            }`}
                             onKeyDown={(e) =>
                               handleEnterPress(e, index, true, "dropdown14")
                             }
@@ -300,7 +358,13 @@ function Row14({
                                 e.target.value
                               )
                             }
-                            className="controller dropdown14-input2"
+                            className={`controller dropdown14-input2 ${
+                              rowIndex < 3
+                                ? "blue-text"
+                                : rowIndex < 6
+                                ? "green-text"
+                                : "brown-text"
+                            }`}
                             onKeyDown={(e) =>
                               handleEnterPress(e, index, true, "dropdown14")
                             }

@@ -20,7 +20,7 @@ function Row4({
     {
       text1: "α",
       text2:
-        "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2}V DC.",
+        "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2} DC.",
       textInput2: "",
       input1: "",
       input2: "",
@@ -30,7 +30,7 @@ function Row4({
     {
       text1: "β",
       text2:
-        "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2}V DC.",
+        "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2} DC.",
       textInput2: "",
       input1: "",
       input2: "",
@@ -40,7 +40,7 @@ function Row4({
     {
       text1: "γ",
       text2:
-        "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2}V DC.",
+        "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2} DC.",
       textInput2: "",
       input1: "",
       input2: "",
@@ -97,90 +97,93 @@ function Row4({
         <td className="table-cell column-text" colSpan={2} rowSpan="2">
           Ρεύμα Φόρτισης – Διάρκεια Φόρτισης
         </td>
-
-        <td className="table-cell" colSpan="2">
-          <div className="input-wrapper">
-            <input
-              type="text"
-              id="duration1BAT"
-              ref={duration1BATRef}
-              value={"Διάρκεια με 1BAT: " + (duration1BAT ?? "")}
-              onChange={(e) => {
-                const prefix = "Διάρκεια με 1BAT: ";
-                const inputValue = e.target.value;
-                if (inputValue.startsWith(prefix)) {
-                  setDuration1BAT(
-                    inputValue.replace(prefix, ""),
-                    duration1BATRef?.current,
-                    duration2BATRef?.current
-                  );
-                } else {
-                  setDuration1BAT(
-                    inputValue,
-                    duration1BATRef?.current,
-                    duration2BATRef?.current
-                  );
-                }
-              }}
-              onKeyDown={(e) => {
-                const prefix = "Διάρκεια με 1BAT: ";
-                const cursorPos = e.target.selectionStart;
-                if (
-                  (e.key === "Backspace" && cursorPos <= prefix.length) ||
-                  (e.key === "Delete" && cursorPos < prefix.length)
-                ) {
-                  e.preventDefault();
-                }
-                handleEnterPress(e, index, true);
-              }}
-              className="controller duration1BAT"
-            />
-            <span className="hoursOfDuration">h</span>
-          </div>
-        </td>
+        <div className="inputs-alignment">
+          <td className="table-cell" colSpan="2">
+            <div className="input-wrapper">
+              <input
+                type="text"
+                id="duration1BAT"
+                ref={duration1BATRef}
+                value={"Διάρκεια με 1BAT: " + (duration1BAT ?? "")}
+                onChange={(e) => {
+                  const prefix = "Διάρκεια με 1BAT: ";
+                  const inputValue = e.target.value;
+                  if (inputValue.startsWith(prefix)) {
+                    setDuration1BAT(
+                      inputValue.replace(prefix, ""),
+                      duration1BATRef?.current,
+                      duration2BATRef?.current
+                    );
+                  } else {
+                    setDuration1BAT(
+                      inputValue,
+                      duration1BATRef?.current,
+                      duration2BATRef?.current
+                    );
+                  }
+                }}
+                onKeyDown={(e) => {
+                  const prefix = "Διάρκεια με 1BAT: ";
+                  const cursorPos = e.target.selectionStart;
+                  if (
+                    (e.key === "Backspace" && cursorPos <= prefix.length) ||
+                    (e.key === "Delete" && cursorPos < prefix.length)
+                  ) {
+                    e.preventDefault();
+                  }
+                  handleEnterPress(e, index, true);
+                }}
+                className="controller duration1BAT"
+              />
+              <span className="unit">H</span>
+            </div>
+          </td>
+        </div>
       </tr>
 
       <tr className="row-width">
-        <td className="table-cell" colSpan="2">
-          <div className="input-wrapper">
-            <input
-              type="text"
-              id="duration2BAT"
-              ref={duration2BATRef}
-              value={"Διάρκεια με 2BAT: " + (duration2BAT ?? "")}
-              onChange={(e) => {
-                const prefix = "Διάρκεια με 2BAT: ";
-                const inputValue = e.target.value;
-                if (inputValue.startsWith(prefix)) {
-                  setDuration2BAT(
-                    inputValue.replace(prefix, ""),
-                    duration1BATRef?.current,
-                    duration2BATRef?.current
-                  );
-                } else {
-                  setDuration2BAT(
-                    inputValue,
-                    duration1BATRef?.current,
-                    duration2BATRef?.current
-                  );
-                }
-              }}
-              onKeyDown={(e) => {
-                const prefix = "Διάρκεια με 2BAT: ";
-                const cursorPos = e.target.selectionStart;
-                if (
-                  (e.key === "Backspace" && cursorPos <= prefix.length) ||
-                  (e.key === "Delete" && cursorPos < prefix.length)
-                ) {
-                  e.preventDefault();
-                }
-                handleEnterPress(e, index, true);
-              }}
-              className="controller duration2BAT"
-            />
-            <span className="hoursOfDuration">h</span>
-          </div>
-        </td>
+        <div className="inputs-alignment">
+          <td className="table-cell" colSpan="2">
+            <div className="input-wrapper">
+              <input
+                type="text"
+                id="duration2BAT"
+                ref={duration2BATRef}
+                value={"Διάρκεια με 2BAT: " + (duration2BAT ?? "")}
+                onChange={(e) => {
+                  const prefix = "Διάρκεια με 2BAT: ";
+                  const inputValue = e.target.value;
+                  if (inputValue.startsWith(prefix)) {
+                    setDuration2BAT(
+                      inputValue.replace(prefix, ""),
+                      duration1BATRef?.current,
+                      duration2BATRef?.current
+                    );
+                  } else {
+                    setDuration2BAT(
+                      inputValue,
+                      duration1BATRef?.current,
+                      duration2BATRef?.current
+                    );
+                  }
+                }}
+                onKeyDown={(e) => {
+                  const prefix = "Διάρκεια με 2BAT: ";
+                  const cursorPos = e.target.selectionStart;
+                  if (
+                    (e.key === "Backspace" && cursorPos <= prefix.length) ||
+                    (e.key === "Delete" && cursorPos < prefix.length)
+                  ) {
+                    e.preventDefault();
+                  }
+                  handleEnterPress(e, index, true);
+                }}
+                className="controller duration2BAT"
+              />
+              <span className="unit">H</span>
+            </div>
+          </td>
+        </div>
       </tr>
 
       <tr className="row-width">
@@ -193,29 +196,31 @@ function Row4({
               ? row.text.split("{middleInput}")
               : ["", ""];
             return (
-              <>
-                {textParts[0]}
-                <input
-                  type="text"
-                  value={row.middleInput || ""}
-                  onChange={(e) =>
-                    handleChange(index, "middleInput", e.target.value)
-                  }
-                  className="controller column-inputs dropdown4-middleInput"
-                  onKeyDown={(e) => handleEnterPress(e, index, true)}
-                />
-                {textParts[1]}
-              </>
+              <div className="middleInput-alignment">
+                <div className="input-wrapper-start">
+                  {textParts[0]}
+                  <input
+                    type="text"
+                    value={row.middleInput || ""}
+                    onChange={(e) =>
+                      handleChange(index, "middleInput", e.target.value)
+                    }
+                    className="controller dropdown4-middleInput"
+                    onKeyDown={(e) => handleEnterPress(e, index, true)}
+                  />
+                  <span className="unit">mA</span>
+                  {textParts[1]}
+                </div>
+              </div>
             );
           })()}
         </td>
-
         <div className="bats-alignment">
           <tr>
-            <td className="bat1">1BAT</td>
-            <td className="bat2">2BAT</td>
-            <td className="bat1">1BAT</td>
-            <td className="bat2">2BAT</td>
+            <td className="table-cell bat1-1">1BAT</td>
+            <td className="table-cell bat2-1">2BAT</td>
+            <td className="table-cell bat1-2">1BAT</td>
+            <td className="table-cell bat2-2">2BAT</td>
           </tr>
         </div>
       </tr>
@@ -239,30 +244,33 @@ function Row4({
                             const parts =
                               dropdownRow.text2.split("{middleInput2}");
                             return (
-                              <>
-                                {parts[0]}
-                                <input
-                                  type="text"
-                                  value={dropdownRow.textInput2}
-                                  onChange={(e) =>
-                                    handleDropdown4Change(
-                                      rowIndex,
-                                      "textInput2",
-                                      e.target.value
-                                    )
-                                  }
-                                  className="controller column-inputs dropdown4-middleInput2 "
-                                  onKeyDown={(e) =>
-                                    handleEnterPress(
-                                      e,
-                                      index,
-                                      true,
-                                      "dropdown4"
-                                    )
-                                  }
-                                />
-                                {parts[1]}
-                              </>
+                              <div className="middleInput-alignment">
+                                <div className="input-wrapper-start">
+                                  {parts[0]}
+                                  <input
+                                    type="text"
+                                    value={dropdownRow.textInput2}
+                                    onChange={(e) =>
+                                      handleDropdown4Change(
+                                        rowIndex,
+                                        "textInput2",
+                                        e.target.value
+                                      )
+                                    }
+                                    className="controller dropdown4-middleInput2 "
+                                    onKeyDown={(e) =>
+                                      handleEnterPress(
+                                        e,
+                                        index,
+                                        true,
+                                        "dropdown4"
+                                      )
+                                    }
+                                  />
+                                  <span className="unit2">V</span>
+                                  {parts[1]}
+                                </div>
+                              </div>
                             );
                           })()
                         : dropdownRow.text2}

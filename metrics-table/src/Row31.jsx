@@ -51,7 +51,7 @@ function Row31({
                     <tr className="table-row">
                       <td className="table-cell">{dropdownRow.text1}</td>
                       <td className="table-cell">{dropdownRow.text2}</td>
-                      <div className="inputs-alignment">
+                      <div className="dropdownInputs-alignment">
                         <td className="table-cell">
                           <input
                             type="text"

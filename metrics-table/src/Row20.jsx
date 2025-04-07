@@ -84,135 +84,151 @@ function Row20({
                       <td className="table-cell" rowSpan="2">
                         {dropdownRow.text2}
                       </td>
-                      <td className="table-cell inputs20-alignment">
-                        <input
-                          type="text"
-                          value={
-                            "Υπολογισμός: " +
-                            dropdownRow.input1.replace("Υπολογισμός: ", "")
-                          }
-                          onChange={(e) => {
-                            const inputValue = e.target.value;
-                            const prefix = "Υπολογισμός: ";
+                      <div className="DropdownInputs-alignment">
+                        <td className="table-cell inputs20-alignment">
+                          <div className="input-wrapper">
+                            <input
+                              type="text"
+                              value={
+                                "Υπολογισμός: " +
+                                dropdownRow.input1.replace("Υπολογισμός: ", "")
+                              }
+                              onChange={(e) => {
+                                const inputValue = e.target.value;
+                                const prefix = "Υπολογισμός: ";
 
-                            if (inputValue.startsWith(prefix)) {
-                              handleDropdown20Change(
-                                rowIndex,
-                                "input1",
-                                inputValue
-                              );
-                            } else {
-                              handleDropdown20Change(
-                                rowIndex,
-                                "input1",
-                                prefix + inputValue
-                              );
-                            }
-                          }}
-                          onKeyDown={(e) => {
-                            const prefix = "Υπολογισμός: ";
-                            const cursorPos = e.target.selectionStart;
+                                if (inputValue.startsWith(prefix)) {
+                                  handleDropdown20Change(
+                                    rowIndex,
+                                    "input1",
+                                    inputValue
+                                  );
+                                } else {
+                                  handleDropdown20Change(
+                                    rowIndex,
+                                    "input1",
+                                    prefix + inputValue
+                                  );
+                                }
+                              }}
+                              onKeyDown={(e) => {
+                                const prefix = "Υπολογισμός: ";
+                                const cursorPos = e.target.selectionStart;
 
-                            if (
-                              (e.key === "Backspace" &&
-                                cursorPos <= prefix.length) ||
-                              (e.key === "Delete" && cursorPos < prefix.length)
-                            ) {
-                              e.preventDefault();
-                            }
-                            handleEnterPress(e, index, true, "dropdown20");
-                          }}
-                          className="controller dropdown20-input1"
-                        />
-                        <input
-                          type="text"
-                          value={
-                            "Μέτρηση: " +
-                            dropdownRow.input2.replace("Μέτρηση: ", "")
-                          }
-                          onChange={(e) => {
-                            const inputValue = e.target.value;
-                            const prefix = "Μέτρηση: ";
+                                if (
+                                  (e.key === "Backspace" &&
+                                    cursorPos <= prefix.length) ||
+                                  (e.key === "Delete" &&
+                                    cursorPos < prefix.length)
+                                ) {
+                                  e.preventDefault();
+                                }
+                                handleEnterPress(e, index, true, "dropdown20");
+                              }}
+                              className="controller dropdown20-input1"
+                            />
+                            <span className="unit">lm</span>
+                          </div>
+                          <div className="input-wrapper">
+                            <input
+                              type="text"
+                              value={
+                                "Μέτρηση: " +
+                                dropdownRow.input2.replace("Μέτρηση: ", "")
+                              }
+                              onChange={(e) => {
+                                const inputValue = e.target.value;
+                                const prefix = "Μέτρηση: ";
 
-                            if (inputValue.startsWith(prefix)) {
-                              handleDropdown20Change(
-                                rowIndex,
-                                "input2",
-                                inputValue
-                              );
-                            } else {
-                              handleDropdown20Change(
-                                rowIndex,
-                                "input2",
-                                prefix + inputValue
-                              );
-                            }
-                          }}
-                          onKeyDown={(e) => {
-                            const prefix = "Μέτρηση: ";
-                            const cursorPos = e.target.selectionStart;
+                                if (inputValue.startsWith(prefix)) {
+                                  handleDropdown20Change(
+                                    rowIndex,
+                                    "input2",
+                                    inputValue
+                                  );
+                                } else {
+                                  handleDropdown20Change(
+                                    rowIndex,
+                                    "input2",
+                                    prefix + inputValue
+                                  );
+                                }
+                              }}
+                              onKeyDown={(e) => {
+                                const prefix = "Μέτρηση: ";
+                                const cursorPos = e.target.selectionStart;
 
-                            if (
-                              (e.key === "Backspace" &&
-                                cursorPos <= prefix.length) ||
-                              (e.key === "Delete" && cursorPos < prefix.length)
-                            ) {
-                              e.preventDefault();
-                            }
-                            handleEnterPress(e, index, true, "dropdown20");
-                          }}
-                          className="controller dropdown20-input2"
-                        />
-                      </td>
+                                if (
+                                  (e.key === "Backspace" &&
+                                    cursorPos <= prefix.length) ||
+                                  (e.key === "Delete" &&
+                                    cursorPos < prefix.length)
+                                ) {
+                                  e.preventDefault();
+                                }
+                                handleEnterPress(e, index, true, "dropdown20");
+                              }}
+                              className="controller dropdown20-input2"
+                            />
+                            <span className="unit">lm</span>
+                          </div>
+                        </td>
+                      </div>
                     </tr>
                     <tr className="table-row">
-                      <td className="table-cell">
-                        <input
-                          type="text"
-                          value={
-                            "Στην οδηγία: " +
-                            dropdownRow.input3.replace("Στην οδηγία: ", "")
-                          }
-                          onChange={(e) => {
-                            const inputValue = e.target.value;
-                            const prefix = "Στην οδηγία: ";
+                      <div className="DropdownInputs-alignment">
+                        <td className="table-cell inputs20-alignment">
+                          <div className="input-wrapper">
+                            <input
+                              type="text"
+                              value={
+                                "Στην οδηγία: " +
+                                dropdownRow.input3.replace("Στην οδηγία: ", "")
+                              }
+                              onChange={(e) => {
+                                const inputValue = e.target.value;
+                                const prefix = "Στην οδηγία: ";
 
-                            if (inputValue.startsWith(prefix)) {
-                              handleDropdown20Change(
-                                rowIndex,
-                                "input3",
-                                inputValue
-                              );
-                            } else {
-                              handleDropdown20Change(
-                                rowIndex,
-                                "input3",
-                                prefix + inputValue
-                              );
-                            }
-                          }}
-                          onKeyDown={(e) => {
-                            const prefix = "Στην οδηγία: ";
-                            const cursorPos = e.target.selectionStart;
+                                if (inputValue.startsWith(prefix)) {
+                                  handleDropdown20Change(
+                                    rowIndex,
+                                    "input3",
+                                    inputValue
+                                  );
+                                } else {
+                                  handleDropdown20Change(
+                                    rowIndex,
+                                    "input3",
+                                    prefix + inputValue
+                                  );
+                                }
+                              }}
+                              onKeyDown={(e) => {
+                                const prefix = "Στην οδηγία: ";
+                                const cursorPos = e.target.selectionStart;
 
-                            if (
-                              (e.key === "Backspace" &&
-                                cursorPos <= prefix.length) ||
-                              (e.key === "Delete" && cursorPos < prefix.length)
-                            ) {
-                              e.preventDefault();
-                            }
-                            handleEnterPress(e, index, true, "dropdown20");
-                          }}
-                          className="controllere dropdown20-input3"
-                          id={
-                            rowIndex === dropdown20Data.length - 1 &&
-                            !dropdownRow.input3
-                              ? "dropdown20-last"
-                              : undefined
-                          }
-                        />
-                      </td>
+                                if (
+                                  (e.key === "Backspace" &&
+                                    cursorPos <= prefix.length) ||
+                                  (e.key === "Delete" &&
+                                    cursorPos < prefix.length)
+                                ) {
+                                  e.preventDefault();
+                                }
+                                handleEnterPress(e, index, true, "dropdown20");
+                              }}
+                              className="controllere dropdown20-input3"
+                              id={
+                                rowIndex === dropdown20Data.length - 1 &&
+                                !dropdownRow.input3
+                                  ? "dropdown20-last"
+                                  : undefined
+                              }
+                            />
+                            <span className="unit">lm</span>
+                          </div>
+                        </td>
+                      </div>
                     </tr>
                   </React.Fragment>
                 ))}

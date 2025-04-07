@@ -48,7 +48,7 @@ function Row19({
       </tr>
       <tr
         key={row.id + "-subrow"}
-        className={`table-row${
+        className={`${
           dropdown19Visible === index ? "visible" : "hidden"
         } dropdown19`}
       >
@@ -60,10 +60,10 @@ function Row19({
                   <tr className="table-row" key={rowIndex}>
                     <td className="table-cell">{dropdownRow.text1}</td>
                     <td className="table-cell">{dropdownRow.text2}</td>
-                    <div className="inputs-alignment">
+                    <div className="dropdownInputs-alignment">
                       <td className="table-cell">
                         {dropdownRow.text1 === "β" ? (
-                          <>
+                          <div className="doubleSelect19-alignment">
                             <select
                               value={dropdownRow.input1}
                               onChange={(e) =>
@@ -78,6 +78,7 @@ function Row19({
                                 handleEnterPress(e, index, true, "dropdown19")
                               }
                             >
+                              <option value=""></option>
                               <option value="ΔΑ">Δ.Α.</option>
                               <option value="ΔΕ">Δ.Ε.</option>
                               <option value="ΟΚ">ΟΚ</option>
@@ -98,12 +99,13 @@ function Row19({
                                 handleEnterPress(e, index, true, "dropdown19")
                               }
                             >
+                              <option value=""></option>
                               <option value="ΔΑ">Δ.Α.</option>
                               <option value="ΔΕ">Δ.Ε.</option>
                               <option value="ΟΚ">ΟΚ</option>
                               <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
                             </select>
-                          </>
+                          </div>
                         ) : (
                           <select
                             value={dropdownRow.input1}
@@ -119,6 +121,7 @@ function Row19({
                               handleEnterPress(e, index, true, "dropdown19")
                             }
                           >
+                            <option value=""></option>
                             <option value="ΔΑ">Δ.Α.</option>
                             <option value="ΔΕ">Δ.Ε.</option>
                             <option value="ΟΚ">ΟΚ</option>
@@ -128,7 +131,7 @@ function Row19({
                       </td>
                       <td className="table-cell">
                         {dropdownRow.text1 === "β" ? (
-                          <>
+                          <div className="doubleSelect19-alignment">
                             <select
                               value={dropdownRow.input3}
                               onChange={(e) =>
@@ -143,6 +146,7 @@ function Row19({
                                 handleEnterPress(e, index, true, "dropdown19")
                               }
                             >
+                              <option value=""></option>
                               <option value="ΔΑ">Δ.Α.</option>
                               <option value="ΔΕ">Δ.Ε.</option>
                               <option value="ΟΚ">ΟΚ</option>
@@ -169,12 +173,13 @@ function Row19({
                                   : undefined
                               }
                             >
+                              <option value=""></option>
                               <option value="ΔΑ">Δ.Α.</option>
                               <option value="ΔΕ">Δ.Ε.</option>
                               <option value="ΟΚ">ΟΚ</option>
                               <option value="ΟΧΙ ΟΚ">NOT ΟΚ</option>
                             </select>
-                          </>
+                          </div>
                         ) : (
                           <select
                             value={dropdownRow.input2}
@@ -190,6 +195,7 @@ function Row19({
                               handleEnterPress(e, index, true, "dropdown19")
                             }
                           >
+                            <option value=""></option>
                             <option value="ΔΑ">Δ.Α.</option>
                             <option value="ΔΕ">Δ.Ε.</option>
                             <option value="ΟΚ">ΟΚ</option>
