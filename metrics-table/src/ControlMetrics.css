@@ -1,16 +1,20 @@
 .MetricsTable {
   width: 100%;
-  padding: 0px 100px;
+  padding: 0px 200px;
   border-collapse: collapse;
   margin-top: 10px;
 }
 
-h2 {
+h1 {
   text-align: center;
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 table {
   width: 100%;
+}
+
+.table-border {
+  border: 2px groove black;
 }

@@ -813,8 +813,8 @@ function ControlMetrics() {
 
   return (
     <div className="MetricsTable">
-      <h2>ΕΛΕΓΧΟΙ ΚΑΙ ΜΕΤΡΗΣΕΙΣ</h2>
-      <table>
+      <h1>ΕΛΕΓΧΟΙ ΚΑΙ ΜΕΤΡΗΣΕΙΣ</h1>
+      <table className="table-border">
         <tbody>
           {data.map((row, index) => {
             if (index === 0) {
