@@ -24,6 +24,9 @@ import Row31 from "./Row31";
 import Row34 from "./Row34";
 import Row38 from "./Row38";
 import Row39 from "./Row39";
+import Row45 from "./Row45";
+import Row46 from "./Row46";
+import Row47 from "./Row47";
 
 function ControlMetrics() {
   const [data, setData] = useState([
@@ -1135,187 +1138,33 @@ function ControlMetrics() {
               );
             } else if (index === 45) {
               return (
-                <>
-                  <tr key={row.id} className="table-row">
-                    <td className="table-cell">{row.id}</td>
-                    <td colSpan={3}>
-                      <textarea
-                        value={
-                          "Παρατηρήσεις: " +
-                          (row.input1?.replace("Παρατηρήσεις: ", "") ?? "")
-                        }
-                        rows={10}
-                        onChange={(e) => {
-                          const inputValue = e.target.value;
-                          const prefix = "Παρατηρήσεις: ";
-
-                          if (inputValue.startsWith(prefix)) {
-                            handleChange(index, "input1", inputValue);
-                          } else {
-                            handleChange(index, "input1", prefix + inputValue);
-                          }
-                        }}
-                        onKeyDown={(e) => {
-                          const prefix = "Παρατηρήσεις: ";
-                          const cursorPos = e.target.selectionStart;
-
-                          if (
-                            (e.key === "Backspace" &&
-                              cursorPos <= prefix.length) ||
-                            (e.key === "Delete" && cursorPos < prefix.length)
-                          ) {
-                            e.preventDefault();
-                          }
-                          handleEnterPress(e, index, true);
-                        }}
-                        className="controller input1"
-                      />
-                    </td>
-                  </tr>
-                </>
+                <Row45
+                  key={row.id}
+                  row={row}
+                  index={index}
+                  handleChange={handleChange}
+                  handleEnterPress={handleEnterPress}
+                />
               );
             } else if (index === 46) {
               return (
-                row.id === "" && (
-                  <>
-                    <tr
-                      key={row.id}
-                      className="table-row"
-                      data-row={index === 0 ? "0" : undefined}
-                    >
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        <b>{row.text}</b>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        {row.text1}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        {row.text2}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        {row.text3}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        {row.text4}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        {row.text5}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        {row.text6}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        {row.text7}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        {row.text8}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        {row.text9}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        {row.text10}
-                      </td>
-                    </tr>
-                  </>
-                )
+                <Row46
+                  key={row.id}
+                  row={row}
+                  index={index}
+                  handleChange={handleChange}
+                  handleEnterPress={handleEnterPress}
+                />
               );
             } else if (index === 47) {
               return (
-                <>
-                  {row.id === "" && (
-                    <tr key={row.id} className="table-row">
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        <b>{row.text1}</b>
-                      </td>
-                    </tr>
-                  )}
-                  {row.id === "" && (
-                    <tr key={row.id} className="table-row">
-                      <td
-                        className="table-cell"
-                        style={{ paddingLeft: "20px" }}
-                      ></td>
-                      <td className="table-cell" colSpan={3}>
-                        <b>{row.text2}</b>
-                      </td>
-                    </tr>
-                  )}
-                </>
+                <Row47
+                  key={row.id}
+                  row={row}
+                  index={index}
+                  handleChange={handleChange}
+                  handleEnterPress={handleEnterPress}
+                />
               );
             } else {
               {
