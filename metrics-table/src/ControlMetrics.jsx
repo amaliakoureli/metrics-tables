@@ -17,7 +17,7 @@ import Row22 from "./Rows/Row22";
 import Row25 from "./Rows/Row25";
 import Row26 from "./Rows/Row26";
 import Row28 from "./Rows/Row28";
-import SingleSelect from "./SingleSelect";
+import SingleSelect from "./Rows/SingleSelect";
 import Row16 from "./Rows/Row16";
 import DoubleSelect from "./Rows/DoubleSelect";
 import Row31 from "./Rows/Row31";
