@@ -165,7 +165,7 @@ function Row16({
                   <React.Fragment key={rowIndex}>
                     {dropdownRow.text1 === "α" ? (
                       <tr>
-                        <td className="table-cell">{dropdownRow.text1}</td>
+                        <td className="table-cell ">{dropdownRow.text1}</td>
                         <td className="table-cell">{dropdownRow.text2}</td>
                         <td className="table-cell">{dropdownRow.text3}</td>
                         {dropdownRow.values.map((value, valueIndex) => (

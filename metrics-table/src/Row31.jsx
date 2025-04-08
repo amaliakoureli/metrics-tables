@@ -49,13 +49,41 @@ function Row31({
                 {dropdown31Data.map((dropdownRow, rowIndex) => (
                   <React.Fragment key={rowIndex}>
                     <tr className="table-row">
-                      <td className="table-cell">{dropdownRow.text1}</td>
-                      <td className="table-cell">{dropdownRow.text2}</td>
+                      <td
+                        className={`table-cell ${
+                          rowIndex === 0
+                            ? "blue-text"
+                            : rowIndex === 1
+                            ? "green-text"
+                            : rowIndex === 2
+                            ? "brown-text"
+                            : "red-text"
+                        }`}
+                      >
+                        {dropdownRow.text1}
+                      </td>
+                      <td
+                        className={`table-cell ${
+                          rowIndex === 0
+                            ? "blue-text"
+                            : rowIndex === 1
+                            ? "green-text"
+                            : "red-text"
+                        }`}
+                      >
+                        {dropdownRow.text2}
+                      </td>
                       <div className="dropdownInputs-alignment">
                         <td className="table-cell">
                           <input
                             type="text"
-                            className="controller dropdown31-input1"
+                            className={`controller dropdown31-input1 ${
+                              rowIndex === 0
+                                ? "blue-text"
+                                : rowIndex === 1
+                                ? "green-text"
+                                : "red-text"
+                            }`}
                             value={
                               "Από μέτρηση: " +
                               dropdownRow.input1.replace("Από μέτρηση: ", "")

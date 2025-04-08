@@ -78,10 +78,32 @@ function Row20({
                 {dropdown20Data.map((dropdownRow, rowIndex) => (
                   <React.Fragment key={rowIndex}>
                     <tr>
-                      <td className="table-cell" rowSpan="2">
+                      <td
+                        className={`table-cell ${
+                          rowIndex === 0
+                            ? "blue-text"
+                            : rowIndex === 1
+                            ? "green-text"
+                            : rowIndex === 2
+                            ? "brown-text"
+                            : "red-text"
+                        }`}
+                        rowSpan="2"
+                      >
                         {dropdownRow.text1}
                       </td>
-                      <td className="table-cell" rowSpan="2">
+                      <td
+                        className={`table-cell ${
+                          rowIndex === 0
+                            ? "blue-text"
+                            : rowIndex === 1
+                            ? "green-text"
+                            : rowIndex === 2
+                            ? "brown-text"
+                            : "red-text"
+                        }`}
+                        rowSpan="2"
+                      >
                         {dropdownRow.text2}
                       </td>
                       <div className="DropdownInputs-alignment">
@@ -125,9 +147,29 @@ function Row20({
                                 }
                                 handleEnterPress(e, index, true, "dropdown20");
                               }}
-                              className="controller dropdown20-input1"
+                              className={`controller dropdown20-input1 ${
+                                rowIndex === 0
+                                  ? "blue-text"
+                                  : rowIndex === 1
+                                  ? "green-text"
+                                  : rowIndex === 2
+                                  ? "brown-text"
+                                  : "red-text"
+                              }`}
                             />
-                            <span className="unit">lm</span>
+                            <span
+                              className={`unit ${
+                                rowIndex === 0
+                                  ? "blue-text"
+                                  : rowIndex === 1
+                                  ? "green-text"
+                                  : rowIndex === 2
+                                  ? "brown-text"
+                                  : "red-text"
+                              }`}
+                            >
+                              lm
+                            </span>
                           </div>
                           <div className="input-wrapper">
                             <input
@@ -168,9 +210,29 @@ function Row20({
                                 }
                                 handleEnterPress(e, index, true, "dropdown20");
                               }}
-                              className="controller dropdown20-input2"
+                              className={`controller dropdown20-input2 ${
+                                rowIndex === 0
+                                  ? "blue-text"
+                                  : rowIndex === 1
+                                  ? "green-text"
+                                  : rowIndex === 2
+                                  ? "brown-text"
+                                  : "red-text"
+                              }`}
                             />
-                            <span className="unit">lm</span>
+                            <span
+                              className={`unit ${
+                                rowIndex === 0
+                                  ? "blue-text"
+                                  : rowIndex === 1
+                                  ? "green-text"
+                                  : rowIndex === 2
+                                  ? "brown-text"
+                                  : "red-text"
+                              }`}
+                            >
+                              lm
+                            </span>
                           </div>
                         </td>
                       </div>
@@ -217,7 +279,15 @@ function Row20({
                                 }
                                 handleEnterPress(e, index, true, "dropdown20");
                               }}
-                              className="controllere dropdown20-input3"
+                              className={`controller dropdown20-input3 ${
+                                rowIndex === 0
+                                  ? "blue-text"
+                                  : rowIndex === 1
+                                  ? "green-text"
+                                  : rowIndex === 2
+                                  ? "brown-text"
+                                  : "red-text"
+                              }`}
                               id={
                                 rowIndex === dropdown20Data.length - 1 &&
                                 !dropdownRow.input3
@@ -225,7 +295,19 @@ function Row20({
                                   : undefined
                               }
                             />
-                            <span className="unit">lm</span>
+                            <span
+                              className={`unit ${
+                                rowIndex === 0
+                                  ? "blue-text"
+                                  : rowIndex === 1
+                                  ? "green-text"
+                                  : rowIndex === 2
+                                  ? "brown-text"
+                                  : "red-text"
+                              }`}
+                            >
+                              lm
+                            </span>
                           </div>
                         </td>
                       </div>
