@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Row4.css";
+import Dropdown19Data from "../TablesData/Dropdown19Data";
 
 function Row19({
   row,
@@ -8,22 +9,7 @@ function Row19({
   toggleDropdown19,
   dropdown19Visible,
 }) {
-  const [dropdown19Data, setDropdown19Data] = useState([
-    {
-      text1: "α",
-      text2: "Απομάκρυνση μπαταρίας και έλεγχος εμφάνισης σφάλματος",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "β",
-      text2: "Lamp Test με μπαταρία και χωρίς μπαταρία",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-    },
-  ]);
+  const [dropdown19Data, setDropdown19Data] = useState(Dropdown19Data);
 
   const handleDropdown19Change = (rowIndex, field, value) => {
     const newDropdown19Data = [...dropdown19Data];

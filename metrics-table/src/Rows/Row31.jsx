@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Row4.css";
+import Dropdown31Data from "../TablesData/Dropdown31Data";
 
 function Row31({
   row,
@@ -9,11 +10,7 @@ function Row31({
   dropdown31Visible,
   setDropdown31Visible,
 }) {
-  const [dropdown31Data, setDropdown31Data] = useState([
-    { text1: "α", text2: "Έχει αυτονομία: 1 ώρα", input1: "" },
-    { text1: "β", text2: "Έχει αυτονομία: 3 ώρες", input1: "" },
-    { text1: "γ", text2: "Έχει αυτονομία: 8 ώρες", input1: "" },
-  ]);
+  const [dropdown31Data, setDropdown31Data] = useState(Dropdown31Data);
 
   const handleDropdown31Change = (rowIndex, field, value) => {
     const newDropdown31Data = [...dropdown31Data];

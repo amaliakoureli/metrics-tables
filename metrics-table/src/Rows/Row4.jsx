@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Row4.css";
+import Dropdown4Data from "../TablesData/Dropdown4Data";
 
 function Row4({
   row,
@@ -16,65 +17,7 @@ function Row4({
   duration1BATRef,
   duration2BATRef,
 }) {
-  const [dropdown4Data, setDropdown4Data] = useState([
-    {
-      text1: "α",
-      text2:
-        "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2} DC.",
-      textInput2: "",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-    },
-    {
-      text1: "β",
-      text2:
-        "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2} DC.",
-      textInput2: "",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-    },
-    {
-      text1: "γ",
-      text2:
-        "Ρεύμα φόρτισης μπαταρίας (σε mA DC), για μπαταρία {middleInput2} DC.",
-      textInput2: "",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-    },
-    {
-      text1: "δ",
-      text2:
-        "Ρεύμα φόρτισης για τάση δικτύου = <b>0.9 x ονομαστική τάση</b> (Max τάση μπαταρίας)",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-    },
-    {
-      text1: "ε",
-      text2:
-        "Ρεύμα φόρτισης για τάση δικτύου = <b>1.06 x ονομαστική τάση</b> (Max τάση μπαταρίας)",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-    },
-    {
-      text1: "ζ",
-      text2:
-        "Τάση μπαταρίας όταν είναι φορτισμένη (συνδεδεμένη πάνω στην συσκευή) <b>(σε V DC)</b>",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-    },
-  ]);
+  const [dropdown4Data, setDropdown4Data] = useState(Dropdown4Data);
 
   const handleDropdown4Change = (rowIndex, field, value) => {
     const newDropdown4Data = [...dropdown4Data];

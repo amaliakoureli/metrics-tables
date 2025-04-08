@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Row4.css";
+import Dropdown18Data from "../TablesData/Dropdown18Data";
 
 function Row18({
   row,
@@ -9,43 +10,7 @@ function Row18({
   dropdown18Visible,
   setDropdown18Visible,
 }) {
-  const [dropdown18Data, setDropdown18Data] = useState([
-    {
-      text1: "α",
-      text2:
-        "Τάση μικροελεγκτή (V DC) στο δίκτυο (τάση μπαταρίας - ονομαστική τιμή)",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "β",
-      text2:
-        "Τάση μικροελεγκτή (V DC) στο δίκτυο (τάση μπαταρίας - πριν την αποκοπή)",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "γ",
-      text2:
-        "Τάση μικροελεγκτή (V DC) στην εφεδρεία (τάση μπαταρίας - ονομαστική τιμή)",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "δ",
-      text2:
-        "Τάση μικροελεγκτή (V DC) στην εφεδρεία (τάση μπαταρίας - πριν την αποκοπή)",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "ε",
-      text2:
-        "Τάση στο κύκλωμα (διαιρέτη) ύπαρξης VDC (πρέπει να είναι > 70% x Τάση Επεξεργαστή).",
-      input1: "",
-      input2: "",
-    },
-  ]);
+  const [dropdown18Data, setDropdown18Data] = useState(Dropdown18Data);
 
   const handleDropdown18Change = (rowIndex, field, value) => {
     const newDropdown18Data = [...dropdown18Data];

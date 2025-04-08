@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Row4.css";
+import Dropdown14Data from "../TablesData/Dropdown14Data";
 
 function Row14({
   row,
@@ -13,71 +14,7 @@ function Row14({
   dropdown14Visible,
   setDropdown14Visible,
 }) {
-  const [dropdown14Data, setDropdown14Data] = useState([
-    {
-      text1: "α",
-      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(1 ώρα αυτονομία)",
-      textInput1: "",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "β",
-      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(1 ώρα αυτονομία)",
-      textInput1: "",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "γ",
-      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(1 ώρα αυτονομία)",
-      textInput1: "",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "α",
-      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(3 ώρα αυτονομία)",
-      textInput1: "",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "β",
-      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(3 ώρα αυτονομία)",
-      textInput1: "",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "γ",
-      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(3 ώρα αυτονομία)",
-      textInput1: "",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "α",
-      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(8 ώρα αυτονομία)",
-      textInput1: "",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "β",
-      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(8 ώρα αυτονομία)",
-      textInput1: "",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "γ",
-      text2: "Για Τάση Μπαταρίας {middleInput} (σε mA).(8 ώρα αυτονομία)",
-      textInput1: "",
-      input1: "",
-      input2: "",
-    },
-  ]);
+  const [dropdown14Data, setDropdown14Data] = useState(Dropdown14Data);
 
   const handleDropdown14Change = (rowIndex, field, value) => {
     const newDropdown14Data = [...dropdown14Data];

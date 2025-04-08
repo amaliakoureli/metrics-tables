@@ -27,219 +27,10 @@ import Row39 from "./Rows/Row39";
 import Row45 from "./Rows/Row45";
 import Row46 from "./Rows/Row46";
 import Row47 from "./Rows/Row47";
+import MainTable from "./TablesData/MainTable";
 
 function ControlMetrics() {
-  const [data, setData] = useState([
-    { id: 1, text: "Τύπος φωτιστικού (Συνεχούς/Μη συνεχούς)" },
-    { id: 2, text: "Πηγή φωτισμού (Αριθμός LED-Διάταξη)", input1: "" },
-    { id: 3, text: "Τύπος LED/λάμπα", input1: "" },
-    {
-      id: 4,
-      text: "(Ρεύμα φόρτισης x ώρες φόρτισης ≥ 1.5 x χωρητικότητα μπαταρίας = {middleInput})",
-      middleInput: "",
-      input1: "",
-      input2: "",
-    },
-    {
-      id: 5,
-      text: "Τάση εξόδου του κυκλώματος φόρτισης (σε V DC)(≥ Max τάση μπαταρίας)",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-    },
-    {
-      id: 6,
-      text: "Τάση μπαταρίας για ένδειξη αποσύνδεξης (σε V DC)",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-    },
-    {
-      id: 7,
-      text: "Ρεύμα Συντήρησης (σε mA DC) (1/5 της ονομαστικής φόρτισης)",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-    },
-    {
-      id: 8,
-      text: "Είναι σβηστά τα LED της λάμπας όταν το φωτιστικό φορτίζει; (μη συνεχούς λειτουργία)",
-      input1: "",
-      input2: "",
-    },
-    {
-      id: 9,
-      text: "Δοκιμή φόρτισης με άδεια μπαταρία (0.7 V)",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-    },
-    {
-      id: 10,
-      text: "'Έλεγχος σειριακού UART καταγραφής θερμοκρασίας (Honeywell)",
-      input1: "",
-    },
-    { id: 11, text: "'Ρεύμα φωτεινής πηγής για αυτονομίες 1,3,8 ώρες" },
-    { id: 12, text: "Εναλλαγή Τάσης 138V AC-195V AC" },
-    { id: 13, text: "Αποκοπή Μπαταρίας (μέτρηση με πολύμετρο)" },
-    {
-      id: 14,
-      text: "<b>Κατανάλωση από τη μπαταρία στην εφεδρική λειτουργία (σε mA) <br><u> -> Για μπαταρίες Ni-Cd, Ni-Mh, LiFePo4:</u> <br> Imax < (60min:0.6xC5A, 90min:0.51xC5A, 180min:0.25xC5A, 480min:0.1xC5A) <br> <u> -> Για μπαταρία Μολύβδου (Pb):</u> <br> Imax < (60min:0.4xC20A, 90min:0.34xxC20A, 180min:0.17xxC20A) </b>",
-      limit1: "",
-      limit2: "",
-      limit3: "",
-    },
-    {
-      id: 15,
-      text: "Κατανάλωση από τη μπαταρία (ονομαστική τάση μπαταρίας) στην εφεδρική λειτουργία (σε mA) όταν η τάση του δικτύου είναι 0,6 x μέγιστη τάση λειτουργίας (σε V AC). Η κατανάλωση πρέπει να είναι περίπου ίδια με την κατανάλωση που αναφερεται στην παραπάνω παραγραφο.",
-      input1: "",
-      input2: "",
-      input3: "",
-    },
-    {
-      id: 16,
-      text: "Κατανάλωση Φωτιστικού στην κανονκή λειτουργια (μέτρηση με YOKOGAWA) με πλήρη διαμόρφωση",
-    },
-    {
-      id: 17,
-      text: "V AC=90V. Φωτιστικό μπαίνει στην αποκοπή. Ξυπνάει σε 1' με V AC=220V",
-      input1: "",
-    },
-    {
-      id: 18,
-      text: "Τάση τροφοδοσίας μικρολεγκτή (αν υπάρχει) με χρήση wireless module. Όριο: Μέχρι 200mV κάτω από την ονομαστική τάση ....",
-    },
-    { id: 19, text: "Έλεγχοι κατα το trickle charge" },
-    { id: 20, text: "Φωτεινότητα" },
-    { id: 21, text: "Βραχυκύκλωμα LEDοσειράς και απόκριση του φωτιστικού" },
-    { id: 22, text: "Κυκλώματα ελέγχου- επικοινωνίας" },
-    {
-      id: 23,
-      text: "Δοκιμή κατανάλωση από την μπαταρία στην κατάσταση rest mode ή inhibit. Το ρεύμα πρέπει να είναι <0,0015 x C5Ah(NiCd) ή <25 x 0,000001 x C5aA(NiMh) ή <0.00001 x C20Ah(Pb)",
-      input1: "",
-    },
-    {
-      id: 24,
-      text: "Δοκιμή ενδεικτικών LED και τις λειτουργίες τους και σύγκριση με την εκτύπωση στο πλαστικό",
-      input1: "",
-    },
-    {
-      id: 25,
-      text: "Θερμικές δοκιμές υλικών κατά την λειτουργία (και με την χρήση wireless module, αν δεχεται)",
-    },
-    {
-      id: 26,
-      text: "Βραχυκύκλωμα φορτιστή (στο φις μπαταρίας) για 1 λεπτό σε τάση 1.06 x ονομαστική τάση δικτύου και μέτρηση θερμοκρασίας στο κύκλωμα φόρτισης",
-      input1: "",
-      input2: "",
-    },
-    {
-      id: 27,
-      text: "Δοκιμές τοποθέτησης σε όλα τα πλαστικά που θα μπαίνει η πλακέτα",
-      input1: "",
-    },
-    { id: 28, text: "EMC - Ασφάλεια" },
-    {
-      id: 29,
-      text: "Έλεγχος αντοχής σε θερμοθάλαμο (στα όρια της θερμοκρασίας λειτουργίας).(Δες το τέλος του εγγράφου για αναλυτικά βήματα).",
-      input1: "",
-    },
-    { id: 30, text: "Πρόγραμμα για το ΗΕ-4000 / ΗΕ-3000", input1: "" },
-    { id: 31, text: "Το προιόν παράγεται με μπαταρία:" },
-    { id: 32, text: "'Εχει δυνατότητα Dimming;", input1: "", input2: "" },
-    {
-      id: 33,
-      text: "Έλεγχος σειράς εκτέλεσης έξυπνων λειτουργιών από το μπουτόν",
-      input1: "",
-      input2: "",
-    },
-    {
-      id: 34,
-      text: "Έλεγχος ομαλής έναυσης LEDοσειράς",
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-    },
-    {
-      id: 35,
-      text: "Έλεγχος σφάλματος LEDοσειράς σε τεστ, με και χωρίς L1",
-      input1: "",
-      input2: "",
-    },
-    {
-      id: 36,
-      text: "Συγκριτικός έλεγχος τεχνικών στοιχείων, λειτουργίας φωτιστικού και τεχνικού εγχειριδίου (αν υπάρχει).",
-      input1: "",
-    },
-    {
-      id: 37,
-      text: "Έλεγχος αποστάσεων πλακέτας (Creepage-Clearance)",
-      input1: "",
-    },
-    {
-      id: 38,
-      text: "Έλεγχος ποιότητας φωτιστικού (χωρίς flicker) ",
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-    },
-    {
-      id: 39,
-      text: "Μετρήσεις πικτογραφήματος",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-      input5: "",
-      input6: "",
-    },
-    { id: 40, text: "IP Test", input1: "" },
-    {
-      id: 41,
-      text: "Dip Switch Test (σε φωτιστικά που έχουν Dip switches)",
-      input1: "",
-    },
-    {
-      id: 42,
-      text: "Max open circuit (V LED+ - V LED- σε V DC, χωρλις τη LEDοσειρά πάνω)(Uout(V DC) : (C1 -> C2 & C1,C2 ->GND). Αν δεν έχει C1 ,C2 τότε είναι η Max open circuit voltage)",
-      input1: "",
-    },
-    { id: 43, text: "tc (θερμόμετρο σημείο της πλακέτας, σε °C)", input1: "" },
-    { id: 44, text: "Μέγιστη θερμοκρασία στην LEDοσειρά", input1: "" },
-    { id: 45, text: "EOFp = P LED,emergency/ P LED,normal", input1: "" },
-    { id: "", text: "", input1: "" },
-    {
-      id: "",
-      text: "28. Βήματα μέτρησης αυτονομίας στο θερμοθάλαμο.",
-      text1: "1) Ρύθμιση του θερμοθαλάμου στην ελάχιστη θρμοκρασία",
-      text2:
-        "2) Τοποθέτηση dip switch για 1 ώρα και πλήρη εκφόρτιση του φωτιστικού",
-      text3:
-        "3) Εκκίνηση καταγραφής μετρήσεων (τάση μπαταρίας, ρεύμα εκφόρτισης και θερμοκρασία μπαταρίας)",
-      text4: "4) Πλήρη φόρτιση και εκφόρτιση του φωτιστικού",
-      text5:
-        "5) Αλλαγή τοθ dip switch για 3 ώρες και πλήρη φόρτιση και εκφόρτιση φωτιστικού",
-      text6:
-        "6) Αλλαγή τοθ dip switch για 8 ώρες και πλήρη φόρτιση και εκφόρτιση φωτιστικού",
-      text7: "7) Αλλαγή της θερμοκρασίας θεροθαλάμου στη μέγιστη θερμοκρασία",
-      text8:
-        "8) Φότριση φωτιστικού σε λειτουργία συνεχούς στη μέγιστη φωτεινότητα (αν υπάρχει)",
-      text9: "9) Τέλος καταγραφής",
-      text10:
-        "* εκτιμώμενος χρόνο για μπαταρίες NiMH 5 ημέρες και για LiFeP04 4 ημέρες",
-    },
-    { id: "", text1: "Δ.Ε. : Δεν έγινε", text2: "Δ.Α. : Δεν απαιτείται." },
-  ]);
+  const [data, setData] = useState(MainTable);
 
   const [selectedButton1, setSelectedButton1] = useState(false);
   const [selectedButton2, setSelectedButton2] = useState(false);
@@ -820,241 +611,199 @@ function ControlMetrics() {
       <table className="table-border">
         <tbody>
           {data.map((row, index) => {
-            if (index === 0) {
-              return (
-                <Row1
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  selectedButton1={selectedButton1}
-                  selectedButton2={selectedButton2}
-                  setSelectedButton1={setSelectedButton1}
-                  setSelectedButton2={setSelectedButton2}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                />
-              );
-            } else if (
-              index === 1 ||
+            return index === 0 ? (
+              <Row1
+                key={row.id}
+                row={row}
+                index={index}
+                selectedButton1={selectedButton1}
+                selectedButton2={selectedButton2}
+                setSelectedButton1={setSelectedButton1}
+                setSelectedButton2={setSelectedButton2}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            ) : index === 1 ||
               index === 2 ||
               index === 22 ||
               index === 29 ||
               index === 41 ||
               index === 42 ||
               index === 43 ||
-              index === 44
-            ) {
-              return (
-                <SingleInput
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                />
-              );
-            } else if (index === 3) {
-              return (
-                <Row4
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown4={toggleDropdown4}
-                  dropdown4Visible={dropdown4Visible}
-                  setDropdown4Visible={setDropdown4Visible}
-                  duration1BAT={duration1BAT}
-                  setDuration1BAT={setDuration1BAT}
-                  duration2BAT={duration2BAT}
-                  setDuration2BAT={setDuration2BAT}
-                  duration1BATRef={duration1BATRef}
-                  duration2BATRef={duration2BATRef}
-                />
-              );
-            } else if (
-              index === 4 ||
-              index === 5 ||
-              index === 6 ||
-              index === 8
-            ) {
-              return (
-                <Rows5679
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                />
-              );
-            } else if (index === 10) {
-              return (
-                <Row11
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown11={toggleDropdown11}
-                  dropdown11Visible={dropdown11Visible}
-                  setDropdown11Visible={setDropdown11Visible}
-                />
-              );
-            } else if (index === 11) {
-              return (
-                <Row12
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown12={toggleDropdown12}
-                  dropdown12Visible={dropdown12Visible}
-                  setDropdown12Visible={setDropdown12Visible}
-                />
-              );
-            } else if (index === 12) {
-              return (
-                <Row13
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown13={toggleDropdown13}
-                  dropdown13Visible={dropdown13Visible}
-                  setDropdown13Visible={setDropdown13Visible}
-                />
-              );
-            } else if (index === 13) {
-              return (
-                <Row14
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  limit1={row.limit1}
-                  limit2={row.limit2}
-                  limit3={row.limit3}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown14={toggleDropdown14}
-                  dropdown14Visible={dropdown14Visible}
-                  setDropdown14Visible={setDropdown14Visible}
-                />
-              );
-            } else if (index === 14) {
-              return (
-                <Row15
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  input1={row.input1}
-                  input2={row.input2}
-                  input3={row.input3}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                />
-              );
-            } else if (index === 15) {
-              return (
-                <Row16
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  toggleDropdown16={toggleDropdown16}
-                  dropdown16Visible={dropdown16Visible}
-                  setDropdown16Visible={setDropdown16Visible}
-                  handleEnterPress={handleEnterPress}
-                  firstDropdown16InputRef={firstDropdown16InputRef}
-                />
-              );
-            } else if (index === 17) {
-              return (
-                <Row18
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown18={toggleDropdown18}
-                  dropdown18Visible={dropdown18Visible}
-                  setDropdown18Visible={setDropdown18Visible}
-                />
-              );
-            } else if (index === 18) {
-              return (
-                <Row19
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown19={toggleDropdown19}
-                  dropdown19Visible={dropdown19Visible}
-                  setDropdown19Visible={setDropdown19Visible}
-                />
-              );
-            } else if (index === 19) {
-              return (
-                <Row20
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown20={toggleDropdown20}
-                  dropdown20Visible={dropdown20Visible}
-                  setDropdown20Visible={setDropdown20Visible}
-                />
-              );
-            } else if (index === 20) {
-              return (
-                <Row21
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown21={toggleDropdown21}
-                  dropdown21Visible={dropdown21Visible}
-                  setDropdown21Visible={setDropdown21Visible}
-                />
-              );
-            } else if (index === 21) {
-              return (
-                <Row22
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown22={toggleDropdown22}
-                  dropdown22Visible={dropdown22Visible}
-                  setDropdown22Visible={setDropdown22Visible}
-                />
-              );
-            } else if (index === 24) {
-              return (
-                <Row25
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown25={toggleDropdown25}
-                  dropdown25Visible={dropdown25Visible}
-                  setDropdown25Visible={setDropdown25Visible}
-                />
-              );
-            } else if (index === 27) {
-              return (
-                <Row28
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown28={toggleDropdown28}
-                  dropdown28Visible={dropdown28Visible}
-                  setDropdown28Visible={setDropdown28Visible}
-                />
-              );
-            } else if (
-              index === 9 ||
+              index === 44 ? (
+              <SingleInput
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            ) : index === 3 ? (
+              <Row4
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown4={toggleDropdown4}
+                dropdown4Visible={dropdown4Visible}
+                setDropdown4Visible={setDropdown4Visible}
+                duration1BAT={duration1BAT}
+                setDuration1BAT={setDuration1BAT}
+                duration2BAT={duration2BAT}
+                setDuration2BAT={setDuration2BAT}
+                duration1BATRef={duration1BATRef}
+                duration2BATRef={duration2BATRef}
+              />
+            ) : index === 4 || index === 5 || index === 6 || index === 8 ? (
+              <Rows5679
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            ) : index === 10 ? (
+              <Row11
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown11={toggleDropdown11}
+                dropdown11Visible={dropdown11Visible}
+                setDropdown11Visible={setDropdown11Visible}
+              />
+            ) : index === 11 ? (
+              <Row12
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown12={toggleDropdown12}
+                dropdown12Visible={dropdown12Visible}
+                setDropdown12Visible={setDropdown12Visible}
+              />
+            ) : index === 12 ? (
+              <Row13
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown13={toggleDropdown13}
+                dropdown13Visible={dropdown13Visible}
+                setDropdown13Visible={setDropdown13Visible}
+              />
+            ) : index === 13 ? (
+              <Row14
+                key={row.id}
+                row={row}
+                index={index}
+                limit1={row.limit1}
+                limit2={row.limit2}
+                limit3={row.limit3}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown14={toggleDropdown14}
+                dropdown14Visible={dropdown14Visible}
+                setDropdown14Visible={setDropdown14Visible}
+              />
+            ) : index === 14 ? (
+              <Row15
+                key={row.id}
+                row={row}
+                index={index}
+                input1={row.input1}
+                input2={row.input2}
+                input3={row.input3}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            ) : index === 15 ? (
+              <Row16
+                key={row.id}
+                row={row}
+                index={index}
+                toggleDropdown16={toggleDropdown16}
+                dropdown16Visible={dropdown16Visible}
+                setDropdown16Visible={setDropdown16Visible}
+                handleEnterPress={handleEnterPress}
+                firstDropdown16InputRef={firstDropdown16InputRef}
+              />
+            ) : index === 17 ? (
+              <Row18
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown18={toggleDropdown18}
+                dropdown18Visible={dropdown18Visible}
+                setDropdown18Visible={setDropdown18Visible}
+              />
+            ) : index === 18 ? (
+              <Row19
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown19={toggleDropdown19}
+                dropdown19Visible={dropdown19Visible}
+                setDropdown19Visible={setDropdown19Visible}
+              />
+            ) : index === 19 ? (
+              <Row20
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown20={toggleDropdown20}
+                dropdown20Visible={dropdown20Visible}
+                setDropdown20Visible={setDropdown20Visible}
+              />
+            ) : index === 20 ? (
+              <Row21
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown21={toggleDropdown21}
+                dropdown21Visible={dropdown21Visible}
+                setDropdown21Visible={setDropdown21Visible}
+              />
+            ) : index === 21 ? (
+              <Row22
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown22={toggleDropdown22}
+                dropdown22Visible={dropdown22Visible}
+                setDropdown22Visible={setDropdown22Visible}
+              />
+            ) : index === 24 ? (
+              <Row25
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown25={toggleDropdown25}
+                dropdown25Visible={dropdown25Visible}
+                setDropdown25Visible={setDropdown25Visible}
+              />
+            ) : index === 27 ? (
+              <Row28
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown28={toggleDropdown28}
+                dropdown28Visible={dropdown28Visible}
+                setDropdown28Visible={setDropdown28Visible}
+              />
+            ) : index === 9 ||
               index === 23 ||
               index === 26 ||
               index === 28 ||
@@ -1062,123 +811,95 @@ function ControlMetrics() {
               index === 36 ||
               index === 39 ||
               index === 16 ||
-              index === 40
-            ) {
-              return (
-                <SingleSelect
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                />
-              );
-            } else if (
-              index === 7 ||
-              index === 31 ||
-              index === 32 ||
-              index === 34
-            ) {
-              return (
-                <DoubleSelect
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                />
-              );
-            } else if (index === 30) {
-              return (
-                <Row31
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown31={toggleDropdown31}
-                  dropdown31Visible={dropdown31Visible}
-                  setDropdown31Visible={setDropdown31Visible}
-                />
-              );
-            } else if (index === 33) {
-              return (
-                <Row34
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown34={toggleDropdown34}
-                  dropdown34Visible={dropdown34Visible}
-                  setDropdown34Visible={setDropdown34Visible}
-                  firstDropdown34InputRef={firstDropdown34InputRef}
-                />
-              );
-            } else if (index === 37) {
-              return (
-                <Row38
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleEnterPress={handleEnterPress}
-                  toggleDropdown38={toggleDropdown38}
-                  dropdown38Visible={dropdown38Visible}
-                  setDropdown38Visible={setDropdown38Visible}
-                  firstDropdown38InputRef={firstDropdown38InputRef}
-                />
-              );
-            } else if (index === 38) {
-              return (
-                <Row39
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                />
-              );
-            } else if (index === 45) {
-              return (
-                <Row45
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                />
-              );
-            } else if (index === 46) {
-              return (
-                <Row46
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                />
-              );
-            } else if (index === 47) {
-              return (
-                <Row47
-                  key={row.id}
-                  row={row}
-                  index={index}
-                  handleChange={handleChange}
-                  handleEnterPress={handleEnterPress}
-                />
-              );
-            } else {
-              {
-                return (
-                  <Row26
-                    key={row.id}
-                    row={row}
-                    index={index}
-                    handleChange={handleChange}
-                    handleEnterPress={handleEnterPress}
-                  />
-                );
-              }
-            }
+              index === 40 ? (
+              <SingleSelect
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            ) : index === 7 || index === 31 || index === 32 || index === 34 ? (
+              <DoubleSelect
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            ) : index === 30 ? (
+              <Row31
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown31={toggleDropdown31}
+                dropdown31Visible={dropdown31Visible}
+                setDropdown31Visible={setDropdown31Visible}
+              />
+            ) : index === 33 ? (
+              <Row34
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown34={toggleDropdown34}
+                dropdown34Visible={dropdown34Visible}
+                setDropdown34Visible={setDropdown34Visible}
+                firstDropdown34InputRef={firstDropdown34InputRef}
+              />
+            ) : index === 37 ? (
+              <Row38
+                key={row.id}
+                row={row}
+                index={index}
+                handleEnterPress={handleEnterPress}
+                toggleDropdown38={toggleDropdown38}
+                dropdown38Visible={dropdown38Visible}
+                setDropdown38Visible={setDropdown38Visible}
+                firstDropdown38InputRef={firstDropdown38InputRef}
+              />
+            ) : index === 38 ? (
+              <Row39
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            ) : index === 45 ? (
+              <Row45
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            ) : index === 46 ? (
+              <Row46
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            ) : index === 47 ? (
+              <Row47
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            ) : (
+              <Row26
+                key={row.id}
+                row={row}
+                index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            );
           })}
         </tbody>
       </table>

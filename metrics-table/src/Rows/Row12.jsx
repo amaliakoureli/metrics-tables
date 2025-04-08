@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Row4.css";
+import Dropdown12Data from "../TablesData/Dropdown12Data";
 
 function Row12({
   row,
@@ -9,24 +10,7 @@ function Row12({
   dropdown12Visible,
   setDropdown12Visible,
 }) {
-  const [dropdown12Data, setDropdown12Data] = useState([
-    {
-      text1: "α",
-      text2:
-        "Τάση έναρξης εφεδρικής λειτουργίας: <b>> 0.6 x μέγιστη τάση λειτουργίας (σε V AC).</b>",
-      input1: "",
-      input2: "",
-      text3: "Όριο = 144 V AC",
-    },
-    {
-      text1: "β",
-      text2:
-        "Τάση παύσης εφεδρικής λειτουργίας και έναρξης φόρτισης: <b>< 0.85 x ελάχιστη τάση λειτουργίας (σε V AC).</b>",
-      input1: "",
-      input2: "",
-      text3: "Όριο = 187 V AC",
-    },
-  ]);
+  const [dropdown12Data, setDropdown12Data] = useState(Dropdown12Data);
 
   const handleDropdown12Change = (rowIndex, field, value) => {
     const newDropdown12Data = [...dropdown12Data];

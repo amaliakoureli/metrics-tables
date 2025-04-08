@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Row4.css";
+import Dropdown20Data from "../TablesData/Dropdown20Data";
 
 function Row20({
   row,
@@ -9,40 +10,7 @@ function Row20({
   dropdown20Visible,
   setDropdown20Visible,
 }) {
-  const [dropdown20Data, setDropdown20Data] = useState([
-    {
-      text1: "α",
-      text2:
-        "Στο δίκτυο (lumen-θεωρητικά και με βάση του ελάχιστου ρεύματος LED)",
-      input1: "",
-      input2: "",
-      input3: "",
-    },
-    {
-      text1: "β",
-      text2:
-        "Στην εφεδρεία (lumen-θεωρητικά και με βάση του ελάχιστου ρεύματος LED) (Για 1 ώρα αυτονομία)",
-      input1: "",
-      input2: "",
-      input3: "",
-    },
-    {
-      text1: "γ",
-      text2:
-        "Στην εφεδρεία (lumen-θεωρητικά και με βάση του ελάχιστου ρεύματος LED) (Για 3 ώρες αυτονομία)",
-      input1: "",
-      input2: "",
-      input3: "",
-    },
-    {
-      text1: "δ",
-      text2:
-        "Στην εφεδρεία (lumen-θεωρητικά και με βάση του ελάχιστου ρεύματος LED) (Για 8 ώρες αυτονομία)",
-      input1: "",
-      input2: "",
-      input3: "",
-    },
-  ]);
+  const [dropdown20Data, setDropdown20Data] = useState(Dropdown20Data);
 
   const handleDropdown20Change = (rowIndex, field, value) => {
     const newDropdown20Data = [...dropdown20Data];

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./Row4.css";
+import Dropdown34Data from "../TablesData/Dropdown34Data";
 
 function Row34({
   row,
@@ -9,38 +10,7 @@ function Row34({
   dropdown34Visible,
   firstDropdown34InputRef,
 }) {
-  const [dropdown34Data, setDropdown34Data] = useState([
-    {
-      text1: "α",
-      text2: "<b>Στο Δίκτυο</b>",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-      input5: "",
-      input6: "",
-    },
-    {
-      text1: "β",
-      text2: "<b>Με την μπαταρία</b>",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-      input5: "",
-      input6: "",
-    },
-    {
-      text1: "γ",
-      text2: "<b>Με το μπουτόν TEST</b>",
-      input1: "",
-      input2: "",
-      input3: "",
-      input4: "",
-      input5: "",
-      input6: "",
-    },
-  ]);
+  const [dropdown34Data, setDropdown34Data] = useState(Dropdown34Data);
 
   const handleDropdown34Change = (rowIndex, inputIndex, value) => {
     const newDropdown34Data = [...dropdown34Data];

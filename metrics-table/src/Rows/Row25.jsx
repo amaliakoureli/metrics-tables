@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Row4.css";
+import Dropdown25Data from "../TablesData/Dropdown25Data";
 
 function Row25({
   row,
@@ -9,32 +10,7 @@ function Row25({
   dropdown25Visible,
   setDropdown25Visible,
 }) {
-  const [dropdown25Data, setDropdown25Data] = useState([
-    {
-      text1: "α",
-      text2: "Θερμκρασία Voltage Regulator(s) , χωρίς μπαταρία, VAC = 240 V",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "β",
-      text2: "Θερμκρασία Voltage Regulator(s) , με μπαταρία, VAC = 240 V",
-      input1: "",
-      input2: "",
-    },
-    {
-      text1: "γ",
-      text2:
-        "Θεροκρασία τρανζίστορ φόρτισης, με μπαταρία, VBAT =  κοντά στην τάση αποκοπής, VAC = 240 V",
-      input1: "",
-    },
-    {
-      text1: "δ",
-      text2:
-        "Στην εφεδρεία με VBAT = πλήρως φορτισμένη μπαταρία (1.50V ανά στοιχείο)",
-      input1: "",
-    },
-  ]);
+  const [dropdown25Data, setDropdown25Data] = useState(Dropdown25Data);
 
   const handleDropdown25Change = (rowIndex, field, value) => {
     const newDropdown25Data = [...dropdown25Data];
