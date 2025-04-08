@@ -12,7 +12,8 @@ function Row16({
   const [dropdown16Data, setDropdown16Data] = useState([
     {
       text1: "α",
-      text2: "Τάση δικτύου (VAC) (Περιοχή τάσης λειτουργίας για τις οδηγίες)",
+      text2:
+        "Τάση δικτύου (VAC) <b>(Περιοχή τάσης λειτουργίας για τις οδηγίες) </b>",
       text3: "",
       values: [
         ["220V", "1BAT"],
@@ -27,7 +28,7 @@ function Row16({
     },
     {
       text1: "β",
-      text2: "Ρεύμα δικτύου (mA AC) (+5% του μέγιστου για τις οδηγίες)",
+      text2: "Ρεύμα δικτύου (mA AC) <b> (+5% του μέγιστου για τις οδηγίες)</b>",
       text3: "Συν.",
       text4: "Μη Συν.",
       input1: "",
@@ -47,7 +48,7 @@ function Row16({
     },
     {
       text1: "γ",
-      text2: "Πραγματική ισχύς (W) (+5% της μέγιστης για τις οδηγίες)",
+      text2: "Πραγματική ισχύς (W) <b>(+5% της μέγιστης για τις οδηγίες) </b>",
       text3: "Συν.",
       text4: "Μη Συν.",
       input1: "",
@@ -67,7 +68,7 @@ function Row16({
     },
     {
       text1: "δ",
-      text2: "Ισχύς (VA) (+5% της μέγιστης για τις οδηγίες)",
+      text2: "Ισχύς (VA) <b>(+5% της μέγιστης για τις οδηγίες) </b>",
       text3: "Συν.",
       text4: "Μη Συν.",
       input1: "",
@@ -87,7 +88,7 @@ function Row16({
     },
     {
       text1: "ε",
-      text2: "Power factor (Ελάχιστο μετρούμενο για τις οδηγίες)",
+      text2: "Power factor <b>(Ελάχιστο μετρούμενο για τις οδηγίες)</b>",
       text3: "Συν.",
       text4: "Μη Συν.",
       input1: "",
@@ -166,7 +167,14 @@ function Row16({
                     {dropdownRow.text1 === "α" ? (
                       <tr>
                         <td className="table-cell ">{dropdownRow.text1}</td>
-                        <td className="table-cell">{dropdownRow.text2}</td>
+                        <td className="table-cell">
+                          {" "}
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: dropdownRow.text2,
+                            }}
+                          />
+                        </td>
                         <td className="table-cell">{dropdownRow.text3}</td>
                         {dropdownRow.values.map((value, valueIndex) => (
                           <td key={valueIndex} className="table-cell">
@@ -205,7 +213,11 @@ function Row16({
                             {dropdownRow.text1}
                           </td>
                           <td rowSpan="2" className="table-cell">
-                            {dropdownRow.text2}
+                            <span
+                              dangerouslySetInnerHTML={{
+                                __html: dropdownRow.text2,
+                              }}
+                            />
                           </td>
                           <td className="table-cell">{dropdownRow.text3}</td>
                           <td className="table-cell">
@@ -441,7 +453,11 @@ function Row16({
                             {dropdownRow.text1}
                           </td>
                           <td rowSpan="2" className="table-cell">
-                            {dropdownRow.text2}
+                            <span
+                              dangerouslySetInnerHTML={{
+                                __html: dropdownRow.text2,
+                              }}
+                            />
                           </td>
                           <td className="table-cell">{dropdownRow.text3}</td>
                           <td className="table-cell">
@@ -698,7 +714,11 @@ function Row16({
                             {dropdownRow.text1}
                           </td>
                           <td rowSpan="2" className="table-cell">
-                            {dropdownRow.text2}
+                            <span
+                              dangerouslySetInnerHTML={{
+                                __html: dropdownRow.text2,
+                              }}
+                            />
                           </td>
                           <td className="table-cell">{dropdownRow.text3}</td>
                           <td className="table-cell">

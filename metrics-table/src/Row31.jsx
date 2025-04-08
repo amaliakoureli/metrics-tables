@@ -50,7 +50,7 @@ function Row31({
                   <React.Fragment key={rowIndex}>
                     <tr className="table-row">
                       <td
-                        className={`table-cell ${
+                        className={`table-cell text-weight ${
                           rowIndex === 0
                             ? "blue-text"
                             : rowIndex === 1
@@ -63,7 +63,7 @@ function Row31({
                         {dropdownRow.text1}
                       </td>
                       <td
-                        className={`table-cell ${
+                        className={`table-cell text-weight ${
                           rowIndex === 0
                             ? "blue-text"
                             : rowIndex === 1

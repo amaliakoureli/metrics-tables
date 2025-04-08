@@ -12,7 +12,7 @@ function Row34({
   const [dropdown34Data, setDropdown34Data] = useState([
     {
       text1: "α",
-      text2: "Στο Δίκτυο",
+      text2: "<b>Στο Δίκτυο</b>",
       input1: "",
       input2: "",
       input3: "",
@@ -22,7 +22,7 @@ function Row34({
     },
     {
       text1: "β",
-      text2: "Με την μπαταρία",
+      text2: "<b>Με την μπαταρία</b>",
       input1: "",
       input2: "",
       input3: "",
@@ -32,7 +32,7 @@ function Row34({
     },
     {
       text1: "γ",
-      text2: "Με το μπουτόν TEST",
+      text2: "<b>Με το μπουτόν TEST</b>",
       input1: "",
       input2: "",
       input3: "",
@@ -95,7 +95,14 @@ function Row34({
                 {dropdown34Data.map((dropdownRow, rowIndex) => (
                   <tr key={rowIndex} className="table-row">
                     <td className="table-cell">{dropdownRow.text1}</td>
-                    <td className="table-cell">{dropdownRow.text2}</td>
+                    <td className="table-cell">
+                      {" "}
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: dropdownRow.text2,
+                        }}
+                      />
+                    </td>
                     <div className="inputs-alignment">
                       {dropdownRow.text1 === "α" ? (
                         <>

@@ -30,7 +30,7 @@ function Row28({
     {
       text1: "ι",
       text2:
-        "Αντίσταση μόνωσης ανάμεσα στα καλώδια (L + N)->(+- βύσμα μπαταρίας). Όριο :> 2 ΜΩ",
+        "Αντίσταση μόνωσης ανάμεσα στα καλώδια (L + N)->(+- βύσμα μπαταρίας). <B>Όριο: > 2 ΜΩ</B>",
       input1: "",
     },
   ]);
@@ -70,7 +70,14 @@ function Row28({
                   <React.Fragment key={rowIndex}>
                     <tr className="table-row">
                       <td className="table-cell">{dropdownRow.text1}</td>
-                      <td className="table-cell">{dropdownRow.text2}</td>
+                      <td className="table-cell">
+                        {" "}
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: dropdownRow.text2,
+                          }}
+                        />
+                      </td>
                       <div className="dropdownInputs-alignment">
                         {dropdownRow.text1 === "α" ||
                         dropdownRow.text1 === "β" ? (

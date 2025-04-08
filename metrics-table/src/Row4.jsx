@@ -50,7 +50,7 @@ function Row4({
     {
       text1: "δ",
       text2:
-        "Ρεύμα φόρτισης για τάση δικτύου = 0.9 x ονομαστική τάση (Max τάση μπαταρίας)",
+        "Ρεύμα φόρτισης για τάση δικτύου = <b>0.9 x ονομαστική τάση</b> (Max τάση μπαταρίας)",
       input1: "",
       input2: "",
       input3: "",
@@ -59,7 +59,7 @@ function Row4({
     {
       text1: "ε",
       text2:
-        "Ρεύμα φόρτισης για τάση δικτύου = 1.06 x ονομαστική τάση (Max τάση μπαταρίας)",
+        "Ρεύμα φόρτισης για τάση δικτύου = <b>1.06 x ονομαστική τάση</b> (Max τάση μπαταρίας)",
       input1: "",
       input2: "",
       input3: "",
@@ -68,7 +68,7 @@ function Row4({
     {
       text1: "ζ",
       text2:
-        "Τάση μπαταρίας όταν είναι φορτισμένη (συνδεδεμένη πάνω στην συσκευή) (σε V DC)",
+        "Τάση μπαταρίας όταν είναι φορτισμένη (συνδεδεμένη πάνω στην συσκευή) <b>(σε V DC)</b>",
       input1: "",
       input2: "",
       input3: "",
@@ -187,9 +187,9 @@ function Row4({
       </tr>
 
       <tr className="row-width">
-        <td className="table-cell column-text" colSpan="2">
-          Για τάση δικτύου = 1 x ονομαστική τάση δικτύου (110VAC, 230VAC,
-          245VAC)
+        <td className="table-cell" colSpan="2">
+          Για τάση δικτύου = 1 x ονομαστική τάση δικτύου{" "}
+          <b>(110VAC, 230VAC, 245VAC)</b>
           <br />
           {(() => {
             const textParts = row.text
@@ -198,7 +198,7 @@ function Row4({
             return (
               <div className="middleInput-alignment">
                 <div className="input-wrapper-start">
-                  {textParts[0]}
+                  <b> {textParts[0]}</b>
                   <input
                     type="text"
                     value={row.middleInput || ""}
@@ -209,7 +209,7 @@ function Row4({
                     onKeyDown={(e) => handleEnterPress(e, index, true)}
                   />
                   <span className="unit">mA</span>
-                  {textParts[1]}
+                  <b> {textParts[1]}</b>
                 </div>
               </div>
             );
@@ -217,10 +217,6 @@ function Row4({
         </td>
         <div className="bats-alignment">
           <tr>
-            <td className="table-cell bat1-1">1BAT</td>
-            <td className="table-cell bat2-1">2BAT</td>
-            <td className="table-cell bat1-2">1BAT</td>
-            <td className="table-cell bat2-2">2BAT</td>
             <td className="table-cell bat1-1">1BAT</td>
             <td className="table-cell bat2-1">2BAT</td>
             <td className="table-cell bat1-2">1BAT</td>
@@ -243,41 +239,47 @@ function Row4({
                   <tr key={rowIndex}>
                     <td className="table-cell">{dropdownRow.text1}</td>
                     <td className="table-cell">
-                      {dropdownRow.text2.includes("{middleInput2}")
-                        ? (() => {
-                            const parts =
-                              dropdownRow.text2.split("{middleInput2}");
-                            return (
-                              <div className="middleInput-alignment">
-                                <div className="input-wrapper-start">
-                                  {parts[0]}
-                                  <input
-                                    type="text"
-                                    value={dropdownRow.textInput2}
-                                    onChange={(e) =>
-                                      handleDropdown4Change(
-                                        rowIndex,
-                                        "textInput2",
-                                        e.target.value
-                                      )
-                                    }
-                                    className="controller dropdown4-middleInput2 "
-                                    onKeyDown={(e) =>
-                                      handleEnterPress(
-                                        e,
-                                        index,
-                                        true,
-                                        "dropdown4"
-                                      )
-                                    }
-                                  />
-                                  <span className="unit2">V</span>
-                                  {parts[1]}
-                                </div>
+                      {dropdownRow.text2.includes("{middleInput2}") ? (
+                        (() => {
+                          const parts =
+                            dropdownRow.text2.split("{middleInput2}");
+                          return (
+                            <div className="middleInput-alignment">
+                              <div className="input-wrapper-start">
+                                {parts[0]}
+                                <input
+                                  type="text"
+                                  value={dropdownRow.textInput2}
+                                  onChange={(e) =>
+                                    handleDropdown4Change(
+                                      rowIndex,
+                                      "textInput2",
+                                      e.target.value
+                                    )
+                                  }
+                                  className="controller dropdown4-middleInput2 "
+                                  onKeyDown={(e) =>
+                                    handleEnterPress(
+                                      e,
+                                      index,
+                                      true,
+                                      "dropdown4"
+                                    )
+                                  }
+                                />
+                                <span className="unit2">V</span>
+                                {parts[1]}
                               </div>
-                            );
-                          })()
-                        : dropdownRow.text2}
+                            </div>
+                          );
+                        })()
+                      ) : (
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: dropdownRow.text2,
+                          }}
+                        />
+                      )}
                     </td>
                     <div className="dropdownInputs-alignment">
                       <td className="table-cell">

@@ -16,7 +16,7 @@ function Row22({
       input1: "",
       input2: "",
     },
-    { text1: "β", text2: "Δοκιμή κυκλώματος Dali (αν υπάρχει)", input1: "" },
+    { text1: "β", text2: "Δοκιμή κυκλώματος DALI (αν υπάρχει)", input1: "" },
     {
       text1: "γ",
       text2: "Δοκιμή κυκλώματος Wireless (αν υπάρχει)",
