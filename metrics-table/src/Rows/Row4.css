@@ -301,7 +301,9 @@ table {
 .single-input1,
 .duration1BAT,
 .duration2BAT,
-.single-dropdown11-input1 {
+.single-dropdown11-input1,
+.row42-input1,
+.row42-select1 {
   width: 260px;
   border: 1px solid #ccc;
   border-radius: 4px;
