@@ -180,8 +180,9 @@ const MainTable = [
   },
   {
     id: 42,
-    text: "Max open circuit (V LED+ - V LED- σε V DC, χωρλις τη LEDοσειρά πάνω)(Uout(V DC) : (C1 -> C2 & C1,C2 ->GND). Αν δεν έχει C1 ,C2 τότε είναι η Max open circuit voltage)",
+    text: "(Uout(V DC) : (C1 -> C2 & C1,C2 ->GND). Αν δεν έχει C1 ,C2 τότε είναι η Max open circuit voltage)",
     input1: "",
+    select1: "",
   },
   { id: 43, text: "tc (θερμόμετρο σημείο της πλακέτας, σε °C)", input1: "" },
   { id: 44, text: "Μέγιστη θερμοκρασία στην LEDοσειρά", input1: "" },
