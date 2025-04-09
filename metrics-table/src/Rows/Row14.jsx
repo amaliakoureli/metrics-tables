@@ -24,7 +24,7 @@ function Row14({
 
   return (
     <>
-      <tr key={row.id + "-1"} className="row-width">
+      <tr key={row.id + "-1"} className="special-row-width">
         <td className="table-cell column-id">
           <button
             onClick={() => toggleDropdown14(index)}
@@ -322,8 +322,8 @@ function Row14({
                           <td
                             colSpan="4"
                             style={{
-                              height: "20px",
-                              backgroundColor: "#f5f5f5",
+                              height: "15px",
+                              backgroundColor: "rgba(240, 240, 240, 0.84)",
                             }}
                           ></td>
                         </tr>

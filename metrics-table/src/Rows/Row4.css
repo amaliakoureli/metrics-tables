@@ -2,6 +2,10 @@
   background-color: #afc7d9 !important;
   width: 100%;
 }
+.special-row-width {
+  background-color: rgb(192, 192, 192) !important;
+  width: 100%;
+}
 
 .table-cell {
   padding: 10px;
@@ -174,11 +178,14 @@ table {
   text-align: right;
 }
 
-.dropdown4,
-.dropdown11,
 .dropdown12,
 .dropdown13,
-.dropdown14,
+.dropdown14 {
+  background-color: rgba(219, 219, 219, 0.842);
+}
+
+.dropdown4,
+.dropdown11,
 .dropdown16,
 .dropdown18,
 .dropdown19,
@@ -190,7 +197,7 @@ table {
 .dropdown31,
 .dropdown34,
 .dropdown38 {
-  background-color: #d8e5f0;
+  background-color: rgb(216, 229, 240, 0.842);
 }
 
 .input-wrapper {
@@ -290,14 +297,20 @@ table {
 
 .duration1BAT,
 .duration2BAT,
-.dropdown4-middleInput,
-.limit1,
-.limit2,
-.limit3 {
+.dropdown4-middleInput {
   font-weight: 600;
   background-color: #d9e5ee;
   text-align: left;
 }
+
+.limit1,
+.limit2,
+.limit3 {
+  font-weight: 600;
+  background-color: rgba(219, 219, 219, 0.842);
+  text-align: left;
+}
+
 .dropdown13-text3,
 .row15input1,
 .row15input2,
@@ -497,7 +510,7 @@ table {
 }
 
 .green-column {
-  background-color: rgb(182, 221, 182);
+  background-color: rgb(169, 194, 169);
   border: 1px solid rgb(137, 180, 137);
   border-radius: 4px;
   margin-top: 30px;
@@ -507,7 +520,7 @@ table {
 }
 
 .dropdown14-input2 {
-  background-color: rgb(182, 221, 182);
+  background-color: rgb(169, 194, 169);
   width: 120px;
   border: 1px solid rgb(137, 180, 137);
   border-radius: 4px;
@@ -516,4 +529,22 @@ table {
 
 .text-weight {
   font-weight: 600;
+}
+
+textarea {
+  width: 1430px;
+  margin: 5px;
+}
+
+.stepsFor28 {
+  padding-left: 15px;
+}
+
+.brief {
+  padding-left: 15px;
+}
+
+.top {
+  padding-top: 20px;
+  border-top: 1px solid #000000;
 }

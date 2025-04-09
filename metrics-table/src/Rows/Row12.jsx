@@ -20,7 +20,7 @@ function Row12({
 
   return (
     <>
-      <tr key={row.id + "-1"} className="row-width">
+      <tr key={row.id + "-1"} className="special-row-width">
         <td className="table-cell column-id">
           <button
             onClick={() => toggleDropdown12(index)}

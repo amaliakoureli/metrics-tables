@@ -2,8 +2,8 @@ import React, { useState, useRef } from "react";
 import "./Row4.css";
 function Row45({ row, index, handleChange, handleEnterPress }) {
   return (
-    <tr key={row.id} className="table-row">
-      <td className="table-cell column-id">{row.id}</td>
+    <tr key={row.id}>
+      <td className=" column-id">{row.id}</td>
       <td colSpan={3}>
         <textarea
           value={
@@ -32,7 +32,7 @@ function Row45({ row, index, handleChange, handleEnterPress }) {
             }
             handleEnterPress(e, index, true);
           }}
-          className="controller input1"
+          className="controller"
         />
       </td>
     </tr>
