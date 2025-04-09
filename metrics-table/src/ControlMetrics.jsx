@@ -28,6 +28,7 @@ import Row45 from "./Rows/Row45";
 import Row46 from "./Rows/Row46";
 import Row47 from "./Rows/Row47";
 import MainTable from "./TablesData/MainTable";
+import Row42 from "./Rows/Row42";
 
 function ControlMetrics() {
   const [data, setData] = useState(MainTable);
@@ -446,14 +447,6 @@ function ControlMetrics() {
 
       if (e.target.classList.contains("row18-middleInput")) {
         toggleDropdown18(17);
-
-        setTimeout(() => {
-          const firstInput = document.querySelector(
-            ".dropdown18-input1, .dropdown18-input2"
-          );
-          if (firstInput) firstInput.focus();
-        }, 50);
-
         return;
       }
 
@@ -630,7 +623,6 @@ function ControlMetrics() {
               index === 2 ||
               index === 22 ||
               index === 29 ||
-              index === 41 ||
               index === 42 ||
               index === 43 ||
               index === 44 ? (
@@ -867,6 +859,16 @@ function ControlMetrics() {
                 key={row.id}
                 row={row}
                 index={index}
+                handleChange={handleChange}
+                handleEnterPress={handleEnterPress}
+              />
+            ) : index === 41 ? (
+              <Row42
+                key={row.id}
+                row={row}
+                index={index}
+                input1={row.input1}
+                select1={row.select1}
                 handleChange={handleChange}
                 handleEnterPress={handleEnterPress}
               />
