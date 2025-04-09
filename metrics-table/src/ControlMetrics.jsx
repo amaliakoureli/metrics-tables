@@ -444,7 +444,7 @@ function ControlMetrics() {
         return;
       }
 
-      if (index === 16 && dropdown18Visible !== 17) {
+      if (e.target.classList.contains("row18-middleInput")) {
         toggleDropdown18(17);
 
         setTimeout(() => {
@@ -456,6 +456,7 @@ function ControlMetrics() {
 
         return;
       }
+
       if (dropdownType === "dropdown18") {
         const isLastInput = e.target.id === "dropdown18-last";
 

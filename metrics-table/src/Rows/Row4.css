@@ -167,7 +167,9 @@ table {
 
 .dropdown4-middleInput2,
 .dropdown14-middleInput,
-.dropdown4-middleInput {
+.dropdown4-middleInput,
+.row9-middleInput,
+.row18-middleInput {
   width: 100px;
   max-width: 100px;
   padding: 4px 6px;
@@ -235,6 +237,15 @@ table {
   pointer-events: none;
 }
 
+.input-wrapper-start .unit-rows9-18 {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  pointer-events: none;
+}
+
 .input-wrapper-start .unit2 {
   position: absolute;
   right: 30px;
@@ -260,7 +271,11 @@ table {
 .input1,
 .input2,
 .input3,
-.input4 {
+.input4,
+.row9-select1,
+.row9-select2,
+.row9-select3,
+.row9-select4 {
   width: 50px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -297,7 +312,8 @@ table {
 
 .duration1BAT,
 .duration2BAT,
-.dropdown4-middleInput {
+.dropdown4-middleInput,
+.row18-middleInput {
   font-weight: 600;
   background-color: #d9e5ee;
   text-align: left;

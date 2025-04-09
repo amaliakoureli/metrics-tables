@@ -30,7 +30,28 @@ function Row18({
           </button>
         </td>
         <td className="table-cell column-text" colSpan={3}>
-          {row.text}
+          {(() => {
+            const textParts = row.text
+              ? row.text.split("{middleInput}")
+              : ["", ""];
+            return (
+              <div className="middleInput-alignment">
+                <div className="input-wrapper-start">
+                  {textParts[0]}
+                  <input
+                    type="text"
+                    value={row.middleInput || ""}
+                    onChange={(e) =>
+                      handleChange(index, "middleInput", e.target.value)
+                    }
+                    className="controller row18-middleInput"
+                    onKeyDown={(e) => handleEnterPress(e, index, true)}
+                  />
+                  <span className="unit-rows9-18">V</span>
+                </div>
+              </div>
+            );
+          })()}
         </td>
       </tr>
       <tr
