@@ -12,7 +12,6 @@ function Row14({
   limit3,
   toggleDropdown14,
   dropdown14Visible,
-  setDropdown14Visible,
 }) {
   const [dropdown14Data, setDropdown14Data] = useState(Dropdown14Data);
 
@@ -224,15 +223,13 @@ function Row14({
                                     )
                                   }
                                   className={`controller dropdown14-middleInput ${
-                                    rowIndex < 3
+                                    rowIndex === 0
+                                      ? "dropdown14-firstMiddleInput"
+                                      : rowIndex < 3
                                       ? "blue-text"
                                       : rowIndex < 6
                                       ? "green-text"
                                       : "brown-text"
-                                  }${
-                                    rowIndex === 0
-                                      ? "dropdown14-firstMiddleInput"
-                                      : ""
                                   }`}
                                   onKeyDown={(e) =>
                                     handleEnterPress(

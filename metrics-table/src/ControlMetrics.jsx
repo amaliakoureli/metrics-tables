@@ -123,7 +123,9 @@ function ControlMetrics() {
     } else {
       setDropdown14Visible(index);
       setTimeout(() => {
-        const firstInput = document.querySelector(".dropdown14-input1");
+        const firstInput = document.querySelector(
+          ".dropdown14-firstMiddleInput"
+        );
         if (firstInput) firstInput.focus();
       }, 50);
     }
@@ -293,7 +295,7 @@ function ControlMetrics() {
         setTimeout(() => {
           const firstInput = document.querySelector(".dropdown11-input1");
           if (firstInput) firstInput.focus();
-        }, 100);
+        }, 50);
 
         return;
       }
@@ -328,7 +330,7 @@ function ControlMetrics() {
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown12-input1");
             if (firstInput) firstInput.focus();
-          }, 100);
+          }, 50);
         } else {
           const dropdown11Inputs = [
             ...document.querySelectorAll(
@@ -350,7 +352,7 @@ function ControlMetrics() {
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown13-input1");
             if (firstInput) firstInput.focus();
-          }, 100);
+          }, 50);
         } else {
           const dropdown12Inputs = [
             ...document.querySelectorAll(
@@ -450,7 +452,7 @@ function ControlMetrics() {
             ".dropdown18-input1, .dropdown18-input2"
           );
           if (firstInput) firstInput.focus();
-        }, 100);
+        }, 50);
 
         return;
       }
@@ -462,7 +464,7 @@ function ControlMetrics() {
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown19-input1");
             if (firstInput) firstInput.focus();
-          }, 100);
+          }, 50);
         } else {
           const dropdown18Inputs = [
             ...document.querySelectorAll(
@@ -484,7 +486,7 @@ function ControlMetrics() {
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown20-input1");
             if (firstInput) firstInput.focus();
-          }, 100);
+          }, 50);
         } else {
           const dropdown19Inputs = [
             ...document.querySelectorAll(
@@ -506,7 +508,7 @@ function ControlMetrics() {
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown21-input1");
             if (firstInput) firstInput.focus();
-          }, 100);
+          }, 50);
         } else {
           const dropdown20Inputs = [
             ...document.querySelectorAll(
@@ -591,7 +593,7 @@ function ControlMetrics() {
         setTimeout(() => {
           const firstInput = document.querySelector(".dropdown38-input1");
           if (firstInput) firstInput.focus();
-        }, 100);
+        }, 50);
 
         return;
       }
