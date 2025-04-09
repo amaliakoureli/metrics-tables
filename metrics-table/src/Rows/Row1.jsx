@@ -20,30 +20,18 @@ function Row1({
         {row.text}
       </td>
       <div className="inputs-alignment">
-        <td>
+        <td className="table-cell">
           <button
             onClick={() => setSelectedButton1((prev) => !prev)}
-            style={{
-              backgroundColor: selectedButton1 ? "#ddd" : "#fff",
-              padding: "10px 20px",
-              margin: "5px",
-              border: "1px solid #ccc",
-              cursor: "pointer",
-            }}
+            className={`buttonStyle ${selectedButton1 ? "selected" : ""}`}
           >
             Συνεχούς
           </button>
         </td>
-        <td>
+        <td className="table-cell">
           <button
             onClick={() => setSelectedButton2((prev) => !prev)}
-            style={{
-              backgroundColor: selectedButton2 ? "#ddd" : "#fff",
-              padding: "10px 20px",
-              margin: "5px",
-              border: "1px solid #ccc",
-              cursor: "pointer",
-            }}
+            className={`buttonStyle ${selectedButton2 ? "selected" : ""}`}
           >
             Μη συνεχούς
           </button>

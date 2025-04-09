@@ -570,3 +570,16 @@ textarea {
 .dropdown14-firstMiddleInput {
   color: rgb(2, 2, 133);
 }
+
+.buttonStyle {
+  width: 120px;
+  padding: 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.buttonStyle.selected {
+  background-color: #ddd;
+}
