@@ -1,6 +1,6 @@
 import React from "react";
-import imgLogo from "./assets/Logo.jpg";
-import "./App.css";
+import imgLogo from "./assets/images/Logo.jpg";
+import "./assets/styles/App.css";
 
 function App() {
   const handleEnterPress = (e) => {

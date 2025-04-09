@@ -1,21 +1,41 @@
 import React, { useState } from "react";
-import "./Row4.css";
-import Dropdown28Data from "../TablesData/Dropdown28Data";
+import "../../../assets/styles/Row4.css";
 
-function Row28({
+function Row22({
   row,
   index,
   handleEnterPress,
-  toggleDropdown28,
-  dropdown28Visible,
-  setDropdown28Visible,
+  toggleDropdown22,
+  dropdown22Visible,
+  setDropdown22Visible,
 }) {
-  const [dropdown28Data, setDropdown28Data] = useState(Dropdown28Data);
+  const [dropdown22Data, setDropdown22Data] = useState([
+    {
+      text1: "α",
+      text2: "Δοκιμή κυκλώματος Remote (αν υπάρχει)",
+      input1: "",
+      input2: "",
+    },
+    { text1: "β", text2: "Δοκιμή κυκλώματος DALI (αν υπάρχει)", input1: "" },
+    {
+      text1: "γ",
+      text2: "Δοκιμή κυκλώματος Wireless (αν υπάρχει)",
+      input1: "",
+    },
+    { text1: "δ", text2: "Δοκιμή κυκλώματος Address (αν υπάρχει)", input1: "" },
+    { text1: "ε", text2: "Δοκιμή κυκλώματος EIBus (αν υπάρχει)", input1: "" },
+    {
+      text1: "ζ",
+      text2: "Δοκιμή κυκλώματος FAULT (αν υπάρχει)",
+      input1: "",
+      input2: "",
+    },
+  ]);
 
-  const handleDropdown28Change = (rowIndex, field, value) => {
-    const newDropdown28Data = [...dropdown28Data];
-    newDropdown28Data[rowIndex][field] = value;
-    setDropdown28Data(newDropdown28Data);
+  const handleDropdown22Change = (rowIndex, field, value) => {
+    const newDropdown22Data = [...dropdown22Data];
+    newDropdown22Data[rowIndex][field] = value;
+    setDropdown22Data(newDropdown22Data);
   };
 
   return (
@@ -23,7 +43,7 @@ function Row28({
       <tr key={row.id + "-1"} className="row-width">
         <td className="table-cell column-id">
           <button
-            onClick={() => toggleDropdown28(index)}
+            onClick={() => toggleDropdown22(index)}
             className="dropdown-button"
           >
             {row.id}
@@ -35,43 +55,36 @@ function Row28({
       </tr>
       <tr
         key={row.id + "-subrow"}
-        className={`table-row ${
-          dropdown28Visible === index ? "visible" : "hidden"
-        } dropdown25`}
+        className={`${
+          dropdown22Visible === index ? "visible" : "hidden"
+        } dropdown22`}
       >
         <td colSpan="4" className="table-cell">
-          {dropdown28Visible === index && (
+          {dropdown22Visible === index && (
             <table>
-              <tbody className="dropdown25">
-                {dropdown28Data.map((dropdownRow, rowIndex) => (
+              <tbody className="dropdown22">
+                {dropdown22Data.map((dropdownRow, rowIndex) => (
                   <React.Fragment key={rowIndex}>
-                    <tr className="table-row">
+                    <tr>
                       <td className="table-cell">{dropdownRow.text1}</td>
-                      <td className="table-cell">
-                        {" "}
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: dropdownRow.text2,
-                          }}
-                        />
-                      </td>
+                      <td className="table-cell">{dropdownRow.text2}</td>
                       <div className="dropdownInputs-alignment">
                         {dropdownRow.text1 === "α" ||
-                        dropdownRow.text1 === "β" ? (
+                        dropdownRow.text1 === "ζ" ? (
                           <>
                             <td className="table-cell">
                               <select
                                 value={dropdownRow.input1}
                                 onChange={(e) =>
-                                  handleDropdown28Change(
+                                  handleDropdown22Change(
                                     rowIndex,
                                     "input1",
                                     e.target.value
                                   )
                                 }
-                                className="controller dropdown28-Dselect1"
+                                className="controller dropdown22-Dselect1 "
                                 onKeyDown={(e) =>
-                                  handleEnterPress(e, index, true, "dropdown28")
+                                  handleEnterPress(e, index, true, "dropdown22")
                                 }
                               >
                                 <option value=""></option>
@@ -85,15 +98,21 @@ function Row28({
                               <select
                                 value={dropdownRow.input2}
                                 onChange={(e) =>
-                                  handleDropdown28Change(
+                                  handleDropdown22Change(
                                     rowIndex,
                                     "input2",
                                     e.target.value
                                   )
                                 }
-                                className="controller dropdown28-Dselect2"
+                                className="controller dropdown22-Dselect2 "
                                 onKeyDown={(e) =>
-                                  handleEnterPress(e, index, true, "dropdown28")
+                                  handleEnterPress(e, index, true, "dropdown22")
+                                }
+                                id={
+                                  rowIndex === dropdown22Data.length - 1 &&
+                                  !dropdownRow.input1
+                                    ? "dropdown22-last"
+                                    : undefined
                                 }
                               >
                                 <option value=""></option>
@@ -109,21 +128,15 @@ function Row28({
                             <select
                               value={dropdownRow.input1}
                               onChange={(e) =>
-                                handleDropdown28Change(
+                                handleDropdown22Change(
                                   rowIndex,
                                   "input1",
                                   e.target.value
                                 )
                               }
-                              className="controller dropdown28-select1"
+                              className="controller dropdown22-select1"
                               onKeyDown={(e) =>
-                                handleEnterPress(e, index, true, "dropdown28")
-                              }
-                              id={
-                                rowIndex === dropdown28Data.length - 1 &&
-                                !dropdownRow.input1
-                                  ? "dropdown28-last"
-                                  : undefined
+                                handleEnterPress(e, index, true, "dropdown22")
                               }
                             >
                               <option value=""></option>
@@ -147,4 +160,4 @@ function Row28({
   );
 }
 
-export default Row28;
+export default Row22;

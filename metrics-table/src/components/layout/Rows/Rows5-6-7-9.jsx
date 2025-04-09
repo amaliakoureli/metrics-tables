@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "./Row4.css";
+import "../../../assets/styles/Row4.css";
 function Rows5679({ row, index, handleChange, handleEnterPress }) {
   return index === 8 ? (
     <tr key={row.id} data-row={index === 0 ? "0" : undefined}>

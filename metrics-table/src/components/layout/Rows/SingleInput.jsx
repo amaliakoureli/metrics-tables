@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Row4.css";
+import "../../../assets/styles/Row4.css";
 
 function SingleInput({ row, index, handleEnterPress, handleChange }) {
   return index === 42 || index === 43 ? (
