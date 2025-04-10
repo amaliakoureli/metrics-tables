@@ -73,7 +73,7 @@ function Row34({
                         }}
                       />
                     </td>
-                    <div className="inputs-alignment">
+                    <div className="dropdownInputs-alignment">
                       {dropdownRow.text1 === "α" ? (
                         <>
                           <td className="table-cell">
