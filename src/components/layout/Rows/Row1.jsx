@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../assets/styles/Row4.css";
+import "../../../assets/styles/styles.css";
 
 function Row1({
   row,

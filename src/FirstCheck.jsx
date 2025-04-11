@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./assets/styles/FirstCheck.css";
 
-function Check1() {
+function FirstCheck() {
   const [check1, setCheck1] = useState([
     { checked: "", approved: "", received: "", date: "" },
   ]);
@@ -80,4 +80,4 @@ function Check1() {
   );
 }
 
-export default Check1;
+export default FirstCheck;

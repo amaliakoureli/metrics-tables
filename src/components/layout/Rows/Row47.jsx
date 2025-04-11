@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
-import "../../../assets/styles/Row4.css";
+import "../../../assets/styles/styles.css";
+
 function Row47({ row, index, handleChange, handleEnterPress }) {
   return (
     <>

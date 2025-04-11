@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "../../../assets/styles/Row4.css";
-
+import "../../../assets/styles/styles.css";
 function Row26({ row, index, handleEnterPress, handleChange }) {
   return (
     <tr

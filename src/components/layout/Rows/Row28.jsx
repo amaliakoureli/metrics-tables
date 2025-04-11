@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../../assets/styles/Row4.css";
+import "../../../assets/styles/styles.css";
 import Dropdown28Data from "../TablesData/Dropdown28Data";
 
 function Row28({
