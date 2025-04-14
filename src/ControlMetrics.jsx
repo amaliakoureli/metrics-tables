@@ -335,7 +335,7 @@ function ControlMetrics() {
         } else {
           const dropdown11Inputs = [
             ...document.querySelectorAll(
-              ".dropdown11-input1, .dropdown11-input2, .single-dropdown11-input1"
+              ".dropdown11-input1, .dropdown11-input2, .dropdown11-input3, .dropdown11-Dinput1, .dropdown11-Dinput2, .dropdown11-SingleInput1"
             ),
           ];
           const currentIndex = dropdown11Inputs.indexOf(e.target);

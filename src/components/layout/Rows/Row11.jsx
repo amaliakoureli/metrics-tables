@@ -67,84 +67,161 @@ function Row11({
                     >
                       {dropdownRow.text2}
                     </td>
-                    <div className="dropdownInputs-alignment ">
+                    <div className="dropdownInputs-alignment">
                       {dropdownRow.text1 === "β" ||
-                      dropdownRow.text1 === "γ" ||
                       dropdownRow.text1 === "ε" ||
-                      dropdownRow.text1 === "ζ" ||
-                      dropdownRow.text1 === "θ" ||
-                      dropdownRow.text1 === "ι" ? (
-                        <td className="table-cell">
-                          <input
-                            type="text"
-                            value={dropdownRow.input1}
-                            onChange={(e) =>
-                              handleDropdown11Change(
-                                rowIndex,
-                                "input1",
-                                e.target.value
-                              )
-                            }
-                            className={`controller single-dropdown11-input1 ${
-                              rowIndex < 3
-                                ? "blue-text"
-                                : rowIndex < 6
-                                ? "green-text"
-                                : "brown-text"
-                            }`}
-                            id={
-                              rowIndex === dropdown11Data.length - 1 &&
-                              !dropdownRow.input2
-                                ? "dropdown11-last"
-                                : undefined
-                            }
-                            onKeyDown={(e) =>
-                              handleEnterPress(e, index, true, "dropdown11")
-                            }
-                          />
-                        </td>
-                      ) : (
+                      dropdownRow.text1 === "θ" ? (
                         <>
-                          <td className="table-cell">
-                            <input
-                              type="text"
-                              value={dropdownRow.input1}
-                              onChange={(e) =>
-                                handleDropdown11Change(
-                                  rowIndex,
-                                  "input1",
-                                  e.target.value
-                                )
-                              }
-                              className={`controller dropdown11-input1 ${
-                                rowIndex < 3
-                                  ? "blue-text"
-                                  : rowIndex < 6
-                                  ? "green-text"
-                                  : "brown-text"
-                              }`}
-                              id={
-                                rowIndex === dropdown11Data.length - 1 &&
-                                !dropdownRow.input2
-                                  ? "dropdown11-last"
-                                  : undefined
-                              }
-                              onKeyDown={(e) =>
-                                handleEnterPress(e, index, true, "dropdown11")
-                              }
-                            />
+                          <td>
+                            <div className="doubleSelect11-alignment mt-[10px] mb-[10px]">
+                              <td colSpan={2}>
+                                <div className="input-wrapper">
+                                  <input
+                                    type="text"
+                                    value={dropdownRow.input1}
+                                    onChange={(e) =>
+                                      handleDropdown11Change(
+                                        rowIndex,
+                                        "input1",
+                                        e.target.value
+                                      )
+                                    }
+                                    className={`controller dropdown11-Dinput1 ${
+                                      rowIndex < 3
+                                        ? "blue-text"
+                                        : rowIndex < 6
+                                        ? "green-text"
+                                        : "brown-text"
+                                    }`}
+                                    onKeyDown={(e) =>
+                                      handleEnterPress(
+                                        e,
+                                        index,
+                                        true,
+                                        "dropdown11"
+                                      )
+                                    }
+                                  />
+                                  <span className="unit">mA</span>
+                                </div>
+                              </td>
+                              <span>/</span>
+                              <td>
+                                <div className="input-wrapper">
+                                  <input
+                                    type="text"
+                                    value={dropdownRow.input2}
+                                    onChange={(e) =>
+                                      handleDropdown11Change(
+                                        rowIndex,
+                                        "input2",
+                                        e.target.value
+                                      )
+                                    }
+                                    className={`controller dropdown11-Dinput2 ${
+                                      rowIndex < 3
+                                        ? "blue-text"
+                                        : rowIndex < 6
+                                        ? "green-text"
+                                        : "brown-text"
+                                    }`}
+                                    onKeyDown={(e) =>
+                                      handleEnterPress(
+                                        e,
+                                        index,
+                                        true,
+                                        "dropdown11"
+                                      )
+                                    }
+                                  />
+                                  <span className="unit">V</span>
+                                </div>
+                              </td>
+                            </div>
+                          </td>
+                        </>
+                      ) : dropdownRow.text1 === "α" ||
+                        dropdownRow.text1 === "δ" ||
+                        dropdownRow.text1 === "η" ? (
+                        <>
+                          <td colSpan={2}>
+                            <div className="doubleSelect11-alignment mt-[10px] mb-[10px]">
+                              <td colSpan={2}>
+                                <div className="input-wrapper">
+                                  <input
+                                    type="text"
+                                    value={dropdownRow.input1}
+                                    onChange={(e) =>
+                                      handleDropdown11Change(
+                                        rowIndex,
+                                        "input1",
+                                        e.target.value
+                                      )
+                                    }
+                                    className={`controller dropdown11-input1 ${
+                                      rowIndex < 3
+                                        ? "blue-text"
+                                        : rowIndex < 6
+                                        ? "green-text"
+                                        : "brown-text"
+                                    }`}
+                                    onKeyDown={(e) =>
+                                      handleEnterPress(
+                                        e,
+                                        index,
+                                        true,
+                                        "dropdown11"
+                                      )
+                                    }
+                                  />
+                                  <span className="unit">mA</span>
+                                </div>
+                              </td>
+                              <span>/</span>
+                              <td>
+                                <div className="input-wrapper">
+                                  <input
+                                    type="text"
+                                    value={dropdownRow.input2}
+                                    onChange={(e) =>
+                                      handleDropdown11Change(
+                                        rowIndex,
+                                        "input2",
+                                        e.target.value
+                                      )
+                                    }
+                                    className={`controller dropdown11-input2 ${
+                                      rowIndex < 3
+                                        ? "blue-text"
+                                        : rowIndex < 6
+                                        ? "green-text"
+                                        : "brown-text"
+                                    }`}
+                                    onKeyDown={(e) =>
+                                      handleEnterPress(
+                                        e,
+                                        index,
+                                        true,
+                                        "dropdown11"
+                                      )
+                                    }
+                                  />
+                                  <span className="unit">V</span>
+                                </div>
+                              </td>
+                            </div>
                           </td>
                           <td className="table-cell">
                             <select
-                              value={dropdownRow.input2}
+                              value={dropdownRow.input3}
                               onChange={(e) =>
                                 handleDropdown11Change(
                                   rowIndex,
-                                  "input2",
+                                  "input3",
                                   e.target.value
                                 )
                               }
-                              className={`controller dropdown11-input2 ${
+                              className={`controller dropdown11-input3 ${
                                 rowIndex < 3
                                   ? "blue-text"
                                   : rowIndex < 6
@@ -162,6 +239,39 @@ function Row11({
                             </select>
                           </td>
                         </>
+                      ) : (
+                        <td className="table-cell">
+                          <div className="input-wrapper">
+                            <input
+                              type="text"
+                              value={dropdownRow.input1}
+                              onChange={(e) =>
+                                handleDropdown11Change(
+                                  rowIndex,
+                                  "input1",
+                                  e.target.value
+                                )
+                              }
+                              className={`controller dropdown11-SingleInput1 ${
+                                rowIndex < 3
+                                  ? "blue-text"
+                                  : rowIndex < 6
+                                  ? "green-text"
+                                  : "brown-text"
+                              }`}
+                              id={
+                                rowIndex === dropdown11Data.length - 1 &&
+                                !dropdownRow.input2
+                                  ? "dropdown11-last"
+                                  : undefined
+                              }
+                              onKeyDown={(e) =>
+                                handleEnterPress(e, index, true, "dropdown11")
+                              }
+                            />
+                            <span className="unit">mA</span>
+                          </div>
+                        </td>
                       )}
                     </div>
                   </tr>

@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 .row-width {
   background-color: #afc7d9;
   width: 100%;
@@ -63,6 +65,16 @@
   justify-items: right;
 }
 
+.doubleSelect11-alignment {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 25px;
+}
+
 .bats-alignment {
   position: relative;
   justify-items: right;
@@ -86,12 +98,13 @@
 }
 
 .input-wrapper input {
-  padding-right: 15px;
+  padding-right: 30px;
+  padding-left: 5px;
 }
 
 .input-wrapper .unit {
   position: absolute;
-  right: 15px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 14px;
@@ -141,7 +154,7 @@
 }
 
 .input-wrapper-start input {
-  padding-right: 15px;
+  padding-right: 20px;
 }
 /*  */
 
@@ -285,8 +298,6 @@
   text-align: center;
 }
 
-.dropdown11-input1,
-.dropdown11-input2,
 .dropdown12-input1,
 .dropdown12-input2,
 .dropdown14-input1,
@@ -301,13 +312,23 @@
 .double-selectInput1,
 .double-selectInput2,
 .dropdown18-input1,
-.dropdown18-input2 {
+.dropdown18-input2,
+.dropdown11-input3 {
   width: 120px !important;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 0;
   margin: 0;
   text-align: center;
+}
+
+.dropdown11-Dinput1,
+.dropdown11-Dinput2 {
+  width: 120px !important;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  height: 25px;
 }
 
 .double-input1,
@@ -370,7 +391,7 @@
 .single-input1,
 .duration1BAT,
 .duration2BAT,
-.single-dropdown11-input1,
+.dropdown11-SingleInput1,
 .row42-input1,
 .row42-select1 {
   width: 260px;
@@ -459,7 +480,22 @@
   margin: 0;
 }
 
-.doubleSelect19-alignment {
+.dropdown11-input1 {
+  width: 80px;
+  border: 0px;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+.dropdown11-input2 {
+  width: 70px;
+  border: 0px;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+}
+
+.doubleSelect-alignment {
   border: 1px solid #ccc;
   background-color: #ffffff;
   border-radius: 4px;
@@ -536,8 +572,9 @@
 
 /* TEXTAREA STEPS BRIEF */
 textarea {
-  width: 1430px;
-  margin: 5px;
+  width: 100%;
+  padding-left: 15px;
+  margin-right: 10px;
 }
 
 .brief,
