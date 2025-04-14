@@ -352,7 +352,9 @@ function ControlMetrics() {
           toggleDropdown13(12);
           setTimeout(() => {
             const firstInput = document.querySelector(".dropdown13-input1");
-            if (firstInput) firstInput.focus();
+            if (firstInput) {
+              firstInput.focus();
+            }
           }, 50);
         } else {
           const dropdown12Inputs = [
@@ -367,25 +369,6 @@ function ControlMetrics() {
         return;
       }
 
-      if (dropdownType === "dropdown13") {
-        const dropdown13Inputs = [
-          ...document.querySelectorAll(".dropdown13-input1, .dropdown13-text3"),
-        ];
-        let currentDropdownIndex = dropdown13Inputs.indexOf(e.target);
-        let nextDropdownIndex = currentDropdownIndex + 1;
-
-        if (nextDropdownIndex >= dropdown13Inputs.length) {
-          const allInputs = [...document.querySelectorAll(".controller")];
-          const currentIndex = allInputs.indexOf(e.target);
-          const nextIndex = currentIndex + 1;
-          if (nextIndex < allInputs.length) {
-            allInputs[nextIndex].focus();
-          }
-        } else {
-          dropdown13Inputs[nextDropdownIndex]?.focus();
-        }
-        return;
-      }
       if (e.target.id === "limit3") {
         toggleDropdown14(13);
         setTimeout(() => {
@@ -433,6 +416,26 @@ function ControlMetrics() {
               }
             }
           }, 50);
+        }
+        return;
+      }
+
+      if (dropdownType === "dropdown13") {
+        const dropdown13Inputs = [
+          ...document.querySelectorAll(".dropdown13-input1, .dropdown13-text3"),
+        ];
+        let currentDropdownIndex = dropdown13Inputs.indexOf(e.target);
+        let nextDropdownIndex = currentDropdownIndex + 1;
+
+        if (nextDropdownIndex >= dropdown13Inputs.length) {
+          const allInputs = [...document.querySelectorAll(".controller")];
+          const currentIndex = allInputs.indexOf(e.target);
+          const nextIndex = currentIndex + 1;
+          if (nextIndex < allInputs.length) {
+            allInputs[nextIndex].focus();
+          }
+        } else {
+          dropdown13Inputs[nextDropdownIndex]?.focus();
         }
         return;
       }
